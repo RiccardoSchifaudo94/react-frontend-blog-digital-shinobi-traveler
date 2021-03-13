@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import logo from './digital-shinobi-traveler.png';
+import React,{useState} from 'react';
+import Header from "./components/Header/Header";
+import PostGallery from "./components/PostGallery";
+
+
 import './App.css';
 
 function App() {
+  
+  const [posts, setPosts] = useState([]);
+ 
+ 
+
+  const get_posts = async()=>{
+    const res = await fetch("https://www.the-shinobi-arts-of-eccentricity.com/blog/wp-json/wp/v2/posts?_embed&lang=it");
+    const result = await res.json().then((data)=>{
+      setPosts(data);
+    });
+
+  }
+
+  get_posts();
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <Header logo={logo}>
+    </Header>
+    <PostGallery posts={posts}></PostGallery>
+   </>
   );
+
 }
 
 export default App;
