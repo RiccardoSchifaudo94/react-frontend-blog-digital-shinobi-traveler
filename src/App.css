@@ -209,12 +209,21 @@ footer img{
     background: #222;
     border-radius: 50%;
     padding: 12px;
-    width: 45px;
-    height: 45px;
+    width: 30px;
+    height: 30px;
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     margin-right: 10px;
     justify-content: center;
+}
+.dst_footer_copyright{
+    font-size: 11px;
+    display: block;
+    margin: 20px auto!important;
+    border-bottom: 1px solid #222;
+    padding: 10px 0 30px;
+    color: #ccc;
+    text-align: center;
 }
