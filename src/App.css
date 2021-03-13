@@ -155,3 +155,41 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   margin: 20px auto;
 }
+footer{
+  background-color: #151515;
+  min-height:300px;
+  padding:40px 0;
+}
+footer h2{
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  color: #fff;
+  text-align: left;
+}
+footer h2::after{
+    content: " ";
+    display: block;
+    height: 2px;
+    width: 90px;
+    background: rgba(15, 151, 203, .8);
+    margin-top: 10px;
+}
+footer img{
+  border: 2px solid #222;
+  padding: 5px;
+  max-width:140px;
+  max-height: 140px;
+  float: left;
+  margin-right: 30px;
+}
+.dst_footer_text{
+    margin-top: 30px;
+    color: #ccc;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    padding-top: 20px;
+}
