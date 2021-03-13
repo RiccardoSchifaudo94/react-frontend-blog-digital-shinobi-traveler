@@ -193,3 +193,28 @@ footer img{
     text-align: left;
     padding-top: 20px;
 }
+.dst_footer_icon_socials{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 20px 0;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    margin-top: 45px;
+}
+.dst_footer_icon_socials i{
+    background: #222;
+    border-radius: 50%;
+    padding: 12px;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: center;
+}
