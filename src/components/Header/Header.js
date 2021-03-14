@@ -1,23 +1,22 @@
 import React from 'react';
 import "./Header.css";
 
-export default function Header({logo}) {
+export default function Header({data}) {
     return (
-        <nav className="dst_header">
+        <nav className="dst_header" id="top">
             <div className="container">
-                <img src={logo} width="75" height="75" alt="digital-shinobi-traveler"/>
-                <h1>Digital Shinobi Traveler</h1>
-                <span>Digital Dojo for Unconventional People</span>
+                <img src={data.header[0].image} width="75" height="75" alt="digital-shinobi-traveler"/>
+                <h1>{data.header[0].title}</h1>
+                <span>{data.header[0].description}</span>
             </div>
             <div className="dst_sub_header">
                 <div className="container">
                     <ul>
-                        <li><a rel="noreferrer" href="/">Home</a></li>
-                        <li><a rel="noreferrer" href="https://www.the-shinobi-arts-of-eccentricity.com/blog/su-di-me/">About</a></li>
-                        <li><a rel="noreferrer" href="https://www.the-shinobi-arts-of-eccentricity.com/blog/contattami/">Contact</a></li>
+                        { data.header[0].items.map((item)=>(<li><a rel="noreferrer" href={item.url} target="_blank">{item.text}</a></li>)) }
                     </ul>
                 </div>
             </div>
+            <a href="#top"><i className="fa fa-2x fa-angle-double-up dst_top_menu"></i></a>
         </nav>
     )
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import ricky_photo from './../../ricky-shinobi.jpg';
 import './Footer.css';
 
 export default function Footer({data}) {

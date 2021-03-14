@@ -5,17 +5,11 @@ class UtilityObj{
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
     }
-    getJSON(url){
-        alert("call getJSON");
-        fetch(url)
-        .then(res => res.json())
-        .then((out) => {
-                        console.log('Checkout this JSON! ', out);
-                        return out;
-        })
-        .catch(err => { throw err });
+    detectLang(){
+        var lang = navigator.language || navigator.userLanguage;
+        return lang;
     }
+   
 }
-
 
 export default UtilityObj;

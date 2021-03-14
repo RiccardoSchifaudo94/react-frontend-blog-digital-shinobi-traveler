@@ -1,0 +1,30 @@
+{   
+    "header":[
+        {
+            "title":"Digital Shinobi Traveler",
+            "image":"/images/digital-shinobi-traveler.png",
+            "description":"Digital Dojo for Unconventional People",
+            "items":[
+                {   
+                    "text":"Home", "url":"/" 
+                },
+                {   
+                    "text":"About me",
+                    "url":"https://www.the-shinobi-arts-of-eccentricity.com/blog/en/about-me/"
+                },
+                {   
+                    "text":"Contacts",
+                    "url":"https://www.the-shinobi-arts-of-eccentricity.com/blog/en/contacts/"
+                }
+            ]
+        }
+    ],
+    "footer":[
+        {
+            "title":"Riccardo Schifaudo",
+            "image":"/images/ricky-shinobi.jpg",
+            "description":"HI, I am Ricky, and I am the “Shinobi” of this blog “Dojo”. I like travelling, I am curious and to keen on about differents hobbies such as Diabolo Juggling, Digital Prototyping and I was a political activist and a scout volunteer as well. I studied Electronics, afterwards UX Design and I am a Web Developer. I am always look for new insights in order to learn and make some new experience for travelling.",
+            "copyright":"The Shinobi Arts of Eccentricity is not a Journal. The website is updated in based on availability of materials. For this reason can not be considered an online newspaper in conformity of law n.62 del 2001 and declaration of costitutional court of law 10 March 2009 n. 10535. This site doesn't receive government subsidy and contents of 'the-shinobi-arts-of-eccentricity.com' must not be censored due the art. 21, comma 3, Cost. In addition these contents must not be copied, share and disclouse with other kind of system of communications without the permit of the webmaster."
+        }
+    ]
+}
