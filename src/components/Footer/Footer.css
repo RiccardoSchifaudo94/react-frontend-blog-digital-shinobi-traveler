@@ -2,7 +2,7 @@
 footer{
     background-color: #151515;
     min-height:300px;
-    padding:40px 0;
+    padding:40px 0 1px;
   }
   footer h2{
     font-size: 18px;
@@ -71,3 +71,6 @@ footer{
       color: #ccc;
       text-align: center;
   }
+  .dst_footer_privacy {
+    background: #151515;
+}
