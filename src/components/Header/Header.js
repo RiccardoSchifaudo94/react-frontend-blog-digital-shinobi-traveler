@@ -2,6 +2,16 @@ import React from 'react';
 import "./Header.css";
 
 export default function Header({data}) {
+
+   
+    
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+    }
+
     return (
         <nav className="dst_header" id="top">
             <div className="container">
@@ -16,7 +26,7 @@ export default function Header({data}) {
                     </ul>
                 </div>
             </div>
-            <a href="#top"><i className="fa fa-2x fa-angle-double-up dst_top_menu"></i></a>
+            <i className="fa fa-2x fa-angle-double-up dst_top_menu" onClick={()=>{scrollToTop()}}></i>
         </nav>
     )
 }
