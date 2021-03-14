@@ -1,0 +1,59 @@
+.dst_header a,
+.dst_post a{
+  text-decoration: none!important;
+  outline: none;
+}
+.dst_header{
+    background: #fff;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: 3px 4px 5px #dedede;
+    position: relative;
+}
+.dst_header h1{
+    color: #02002f;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    text-align: center;
+}
+.dst_header span{
+  color: #828992;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+}
+.dst_sub_header{
+  background: #02002f;
+  padding: 20px;
+  position: relative;
+  top: 20px;
+}
+.dst_sub_header ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.dst_sub_header ul li{
+  margin-left: 20px;
+  display: flex;
+}
+.dst_sub_header ul li a{
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: Montserrat, serif;
+  line-height: 26px;
+  padding: 0;
+  text-transform: uppercase;
+}

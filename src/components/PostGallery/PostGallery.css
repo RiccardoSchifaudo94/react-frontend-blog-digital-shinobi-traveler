@@ -1,0 +1,63 @@
+.dst_post {
+    padding:20px auto;
+  }
+  .dst_post h1{
+    line-height: 100%;
+    font-size: 32px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  .dst_post h1::after{
+      content: " ";
+      display: block;
+      height: 3px;
+      width: 90px;
+      background: linear-gradient( -45deg, #02002f ,#0f97cb );
+      margin-top: 15px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .dst_post article{
+    background-color: #dedede;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    background: #fff;
+    padding: 20px 20px 15px;
+    border-radius: 5px;
+    box-shadow: 6px 7px 10px #dedede;
+    border-bottom: 4px solid #ccc;
+  }
+  .dst_post article button{
+      display: inline-block;
+      padding: 12px 25px;
+      background: #02002f;
+      color: #fff;
+      font-size: 16px;
+      font-family: Raleway;
+      line-height: 1;
+      text-transform: unset;
+      font-weight: 400;
+      -webkit-transition: all .3s ease;
+      transition: all .3s ease;
+      border-bottom: 3px solid #030314;
+      outline: none;
+      border-radius: 4px;
+      margin: 30px auto;
+      border: none;
+  }
+  .dst_post article button:hover{
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #0f97cb!important;
+    transition: ease-in-out .8s;
+    box-shadow: inset 1200px 0 0 0 #0f97cb!important;
+    color: #fff;
+  }
+  .dst_post img{
+    max-width: 600px;
+    height: auto;
+    width: 100%;
+    margin: 20px auto;
+  }

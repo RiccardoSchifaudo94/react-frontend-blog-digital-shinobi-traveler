@@ -1,24 +1,22 @@
 import logo from './digital-shinobi-traveler.png';
 import React,{useState} from 'react';
-import Header from "./components/Header/Header";
-import PostGallery from "./components/PostGallery";
-
+import { Header, Footer, Spinner, PostGallery } from "./components";
 
 import './App.css';
-import Footer from './components/Footer/Footer';
 
 function App() {
   
   const [posts, setPosts] = useState([]);
+  const [spinner,setSpinner] = useState(true);
  
  
 
   const get_posts = async()=>{
-    const res = await fetch("https://www.the-shinobi-arts-of-eccentricity.com/blog/wp-json/wp/v2/posts?_embed&lang=it");
-    const result = await res.json().then((data)=>{
+    const res = await fetch(window.env.API_URL);
+    await res.json().then((data)=>{
       setPosts(data);
+      setSpinner(false);
     });
-
   }
 
   get_posts();
@@ -26,9 +24,8 @@ function App() {
 
   return (
    <>
-    <Header logo={logo}>
-    </Header>
-    <PostGallery posts={posts}></PostGallery>
+    <Header logo={logo}/>
+    {(spinner) ? ( <Spinner/>) : (<PostGallery posts={posts}/>)}
     <Footer/>
    </>
   );
