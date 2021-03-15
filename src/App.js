@@ -29,8 +29,6 @@ function App() {
     await res.json().then((data)=>{
       setPosts(data);
     });
-   
-
     
     setSpinner(false); 
   }
@@ -56,7 +54,7 @@ function App() {
     <Header data={data}/>
       <PostGallery posts={posts} spinner={spinner}/>
       <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage}/>
-    <Footer data={data}/>
+      <Footer data={data}/>
    </>
   );
 

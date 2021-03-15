@@ -1,4 +1,5 @@
 import React from 'react';
+import { Privacy } from '..';
 import './Footer.css';
 
 export default function Footer({data}) {
@@ -15,6 +16,7 @@ export default function Footer({data}) {
                         <a href={window.env.URL_TWITTER} target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
                 </div>
                 <span className="dst_footer_copyright">{data.footer[0].copyright}</span>
+                <Privacy/>
             </div>
         </footer>
     )
