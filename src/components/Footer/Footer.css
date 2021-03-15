@@ -74,3 +74,24 @@ footer{
   .dst_footer_privacy {
     background: #151515;
 }
+
+@media screen and (max-width:468px){
+  footer *{
+    display: block;
+  }
+  .dst_footer_text,footer h2, footer img{
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+  }
+  footer h2:after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left:auto;
+    margin-right: auto;
+  }
+  footer img{
+    margin-top:30px;
+  }
+}

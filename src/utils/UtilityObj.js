@@ -9,6 +9,12 @@ class UtilityObj{
         var lang = navigator.language || navigator.userLanguage;
         return lang;
     }
+    scrollToTop(){
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
    
 }
 

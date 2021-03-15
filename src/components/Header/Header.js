@@ -1,16 +1,12 @@
 import React from 'react';
 import "./Header.css";
+import UtilityObj from './../../utils/UtilityObj';
 
 export default function Header({data}) {
 
-   
+    const utilObj = new UtilityObj();
     
-    const scrollToTop = () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-    }
+    const scrollToTop = () => utilObj.scrollToTop();
 
     return (
         <nav className="dst_header" id="top">
