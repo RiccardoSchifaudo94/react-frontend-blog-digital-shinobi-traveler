@@ -22,7 +22,7 @@ export default function Header({data}) {
             <div className="dst_sub_header">
                 <div className="container">
                     <ul>
-                        { data.header[0].items.map((item)=>(<li><a rel="noreferrer" href={item.url} target="_blank">{item.text}</a></li>)) }
+                        { data.header[0].items.map((item,key)=>(<li key={key}><a rel="noreferrer" href={item.url} target="_blank">{item.text}</a></li>)) }
                     </ul>
                 </div>
             </div>

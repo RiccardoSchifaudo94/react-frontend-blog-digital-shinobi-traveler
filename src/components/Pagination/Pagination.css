@@ -1,0 +1,31 @@
+.dst_pagination {
+    list-style-type: none;
+    display: flex;
+    margin: 20px auto 40px;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.dst_page_item{
+    background-color: #e4e4e4;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    border-bottom: 3px solid #ccc;
+    margin-right: 10px;
+    border-radius:4px;
+    padding: 10px 20px;
+}
+.dst_page_link{
+    color: #979797;
+    font-weight: 700;
+    text-decoration: none;
+}
+.dst_page_active{
+    background-color:#02002f;
+    border-bottom: solid #030314;
+}
+.dst_page_active .dst_page_link{
+    color: #fff!important;
+}
