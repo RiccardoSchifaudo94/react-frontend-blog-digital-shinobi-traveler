@@ -15,7 +15,7 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "REACT_APP_API_URL=https://www.the-shinobi-arts-of-eccentricity.com/blog/wp-json/wp/v2/posts && react-dotenv && react-scripts start",
+    "start": "react-dotenv && react-scripts start",
     "build": "react-dotenv && react-scripts build",
     "serve": "react-dotenv && serve build",
     "test": "react-scripts test",

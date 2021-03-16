@@ -25,8 +25,8 @@ function App() {
   const utilityOBJ = new UtilityObj();
 
   const get_posts = async(id)=>{
-    console.log(window.env.API_URL);
-    const res = await fetch(window.env.API_URL+"?_embed&lang=it&per_page="+postsPerPage+"&page="+id);
+    console.log(process.env.REACT_APP_API_URL);
+    const res = await fetch(process.env.REACT_APP_API_URL+"?_embed&lang=it&per_page="+postsPerPage+"&page="+id);
     let totals = Number(res.headers.get('X-WP-Total'));
     
     setTotalPosts(totals);

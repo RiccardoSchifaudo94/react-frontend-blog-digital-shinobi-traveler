@@ -3,6 +3,24 @@
 body{
     background-color: #fff!important;
 }
+.dst_back_home {
+    color: #fff;
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+.dst_back_home * {
+    color: #fff;
+    display: inline-block;
+    float: left;
+    text-decoration: none;
+}
+.dst_back_home i{
+    position: relative;
+    top: -12px;
+    margin-right: 10px;
+}
 .dst_img_section_article{
     position: relative;
     background-repeat: no-repeat;
@@ -15,6 +33,7 @@ body{
     background-size: cover;
     display: flex;
     align-items: center;
+    z-index: 9999999999;
 }
 .dst_img_section_article:after {
     content: "";
@@ -32,7 +51,7 @@ body{
     color: #fff;
     text-align: center;
     padding: 0 0 20px;
-    line-height: 100%;
+    line-height: 80%;
     max-width: 800px;
     width: 100%;
     bottom: 0;
@@ -177,10 +196,25 @@ body{
 }
 .dst_blog_post figure {
     text-align: center;
-    background-color: #dedede;
     padding: 20px;
     max-width: 600px;
     margin: 40px auto;
+}
+.dst_blog_post figure .wp-block-embed__wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    margin-bottom: 30px;
+}
+.dst_blog_post figure .wp-block-embed__wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 }
 .shinobi_icon_box {
     border: 1px solid #ccced0;
@@ -226,7 +260,7 @@ body{
 
 @keyframes pulse {
 	0% {
-		transform: scale(0.85);
+		transform: scale(0.75);
 	}
 
 	50% {
@@ -234,6 +268,6 @@ body{
 	}
 
 	100% {
-		transform: scale(0.85);
+		transform: scale(0.75);
 	}
 }

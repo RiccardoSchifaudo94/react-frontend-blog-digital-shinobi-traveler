@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 import UtilityObj from '../../utils/UtilityObj';
 import Parser from 'html-react-parser';
 import './Post.css';
@@ -15,9 +15,9 @@ export default function Post() {
    
     const get_single_post = async() => {
         console.log("url get single post");
-        console.log(window.env.API_URL+`/?_embed&slug=${slug}`);
+        console.log(process.env.REACT_APP_API_URL+`/?_embed&slug=${slug}`);
       
-        const res = await fetch(window.env.API_URL+`?_embed&slug=${slug}`);
+        const res = await fetch(process.env.REACT_APP_API_URL+`?_embed&slug=${slug}`);
         await res.json().then((data)=>{
             setPost(data);
             setIsFetching(false);
@@ -32,13 +32,15 @@ export default function Post() {
     }
 
     useEffect(()=>{    
+        utilObj.scrollToTop();
         get_single_post();
     },[]);
    
     return (
             (!isFetching) ? 
-            (    <div onLoad={utilObj.scrollToTop()}>
+            (    <div>
                     <div className="dst_img_section_article" style={{backgroundImage: `url(${post[0].images.large})`}}>
+                        <div className="dst_back_home"><Link to="/"> <i className="fa fa-3x fa-angle-double-left"></i>Back</Link></div>
                         <div className="dst_info_section_article">    
                             <h1>{utilObj.stripHtml(post[0].title.rendered)}</h1> 
                             <span>{post[0].date}</span>
