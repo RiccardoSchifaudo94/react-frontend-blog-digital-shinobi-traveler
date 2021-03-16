@@ -14,7 +14,7 @@ class UtilityObj{
             top: 0,
             behavior: "smooth"
         });
-    }   
+    }
 }
 
 export default UtilityObj;

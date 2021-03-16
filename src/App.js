@@ -1,5 +1,10 @@
 import React,{useState,useEffect} from 'react';
-import { Header, Footer, PostGallery, Pagination } from "./components";
+import { Header, Footer, Post , PostGallery, Pagination } from "./components";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 import './App.css';
 
@@ -20,8 +25,8 @@ function App() {
   const utilityOBJ = new UtilityObj();
 
   const get_posts = async(id)=>{
-  
-    const res = await fetch(window.env.API_URL+"&per_page="+postsPerPage+"&page="+id);
+    console.log(window.env.API_URL);
+    const res = await fetch(window.env.API_URL+"?_embed&lang=it&per_page="+postsPerPage+"&page="+id);
     let totals = Number(res.headers.get('X-WP-Total'));
     
     setTotalPosts(totals);
@@ -50,12 +55,20 @@ function App() {
   }
 
   return (
-   <>
-    <Header data={data}/>
-      <PostGallery posts={posts} spinner={spinner}/>
-      <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage}/>
-      <Footer data={data}/>
-   </>
+    <Router>
+      <Header data={data}/>
+        
+        <Switch>
+          <Route exact path="/">
+            <PostGallery posts={posts} spinner={spinner}/>
+            <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
+          </Route>
+          <Route path="/post/:slug">
+            <Post/>
+          </Route>
+        </Switch>  
+     <Footer data={data}/>
+    </Router>
   );
 
 }

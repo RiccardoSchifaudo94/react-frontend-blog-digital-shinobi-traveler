@@ -2,7 +2,7 @@ import React from 'react';
 import './Pagination.css';
 import UtilityObj from './../../utils/UtilityObj';
 
-export default function Pagination({postsPerPage,totalPosts, paginate, currentPage}) {
+export default function Pagination({postsPerPage,totalPosts, paginate, currentPage, spinner}) {
     
     
     
@@ -15,6 +15,7 @@ export default function Pagination({postsPerPage,totalPosts, paginate, currentPa
     const utilObj = new UtilityObj();
 
     return (
+        (!spinner) &&
         <div className="container">
             <nav>
                 <ul className="dst_pagination">
