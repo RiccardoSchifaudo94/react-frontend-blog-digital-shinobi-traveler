@@ -5,7 +5,7 @@ import Parser from 'html-react-parser';
 import './Post.css';
 import Spinner from '../Spinner/Spinner';
 
-export default function Post() {
+export default function Post({data}) {
     let { slug } = useParams();
     const [post, setPost] = useState([]);
     const [isFetching, setIsFetching] = useState(true);
@@ -43,7 +43,7 @@ export default function Post() {
                         <div className="dst_back_home"><Link to="/"> <i className="fa fa-3x fa-angle-double-left"></i>Back</Link></div>
                         <div className="dst_info_section_article">    
                             <h1>{utilObj.stripHtml(post[0].title.rendered)}</h1> 
-                            <span>{post[0].date}</span>
+                            <span>{utilObj.formatDate(post[0].date, data.lang)}</span>
                             <p>Scroll</p>
                             <i className="fa fa-3x fa-angle-double-down" onClick={scrollDown}></i>
                         </div>

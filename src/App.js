@@ -64,7 +64,7 @@ function App() {
             <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
           </Route>
           <Route path="/post/:slug">
-            <Post/>
+            <Post data={data}/>
           </Route>
         </Switch>  
      <Footer data={data}/>
