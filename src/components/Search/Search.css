@@ -1,7 +1,8 @@
 .dst_search_bar {
     background-color: #dedede;
-    padding: 10px;
-    display: flex
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
 }
 .dst_search_bar input{
     background: #f2f2f2;
@@ -10,24 +11,32 @@
     border-radius: 4px;
     color: #151515;
     font-size: 20px;
-    float: left;
-    padding-left:10px;
+    padding-left: 10px;
     width: 65%;
 }
 .dst_search_bar button{
-    float: left;
     border: 0;
     line-height: 45px;
     color: #fff;
     font-family: Montserrat;
     background: #02002f;
-    padding: 2px 22px;
+    padding: 2px 0px;
     margin: 0;
     border-bottom: 3px solid #030314;
     border-radius: 3px;
     font-weight: 400;
     text-transform: capitalize;
     font-size: 16px;
-    width: 90px;
-    margin-left: 5px;
+    margin-left: 0px;
+    position: relative;
+    top: -3px;
+}
+.dst_search_bar .dst_strip_results .dst_strip_result_header{
+    font-weight: 700;
+    font-size: 20px;
+    background-color: #c1c1c1;
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 600px;
+    margin: 30px auto;
 }

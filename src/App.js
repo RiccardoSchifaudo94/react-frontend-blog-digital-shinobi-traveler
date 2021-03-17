@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Header,NotFound, Footer, Post , PostGallery, Pagination } from "./components";
+import { Header,NotFound, Footer, Post , PostGallery, Pagination, Search } from "./components";
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,7 +25,7 @@ function App() {
   const utilityOBJ = new UtilityObj();
 
   const get_posts = async(id)=>{
-    console.log(process.env.REACT_APP_API_URL);
+
     const res = await fetch(process.env.REACT_APP_API_URL+"?_embed&lang=it&per_page="+postsPerPage+"&page="+id);
     let totals = Number(res.headers.get('X-WP-Total'));
     
@@ -57,7 +57,6 @@ function App() {
   return (
     <Router>
       <Header data={data}/>
-        
         <Switch>
           <Route exact path="/">
             <PostGallery posts={posts} spinner={spinner}/>
@@ -65,6 +64,9 @@ function App() {
           </Route>
           <Route path="/post/:slug">
             <Post data={data}/>
+          </Route>
+          <Route path='/search'>
+            <Search statusSearchBar={true} data={data}/>
           </Route>
           <Route path='*'>
             <NotFound data={data}/>

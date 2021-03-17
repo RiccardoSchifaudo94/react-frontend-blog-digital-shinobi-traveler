@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import "./Header.css";
 import UtilityObj from './../../utils/UtilityObj';
 import Search from '../Search/Search';
@@ -21,13 +22,18 @@ export default function Header({data}) {
                 <div className="container">
                     <ul>
                         { data.header[0].items.map((item,key)=>(<li key={key}><a rel="noreferrer" href={item.url}>{item.text}</a></li>)) }
-                        <li><a onClick={()=>setShowSearchBar(!showSearchBar)}><i className={`fa ${showSearchBar? 'fa-times':'fa-search'}`}></i></a></li>
+                        <li onClick={()=>{setShowSearchBar(!showSearchBar);}}>
+                            {
+                                showSearchBar 
+                                ?(<Link to="/"><i className="fa fa-times"></i></Link>)
+                                :(<Link to="/search"><i className="fa fa-search"></i></Link>)
+                            }
+                        </li>
                     </ul>
                 </div>
             </div>
             <i className="fa fa-2x fa-angle-double-up dst_top_menu" onClick={()=>{scrollToTop()}}></i>
         </nav>
-        <Search statusSearchBar={showSearchBar}/>
         </>
     )
 }

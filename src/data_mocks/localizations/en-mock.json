@@ -39,5 +39,12 @@
             "description":"Click to go back to the homepage",
             "label_url":"Back"
         }
+    ],
+    "searchbar":[
+        {
+            "title":"Insert your query to search filtered posts",
+            "placeholder":"Search blog post here ...",
+            "label_btn":"Search"
+        }
     ]
 }

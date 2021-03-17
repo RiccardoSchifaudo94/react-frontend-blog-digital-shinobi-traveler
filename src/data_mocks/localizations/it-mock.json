@@ -39,5 +39,12 @@
             "description":"Torna indietro all'homepage",
             "label_url":"Indietro"
         }
+    ],
+    "searchbar":[
+        {   
+            "title":"Esegui qui la tua ricerca, digita nella barra di ricerca la parola chiave",
+            "placeholder":"Cerca qui il post ...",
+            "label_btn":"Cerca"
+        }
     ]
 }
