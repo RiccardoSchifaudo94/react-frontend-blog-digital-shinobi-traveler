@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Header, Footer, Post , PostGallery, Pagination } from "./components";
+import { Header,NotFound, Footer, Post , PostGallery, Pagination } from "./components";
 import {
   BrowserRouter as Router,
   Switch,
@@ -65,6 +65,9 @@ function App() {
           </Route>
           <Route path="/post/:slug">
             <Post data={data}/>
+          </Route>
+          <Route path='*'>
+            <NotFound data={data}/>
           </Route>
         </Switch>  
      <Footer data={data}/>

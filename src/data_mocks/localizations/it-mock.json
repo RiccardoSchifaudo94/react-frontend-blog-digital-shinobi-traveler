@@ -32,5 +32,12 @@
                 "twitter":"https://www.twitter.com/ActivistShinobi/"
             }]
         }
+    ],
+    "not_found":[
+        {
+            "title":"Errore 404 - Pagina non Trovata!",
+            "description":"Torna indietro all'homepage",
+            "label_url":"Indietro"
+        }
     ]
 }

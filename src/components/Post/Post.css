@@ -257,7 +257,11 @@ body{
 .shinobi_sub_section i{
     color: #ffffff;
 }
-
+.dst_blog_post pre.wp-block-code {
+    overflow: scroll;
+    text-align: left;
+    background-color: #dedede;
+}
 @keyframes pulse {
 	0% {
 		transform: scale(0.75);
