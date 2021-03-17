@@ -41,11 +41,7 @@
   },
   "react-dotenv": {
     "whitelist": [
-      "API_URL",
-      "URL_FACEBOOK",
-      "URL_LINKEDIN",
-      "URL_INSTAGRAM",
-      "URL_TWITTER"
+      "API_URL"
     ]
   }
 }
