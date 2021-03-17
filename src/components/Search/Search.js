@@ -44,7 +44,7 @@ export default function Search({statusSearchBar, data}) {
         <div className="dst_search_bar">
             <div className="container">
                 <h1>{data.searchbar[0].title}</h1>
-                <input type="text" value={searchQuery} onChange={(e)=>{setSearchQuery(e.target.value); disableSearch();}} placeholder={data.searchbar[0].placeholder}/>
+                <input type="text" value={searchQuery} onChange={(e)=>{setSearchQuery(e.target.value); disableSearch(); }} onKeyPress={(e)=>{ if(e.key==='Enter') search(); }} placeholder={data.searchbar[0].placeholder}/>
                 <button style={{width:'90px'}} onClick={search}>{data.searchbar[0].label_btn}</button>
             </div>
             <div className="container">
