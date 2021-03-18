@@ -1,0 +1,78 @@
+
+.shinobi_contact_subtitle {
+    color: #222;
+    padding-top: 20px;
+    line-height: 100%;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.shinobi_contact_subtitle:after {
+    content: " ";
+    display: block;
+    height: 3px;
+    width: 150px;
+    background: linear-gradient( 
+-45deg
+, #02002f ,#0f97cb );
+    margin-top: 10px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shinobi_contact_block {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+.shinobi_contact_block strong{
+    font-weight: 400;
+}
+.shinobi_contact_block td a {
+    font-weight: 400;
+    margin-left: 5px;
+    position: relative;
+    top: 1px;
+    font-size: 16px;
+    color: #222;
+    border-bottom: 1px solid #02002f;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+.shinobi_contact_block td{
+    text-align: left;
+    padding-bottom: 10px
+}
+.shinobi_contact_block td i {
+    color: #ffffff;
+    float: left;
+    width: 30px;
+    background: #0f97cb;
+    text-align: center;
+    padding: 8px;
+    font-size: 24px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 2px solid #02002f;
+    margin-right: 10px;
+}
+.shinobi_contacts_box {
+    display: flex;
+    flex-direction: row;
+}
+.shinobi_contacts_box img{
+    border-radius:4px;
+    box-shadow:30px 30px #02002f;
+    max-width:200px;
+}
+.shinobi_contacts_box figure img {
+    margin-right: 100px;
+}
+@media screen and (max-width:468px){
+    .shinobi_contacts_box {
+        display: block;
+    }
+    .shinobi_contacts_box figure img {
+        margin:30px auto 60px;
+    }
+}

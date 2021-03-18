@@ -6,15 +6,34 @@
             "description":"Digital Dojo for Unconventional People",
             "items":[
                 {   
-                    "text":"Home", "url":"/" 
+                    "text":"Home", 
+                    "url":"/",
+                    "css":null
                 },
                 {   
                     "text":"About me",
-                    "url":"https://www.the-shinobi-arts-of-eccentricity.com/blog/en/about-me/"
+                    "url":"/page/about-me",
+                    "css":"about"
+                },
+                {   
+                    "text":"Mission",
+                    "url":"/page/dojo-philosophy",
+                    "css":"mission"
                 },
                 {   
                     "text":"Contacts",
-                    "url":"https://www.the-shinobi-arts-of-eccentricity.com/blog/en/contacts/"
+                    "url":"/page/contacts/",
+                    "css":"contacts"
+                },
+                {
+                    "text":"FAQ",
+                    "url":"/page/faq-domande-frequenti",
+                    "css":null
+                },
+                {
+                    "text":"Dona",
+                    "url":"/page/dona",
+                    "css":null
                 }
             ]
         }

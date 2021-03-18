@@ -18,7 +18,7 @@ export default function Search({statusSearchBar, data}) {
     
     const search_posts = async() => {
        
-        const result = await fetch(process.env.REACT_APP_API_URL+`?search=${searchQuery}&_embed`);
+        const result = await fetch(process.env.REACT_APP_API_URL+`posts?search=${searchQuery}&_embed`);
         
         await result.json().then((data)=>{
             setSearchedPosts(data);
@@ -44,8 +44,30 @@ export default function Search({statusSearchBar, data}) {
         <div className="dst_search_bar">
             <div className="container">
                 <h1>{data.searchbar[0].title}</h1>
-                <input type="text" value={searchQuery} onChange={(e)=>{setSearchQuery(e.target.value); disableSearch(); }} onKeyPress={(e)=>{ if(e.key==='Enter') search(); }} placeholder={data.searchbar[0].placeholder}/>
-                <button style={{width:'90px'}} onClick={search}>{data.searchbar[0].label_btn}</button>
+                <input type="text" 
+                       value={searchQuery} 
+                       onChange={
+                                    (e) =>  
+                                            {
+                                                setSearchQuery(e.target.value); 
+                                                disableSearch(); 
+                                            }
+                                } 
+                        onKeyPress={
+                                    
+                                    (e) =>  { 
+                                                if(e.key==='Enter') 
+                                                    search(); 
+                                            }
+                                    } 
+                        placeholder={
+                                        data.searchbar[0].placeholder
+                                    }
+                />
+                <button style={{width:'90px'}} 
+                        onClick={search}>
+                    {data.searchbar[0].label_btn}
+                </button>
             </div>
             <div className="container">
             {

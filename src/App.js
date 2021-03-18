@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Header,NotFound, Footer, Post , PostGallery, Pagination, Search } from "./components";
+import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search } from "./components";
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,13 +20,13 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage]  = useState(10);
   const [totalPosts,setTotalPosts] = useState(1);
-
+  const [statusSearchBar,setStatusSearchBar] = useState(true);
   let data; 
   const utilityOBJ = new UtilityObj();
 
   const get_posts = async(id)=>{
 
-    const res = await fetch(process.env.REACT_APP_API_URL+"?_embed&lang=it&per_page="+postsPerPage+"&page="+id);
+    const res = await fetch(process.env.REACT_APP_API_URL+"posts?_embed&lang=it&per_page="+postsPerPage+"&page="+id);
     let totals = Number(res.headers.get('X-WP-Total'));
     
     setTotalPosts(totals);
@@ -62,13 +62,19 @@ function App() {
             <PostGallery posts={posts} spinner={spinner}/>
             <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
           </Route>
+          <Route path="/page/:slug">
+            <Page data={data}/>
+          </Route>
           <Route path="/post/:slug">
             <Post data={data}/>
           </Route>
           <Route path='/search'>
-            <Search statusSearchBar={true} data={data}/>
+            <Search statusSearchBar={statusSearchBar} data={data}/>
           </Route>
           <Route path='*'>
+            <NotFound data={data}/>
+          </Route>
+          <Route path='/page/*'>
             <NotFound data={data}/>
           </Route>
         </Switch>  

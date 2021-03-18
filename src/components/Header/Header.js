@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
-import "./Header.css";
+import React, { useState, useEffect } from 'react';
+import {Link, useLocation, useHistory} from 'react-router-dom';
 import UtilityObj from './../../utils/UtilityObj';
-import Search from '../Search/Search';
+import "./Header.css";
+
+
 
 export default function Header({data}) {
 
     const utilObj = new UtilityObj();
+    
     const [showSearchBar, setShowSearchBar] = useState(false);
+    
     const scrollToTop = () => utilObj.scrollToTop();
+
+    const location = useLocation();
+    const history = useHistory();
+
+
+    useEffect(()=>{
+        if(location.pathname!=='/search'){
+            setShowSearchBar(false);
+        }       
+    },[location]);
+
 
     return (
         <>

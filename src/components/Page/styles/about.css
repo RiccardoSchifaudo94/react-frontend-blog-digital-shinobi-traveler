@@ -1,0 +1,145 @@
+.shinobi-shadow-image {
+    box-shadow: -30px -30px #0f94c8;
+    margin: 50px auto;
+    border-radius: 4px;
+    max-width: 200px;
+}
+.shinobi-shadow-image img {
+    box-shadow: 30px 30px #02002f;
+    border-radius: 4px;
+}
+.shinobi-shadow-image-2{
+    box-shadow: 30px 60px #0f94c8;
+    margin: 100px auto 200px;
+    border-radius: 4px;
+    max-width: 200px;
+}
+.shinobi-shadow-image img, 
+.shinobi-shadow-image-2 img{
+    max-width: 200px;
+}
+.shinobi-shadow-image-2 img{
+    box-shadow: -30px 30px #02002f;
+    margin: 0px auto;
+    position: relative;
+    top: 9px;
+    border-radius: 4px;
+}
+.shinobi_about_me {
+    padding: 20px;
+}
+
+.shinobi_about_me:before,
+.shinobi_diabolist:before {
+    content: "";
+    position: absolute;
+    background-color: #f2f2f2;
+    height: 500px;
+    width: 100%;
+    z-index: -1;
+    right: 0;
+    border-radius: 4px;
+}
+.shinobi_traveler{
+    margin:200px auto;
+}
+.shinobi_traveler:before{
+    content: "";
+    position: absolute;
+    background-color: #f2f2f2;
+    height: 500px;
+    width: 100%;
+    z-index: -1;
+    left: 0;
+    border-radius: 4px;
+}
+.shinobi_about_me h2,
+.shinobi_diabolist h2,
+.shinobi_traveler h2{
+    margin-top:100px;
+    text-align:center;
+    position:relative;
+}
+.shinobi_about_me h2 strong,
+.shinobi_diabolist h2 strong,
+.shinobi_traveler h2 strong{
+    font-size: 32px;
+    line-height:100%;
+}
+.shinobi_about_me h2, 
+.shinobi_about_me p,
+.shinobi_diabolist h2,
+.shinobi_diabolist p,
+.shinobi_traveler h2,
+.shinobi_traveler p {
+    padding:0 40px 20px;
+    color: #333;
+}
+.shinobi_about_me h2:before,
+.shinobi_diabolist h2:before,
+.shinobi_traveler h2:before{
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100px;
+    background: linear-gradient( 
+-45deg
+, #02002f ,#0f97cb );
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    bottom: 0px;
+    margin-right: auto;
+}
+.shinobi_diabolist{
+    margin:100px auto;
+}
+.shinobi_diabolist iframe{
+	position:relative;
+	left:100px;
+}
+.shinobi_diabolo_show {
+    max-width: 300px;
+    float: left;
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    .shinobi_about_me{
+        padding-bottom:100px;
+    }
+    .shinobi_about_me:before, .shinobi_diabolist:before{
+        background-color:transparent;
+    }
+    .shinobi_about_me, .shinobi_diabolist,.shinobi_traveler{
+        background-color: #f2f2f2;
+        padding:0;
+    }
+    .shinobi_about_me h2, .shinobi_diabolist h2, .shinobi_traveler h2{
+        margin-top:50px;
+        position: relative;
+   	    font-size: 22px;
+    	margin-bottom: 40px;
+        padding-bottom: 20px;
+    }
+    .shinobi-shadow-image-2{
+        margin:0 auto 200px;
+    }
+    .shinobi_about_me,
+    .shinobi_traveler,
+    .shinobi_diabolist{
+        padding:50px 10px;
+        margin-top:0;
+    }
+    .shinobi_diabolist iframe{
+    	position:static;
+    	left:0;
+    }
+    .shinobi-shadow-image:first-child{
+        margin-top:100px;
+    }
+    .shinobi_diabolo_show{
+        position: relative;
+        left: -25px;
+    }
+}
