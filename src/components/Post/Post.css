@@ -102,6 +102,10 @@ body{
     padding:20px;
     color: #02002f;
 }
+.dst_blog_post a {
+    color: #02002f;
+    font-weight: 500;
+}
 .dst_blog_post b,
 .dst_blog_post optgroup,
 .dst_blog_post strong {
