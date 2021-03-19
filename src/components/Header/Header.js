@@ -5,7 +5,7 @@ import "./Header.css";
 
 
 
-export default function Header({data}) {
+export default function Header({data, selectLang}) {
 
     const utilObj = new UtilityObj();
     
@@ -36,6 +36,12 @@ export default function Header({data}) {
                 <div className="container">
                     <ul>
                         { data.header[0].items.map((item,key)=>(<li key={key}><a rel="noreferrer" href={item.url}>{item.text}</a></li>)) }
+                        <li>
+                            <select className="dst_select_lang" value={data.lang} onChange={(e)=>selectLang(e.target.value)}>
+                                <option value="it">Ita</option>
+                                <option value="en">Eng</option>
+                            </select>
+                        </li>
                         <li onClick={()=>{setShowSearchBar(!showSearchBar);}}>
                             {
                                 showSearchBar 

@@ -22,8 +22,31 @@ function App() {
   const [totalPosts,setTotalPosts] = useState(1);
   const [statusSearchBar] = useState(true);
   
-  let data; 
+ 
+  
   const utilityOBJ = new UtilityObj();
+
+  const localize_site = () =>{
+    
+    let data_temp;
+    
+    if(localStorage.getItem('lang')===null){
+      (utilityOBJ.detectLang()==='it-IT') ? data_temp = data_it : data_temp = data_en;
+    }else{
+      (localStorage.getItem('lang')==='it') ? data_temp = data_it : data_temp = data_en;
+    }
+      return data_temp;
+  }
+
+  let [data,setData] = useState(localize_site()); 
+
+  const selectLang = (selected_lang = 'it') =>{
+    (selected_lang === 'it') ? data = data_it : data = data_en;
+    setData(data);
+    setSpinner(true);
+    get_posts(1);
+    localStorage.setItem('lang',selected_lang);
+  }
 
   const get_posts = async(id)=>{
     
@@ -31,7 +54,7 @@ function App() {
     (data.lang==='it') ? lang = 'it' : lang = 'en';
 
     let url_localized = process.env.REACT_APP_API_URL+`posts?_embed&lang=${lang}&per_page=${postsPerPage}&page=${id}`;
-    console.log(url_localized);
+
     const res = await fetch(url_localized);
     let totals = Number(res.headers.get('X-WP-Total'));
     
@@ -44,15 +67,11 @@ function App() {
     setSpinner(false); 
   }
   
-  useEffect(() => {
-    get_posts(1);
-  }, []);
+ 
   
-  const localize_site = () =>{
-    (utilityOBJ.detectLang()==='it-IT') ? data = data_it : data = data_en;
-  }
   
-  localize_site();
+  
+  //localize_site()
   
   const paginate = (pageNumber) => {
     setSpinner(true);
@@ -60,9 +79,13 @@ function App() {
     get_posts(pageNumber);
   }
 
+  useEffect(() => {
+    get_posts(1);
+  }, []);
+  
   return (
     <Router>
-      <Header data={data}/>
+      <Header data={data} selectLang={selectLang}/>
         <Switch>
           <Route exact path="/">
             <PostGallery posts={posts} spinner={spinner}/>
