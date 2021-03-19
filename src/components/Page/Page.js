@@ -34,7 +34,7 @@ export default function Page({data}) {
 
     const get_page = async() =>{
      
-        const res_page = await fetch(process.env.REACT_APP_API_URL+`pages?slug=${slug}&_embed`);
+        const res_page = await fetch(process.env.REACT_APP_API_URL+`pages?slug=${slug}&_embed&lang=${data.lang}`);
         
         await res_page.json().then((data)=>{
             (data.length===0) ? setPage([]): setPage(data);
