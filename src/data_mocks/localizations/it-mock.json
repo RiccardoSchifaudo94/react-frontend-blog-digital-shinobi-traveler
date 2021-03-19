@@ -63,7 +63,9 @@
         {   
             "title":"Esegui qui la tua ricerca, digita nella barra di ricerca la parola chiave",
             "placeholder":"Cerca qui il post ...",
-            "label_btn":"Cerca"
+            "label_btn":"Cerca",
+            "alert_results":"Risultati per parola",
+            "not_found":"Nessun risultato trovato!"
         }
     ]
 }

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {PostGallery,Spinner} from './../../components'
+import {Pagination,PostGallery,Spinner} from './../../components'
 
 import './Search.css';
 
@@ -9,6 +9,17 @@ export default function Search({statusSearchBar, data}) {
     const [searchedPosts, setSearchedPosts] = useState([]);
     const [enableSearch, setEnabledSearch] = useState(false);
     const [searchSpinner, setSearchSpinner] = useState(false);
+    const [postsPerPage,setPostsPerPage] = useState(10);
+    const [currentPage,setCurrentPage] = useState(1);
+    const [totalPosts,setTotalPosts] = useState(100);
+
+   
+
+    const searchPaginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+        setSearchSpinner(true);
+        search_posts(pageNumber);
+    }
 
     useEffect(()=>{
         setSearchQuery('');
@@ -16,15 +27,17 @@ export default function Search({statusSearchBar, data}) {
         setSearchedPosts([]);
     },[statusSearchBar]);
     
-    const search_posts = async() => {
+    const search_posts = async(id) => {
         let lang;
         
         (data.lang==='it') ? lang = 'it' : lang = 'en';
 
-        const url_localized = process.env.REACT_APP_API_URL+`posts?search=${searchQuery}&_embed&lang=${lang}&per_page=25`;
-
+        const url_localized = process.env.REACT_APP_API_URL+`posts?search=${searchQuery}&_embed&lang=${lang}&per_page=${postsPerPage}&page=${id}`;
+       
         const result = await fetch(url_localized);
-        
+        let totals = Number(result.headers.get('X-WP-Total'));
+        setTotalPosts(totals);
+
         await result.json().then((data)=>{
             setSearchedPosts(data);
             setEnabledSearch(true);
@@ -36,7 +49,8 @@ export default function Search({statusSearchBar, data}) {
         
         if(searchQuery.length>0){
             setSearchSpinner(true);
-            search_posts();
+            setCurrentPage(1);
+            search_posts(1);
         }    
         else
             alert("Fill the search input");
@@ -80,14 +94,15 @@ export default function Search({statusSearchBar, data}) {
                ? (<Spinner/>)
                :( 
                     (searchedPosts.length===0) 
-                    ?((enableSearch)&&(<div className="dst_strip_results"><h1 className="dst_strip_result_header"><strong>Not results found!</strong></h1></div>))
+                    ?((enableSearch)&&(<div className="dst_strip_results"><h1 className="dst_strip_result_header"><strong>{data.searchbar[0].not_found}</strong></h1></div>))
                     :(
                         <div className="dst_strip_results">
                             { 
                                 (enableSearch)&& 
-                                (<h1 className="dst_strip_result_header"><strong>{searchedPosts.length} Risultati per parola :</strong>{" "}{searchQuery}</h1>)
+                                (<h1 className="dst_strip_result_header"><strong>{totalPosts} {data.searchbar[0].alert_results} :</strong>{" "}{searchQuery}</h1>)
                             }
                             <PostGallery posts={searchedPosts}/>
+                            <Pagination postsPerPage={10} totalPosts={totalPosts} paginate={searchPaginate} currentPage={currentPage}/>
                         </div>
                     )
                 )

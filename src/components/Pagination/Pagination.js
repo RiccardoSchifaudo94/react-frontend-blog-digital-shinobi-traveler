@@ -5,7 +5,6 @@ import UtilityObj from './../../utils/UtilityObj';
 export default function Pagination({postsPerPage,totalPosts, paginate, currentPage, spinner}) {
     
     
-    
     const pageNumbers =  [];
     
     for(let i = 1; i <= Math.ceil(totalPosts/postsPerPage); i++ ){

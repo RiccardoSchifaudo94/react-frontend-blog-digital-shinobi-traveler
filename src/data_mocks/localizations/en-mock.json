@@ -53,7 +53,9 @@
         {
             "title":"Insert your query to search filtered posts",
             "placeholder":"Search blog post here ...",
-            "label_btn":"Search"
+            "label_btn":"Search",
+            "alert_results":"Results found with query",
+            "not_found":"Not results found!"
         }
     ]
 }
