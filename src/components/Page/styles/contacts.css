@@ -5,6 +5,7 @@
     line-height: 100%;
     font-size: 32px;
     margin-bottom: 30px;
+    display: none;
 }
 .shinobi_contact_subtitle:after {
     content: " ";
@@ -59,6 +60,7 @@
 .shinobi_contacts_box {
     display: flex;
     flex-direction: row;
+    padding-top: 40px;
 }
 .shinobi_contacts_box img{
     border-radius:4px;

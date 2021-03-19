@@ -24,16 +24,6 @@
                     "text":"Contacts",
                     "url":"/page/contacts/",
                     "css":"contacts"
-                },
-                {
-                    "text":"FAQ",
-                    "url":"/page/faq-domande-frequenti",
-                    "css":null
-                },
-                {
-                    "text":"Dona",
-                    "url":"/page/dona",
-                    "css":null
                 }
             ]
         }

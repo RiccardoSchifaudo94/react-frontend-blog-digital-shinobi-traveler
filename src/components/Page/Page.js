@@ -12,7 +12,6 @@ export default function Page({data}) {
     const menu_items = data.header[0].items;
     let css = null;
 
-    console.log(menu_items);
     menu_items.map((item)=>{
         if(item.url===current_page)
         css = item.css;
@@ -36,21 +35,15 @@ export default function Page({data}) {
     const get_page = async() =>{
      
         const res_page = await fetch(process.env.REACT_APP_API_URL+`pages?slug=${slug}&_embed`);
-        await res_page.json().then((data)=>{
-            
-            if(data.lenght===0) {
-                    setPage([]); 
-                    setIsFetching(false);
-            }else{
-                setPage(data);
-                setIsFetching(false);
-            }   
         
+        await res_page.json().then((data)=>{
+            (data.length===0) ? setPage([]): setPage(data);
+            setIsFetching(false);        
         }).catch((err)=>console.error(err));
+
     }
 
     useEffect(()=>{
-        console.log(data);
         get_page();
     },[]);
     
@@ -63,7 +56,7 @@ export default function Page({data}) {
         <div>
             {
              (!isFetching)
-                ?((page.lenght!==0)
+                ?((page.length!==0)
                     ?
                     (  <div>
                            
@@ -96,7 +89,7 @@ export default function Page({data}) {
                             </div>
                         </div>
                     )
-                    :(<Redirect to="*"></Redirect>))
+                    :(<Redirect to="/*"/>))
                 :(<Spinner/>)
             }
         </div>

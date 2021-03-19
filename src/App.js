@@ -74,9 +74,6 @@ function App() {
           <Route path='*'>
             <NotFound data={data}/>
           </Route>
-          <Route path='/page/*'>
-            <NotFound data={data}/>
-          </Route>
         </Switch>  
      <Footer data={data}/>
     </Router>
