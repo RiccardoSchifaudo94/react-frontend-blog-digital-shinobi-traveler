@@ -33,7 +33,7 @@ body{
     background-size: cover;
     display: flex;
     align-items: center;
-    z-index: 9999999999;
+    z-index: 2;
 }
 .dst_img_section_article:after {
     content: "";

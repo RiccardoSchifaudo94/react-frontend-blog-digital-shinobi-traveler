@@ -62,8 +62,12 @@
 }
 .shinobi_about_me h2 strong,
 .shinobi_diabolist h2 strong,
-.shinobi_traveler h2 strong{
+.shinobi_traveler h2 strong,
+.shinobi_about_me h2 , 
+.shinobi_diabolist h2 , 
+.shinobi_traveler h2{
     font-size: 32px;
+    font-weight: 400;
     line-height:100%;
 }
 .shinobi_about_me h2, 

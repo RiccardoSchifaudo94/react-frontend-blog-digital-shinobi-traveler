@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import {Link, useLocation, useHistory} from 'react-router-dom';
 import UtilityObj from './../../utils/UtilityObj';
+import {Sidebar} from '../../components';
 import "./Header.css";
 
 
 
-export default function Header({data, selectLang}) {
+export default function Header({data, selectLang, isMobile}) {
 
     const utilObj = new UtilityObj();
     
     const [showSearchBar, setShowSearchBar] = useState(false);
+    const [showSidebar,setShowSidebar] = useState(isMobile);
+    
     
     const scrollToTop = () => utilObj.scrollToTop();
 
@@ -23,6 +26,10 @@ export default function Header({data, selectLang}) {
         }       
     },[location]);
 
+    useEffect(()=>{
+        console.log("status sidebar dentro header = "+isMobile);
+    },[]);
+
 
     return (
         <>
@@ -35,7 +42,9 @@ export default function Header({data, selectLang}) {
             <div className="dst_sub_header">
                 <div className="container">
                     <ul>
-                        { data.header[0].items.map((item,key)=>(<li key={key}><a rel="noreferrer" href={item.url}>{item.text}</a></li>)) }
+                    <li className="ds_header_mobile_item"><Link to="/"><i className="fa fa-angle-left" style={{fontWeight:"900",fontSize:"20px"}}></i></Link></li>
+                        <li className="ds_header_mobile_item" onClick={()=>{setShowSidebar(!showSidebar);}}><a><i className="fa fa-reorder"></i></a></li>
+                        { data.header[0].items.map((item,key)=>(<li key={key} className="ds_header_desktop_item"><a rel="noreferrer" href={item.url}>{item.text}</a></li>)) }
                         <li>
                             <select className="dst_select_lang" value={data.lang} onChange={(e)=>selectLang(e.target.value)}>
                                 <option value="it">Ita</option>
@@ -45,7 +54,7 @@ export default function Header({data, selectLang}) {
                         <li onClick={()=>{setShowSearchBar(!showSearchBar);}}>
                             {
                                 showSearchBar 
-                                ?(<Link to="/"><i className="fa fa-times"></i></Link>)
+                                ?(<a onClick={()=>{history.goBack();}}><i className="fa fa-times"></i></a>)
                                 :(<Link to="/search"><i className="fa fa-search"></i></Link>)
                             }
                         </li>
@@ -54,6 +63,7 @@ export default function Header({data, selectLang}) {
             </div>
             <i className="fa fa-2x fa-angle-double-up dst_top_menu" onClick={()=>{scrollToTop()}}></i>
         </nav>
+        <Sidebar data={data} showSidebar={showSidebar}/>
         </>
     )
 }

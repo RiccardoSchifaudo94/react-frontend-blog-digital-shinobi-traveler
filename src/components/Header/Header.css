@@ -89,4 +89,21 @@
   padding: 0;
   text-transform: uppercase;
   outline: none;
+  cursor: pointer;
+}
+@media screen and (min-width:469px){
+  .ds_header_mobile_item{
+    display: none!important;
+  }
+  .ds_header_desktop_item{
+    display: block;
+  }
+}
+@media screen and (max-width:468px){
+  .ds_header_mobile_item{
+    display: block;
+  }
+  .ds_header_desktop_item{
+    display: none!important;
+  }
 }

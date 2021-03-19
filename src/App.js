@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search } from "./components";
+import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search, Sidebar } from "./components";
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +21,7 @@ function App() {
   const [postsPerPage]  = useState(10);
   const [totalPosts,setTotalPosts] = useState(1);
   const [statusSearchBar] = useState(true);
+  const [statusSidebar] = useState(false);
   
  
   
@@ -85,7 +86,7 @@ function App() {
   
   return (
     <Router>
-      <Header data={data} selectLang={selectLang}/>
+      <Header data={data} selectLang={selectLang} isMobile={statusSidebar}/>
         <Switch>
           <Route exact path="/">
             <PostGallery posts={posts} spinner={spinner}/>
