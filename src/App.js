@@ -21,22 +21,22 @@ function App() {
   const [postsPerPage]  = useState(10);
   const [totalPosts,setTotalPosts] = useState(1);
   const [statusSearchBar] = useState(true);
-  const [lang,setLang] = useState('it');
   
   let data; 
   const utilityOBJ = new UtilityObj();
 
   const get_posts = async(id)=>{
     
-    (utilityOBJ.detectLang()==='it-IT') ? setLang('it') : setLang('en');
+    let lang;
+    (data.lang==='it') ? lang = 'it' : lang = 'en';
 
     let url_localized = process.env.REACT_APP_API_URL+`posts?_embed&lang=${lang}&per_page=${postsPerPage}&page=${id}`;
-
+    console.log(url_localized);
     const res = await fetch(url_localized);
     let totals = Number(res.headers.get('X-WP-Total'));
     
     setTotalPosts(totals);
-    
+
     await res.json().then((data)=>{
       setPosts(data);
     });

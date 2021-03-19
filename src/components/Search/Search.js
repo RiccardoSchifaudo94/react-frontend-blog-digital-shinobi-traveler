@@ -17,8 +17,13 @@ export default function Search({statusSearchBar, data}) {
     },[statusSearchBar]);
     
     const search_posts = async() => {
-       
-        const result = await fetch(process.env.REACT_APP_API_URL+`posts?search=${searchQuery}&_embed`);
+        let lang;
+        
+        (data.lang==='it') ? lang = 'it' : lang = 'en';
+
+        const url_localized = process.env.REACT_APP_API_URL+`posts?search=${searchQuery}&_embed&lang=${lang}&per_page=25`;
+
+        const result = await fetch(url_localized);
         
         await result.json().then((data)=>{
             setSearchedPosts(data);
