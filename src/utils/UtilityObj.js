@@ -27,6 +27,10 @@ class UtilityObj{
 
         return array_date[2]+"  "+array_months[Number(array_date[1])]+"  "+array_date[0];
     }
+    trimString(string,length){
+        var trimmedString = string.substring(0, length);
+        return trimmedString;
+    }
 }
 
 export default UtilityObj;

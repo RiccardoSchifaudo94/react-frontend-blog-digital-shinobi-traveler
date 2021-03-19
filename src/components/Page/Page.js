@@ -64,11 +64,6 @@ export default function Page({data}) {
                                 (page[0].featured_media!==0)
                                 &&
                                 (<div className="dst_img_section_article" style={{backgroundImage: `url(${page[0]["_embedded"]["wp:featuredmedia"][0]["source_url"]})`}}>
-                                    <div className="dst_back_home">
-                                        <Link to="/"> 
-                                            <i className="fa fa-3x fa-angle-double-left"></i>Back
-                                        </Link>
-                                    </div>
                                     <div className="dst_info_section_article">    
                                         <h1>{utilObj.stripHtml(page[0].title.rendered)}</h1> 
                                         <span>{utilObj.formatDate(page[0].date, data.lang)}</span>

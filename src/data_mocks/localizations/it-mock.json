@@ -67,5 +67,8 @@
             "alert_results":"Risultati per parola",
             "not_found":"Nessun risultato trovato!"
         }
-    ]
+    ],
+    "postgallery":[{
+        "label_btn_read":"Leggi qui"
+    }]
 }

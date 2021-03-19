@@ -57,5 +57,8 @@
             "alert_results":"Results found with query",
             "not_found":"Not results found!"
         }
-    ]
+    ],
+    "postgallery":[{
+        "label_btn_read":"Read more"
+    }]
 }

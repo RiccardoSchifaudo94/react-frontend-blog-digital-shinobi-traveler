@@ -89,7 +89,7 @@ function App() {
       <Header data={data} selectLang={selectLang} isMobile={statusSidebar}/>
         <Switch>
           <Route exact path="/">
-            <PostGallery posts={posts} spinner={spinner}/>
+            <PostGallery data={data} posts={posts} spinner={spinner}/>
             <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
           </Route>
           <Route path="/page/:slug">
