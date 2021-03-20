@@ -1,12 +1,13 @@
 .dst_carousel{
-    height: 300px;
+    height: auto;
     max-width: 600px;
     overflow-x: hidden;
-    margin: 30px auto;
+    margin: 30px auto 100px;
     width: 100%;
     border-top: 1px solid #c1c1c1;
     border-bottom: 1px solid #c1c1c1;
     padding-top: 20px;
+    padding-bottom: 40px;
 }
 .dst_carousel h2{
     font-family: "Raleway",sans-serif;
@@ -114,10 +115,11 @@
         left: 525px;
         z-index: 2;
     }
+    
 }
 
 @media screen and (max-width:468px){
-    .dst_carousel{max-width:200px;}
+    .dst_carousel{max-width:200px;padding-bottom:100px;}
     .dst_carousel_nav{
         background-color: #dedede;
         height: 50px;

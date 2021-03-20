@@ -69,10 +69,10 @@
         }
     ],
     "postgallery":[{
-        "label_btn_read":"Leggi"
+        "label_btn_read":"Leggi qui"
     }],
     "carousel":[{
         "title":"Potrebbe piacerti, vuoi darci un'occhiata? ;)",
-        "label_btn_read":"Leggi qui"
+        "label_btn_read":"Leggi"
     }]
 }

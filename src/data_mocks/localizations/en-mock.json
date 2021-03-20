@@ -59,10 +59,10 @@
         }
     ],
     "postgallery":[{
-        "label_btn_read":"Read"
+        "label_btn_read":"Read More"
     }],
     "carousel":[{
         "title":"Would you like to give a glance here ;)",
-        "label_btn_read":"Read more"
+        "label_btn_read":"Read"
     }]
 }
