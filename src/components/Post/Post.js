@@ -9,9 +9,10 @@ import carousel_json from '../../data_mocks/carousel_mock/it-mock.json'
 
 
 export default function Post({data,posts}) {
-    console.log(posts);
+
     let { slug } = useParams();
     const [post, setPost] = useState([]);
+    const [postsCarousel,setPostsCarousel] = useState([]);
     const [isFetching, setIsFetching] = useState(true);
     const utilObj = new UtilityObj();
     
@@ -25,6 +26,7 @@ export default function Post({data,posts}) {
                 setIsFetching(false);
             }else{
                 setPost(data);
+                get_posts_carousel(data);
                 setIsFetching(false);
             }  
         }).catch((err)=>{
@@ -32,6 +34,13 @@ export default function Post({data,posts}) {
         });
     }
    
+    const get_posts_carousel = async(single_post) => {
+        const res_carousel = await fetch(process.env.REACT_APP_API_URL+`posts?_embed&lang=${data.lang}&categories=${single_post[0].categories[0]}`);
+        await res_carousel.json().then((data)=>{
+            setPostsCarousel(data);
+        }).catch((err)=>console.log(err));
+    }
+    
     const scrollDown = () =>{
         document.getElementById('dst_blog_post').scrollIntoView({
             behavior: 'smooth'
@@ -66,7 +75,7 @@ export default function Post({data,posts}) {
                                         <div className="dst_blog_post" id="dst_blog_post">
                                             { Parser(post[0].content.rendered) }
                                         </div>
-                                        <Carousel data={data} posts={carousel_json} autoplay={false}/>
+                                        <Carousel data={data} posts={postsCarousel} autoplay={false}/>
                                     </div>
                                 </div>
                             )

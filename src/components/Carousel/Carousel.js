@@ -3,7 +3,7 @@ import './Carousel.css';
 import UtilityObj from './../../utils/UtilityObj';
 
 export default function Carousel({data,posts, autoplay = false}) {
-    
+    console.log(data);
 
     var shift = 0;
     const items = posts.length;
@@ -80,13 +80,14 @@ export default function Carousel({data,posts, autoplay = false}) {
 
     return (
         <div className="dst_carousel">
+            <h2>{data.carousel[0].title}</h2>
             <ul>
                 {posts.map((post)=>(
                     <li key={post.id}>
                         <a href={post.slug}>
                             <div className="dst_carousel_item" style={{backgroundImage:`url(${post.images.medium})`}}>
                                 <h3>{utilObj.trimString(utilObj.stripHtml(post.title.rendered),70)}</h3>
-                                <button>{data.postgallery[0].label_btn_read}</button>
+                                <button>{data.carousel[0].label_btn_read}</button>
                             </div>
                         </a>
                     </li>

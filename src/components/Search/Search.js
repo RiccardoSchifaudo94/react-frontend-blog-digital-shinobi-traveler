@@ -101,7 +101,7 @@ export default function Search({statusSearchBar, data}) {
                                 (enableSearch)&& 
                                 (<h1 className="dst_strip_result_header"><strong>{totalPosts} {data.searchbar[0].alert_results} :</strong>{" "}{searchQuery}</h1>)
                             }
-                            <PostGallery posts={searchedPosts}/>
+                            <PostGallery posts={searchedPosts} data={data}/>
                             <Pagination postsPerPage={10} totalPosts={totalPosts} paginate={searchPaginate} currentPage={currentPage}/>
                         </div>
                     )
