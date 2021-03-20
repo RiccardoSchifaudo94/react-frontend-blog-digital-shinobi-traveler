@@ -7,28 +7,44 @@ export default function Carousel({data,posts, autoplay = false}) {
 
     var shift = 0;
     const items = posts.length;
-    let totalLength = (items-3)*200;
+    let num_slides;
+
+    const isMobile = () =>{
+        if(window.screen.width<468)
+            return true;
+        return false;
+    }
+
+    let totalLength = (isMobile()) ? (items-1)*200 : (items-3)*200;
     let i = 0;
-    
- 
-
-
 
     const utilObj = new UtilityObj();
+    
    
+
     const shiftLeftCarousel = () =>{
+        
         if(i>0){
+        
             shift += 200;
             i--;
-        }else{
+        
+        }else{ 
+            
+            (isMobile()) ? num_slides = items - 1 : num_slides = items - 4;
+            
             shift = -totalLength;
-            i = (items-3);
+            i = (num_slides);
         }
+        
         document.querySelector(".dst_carousel ul").style.left = shift+"px";
     }
+    
     const shiftRightCarousel = () =>{
         
-        if(i<=(items-4)){
+        (isMobile()) ? num_slides = items - 2 : num_slides = items - 4;
+        
+        if(i<=(num_slides)){
             shift -= 200; 
             i++;
         }
@@ -39,9 +55,12 @@ export default function Carousel({data,posts, autoplay = false}) {
 
         document.querySelector(".dst_carousel ul").style.left = shift+"px";
     }
+    
     const autoplayCarousel = () =>{
-                  
-        if(i<=(items-4)){
+        
+        (isMobile()) ? num_slides = items - 2 : num_slides = items - 4;        
+        
+        if(i<=(num_slides)){
             shift -= 200; 
             i++
         }
