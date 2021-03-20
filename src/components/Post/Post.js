@@ -66,7 +66,7 @@ export default function Post({data,posts}) {
                                         <div className="dst_blog_post" id="dst_blog_post">
                                             { Parser(post[0].content.rendered) }
                                         </div>
-                                        <Carousel data={data} posts={carousel_json} autoplay={true} showNav={false}/>
+                                        <Carousel data={data} posts={carousel_json} autoplay={false}/>
                                     </div>
                                 </div>
                             )

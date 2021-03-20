@@ -21,17 +21,19 @@
 }
 .dst_carousel_item h3{
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     line-height:120%;
     padding-top: 30px;
 }
 .dst_carousel_item{
-    width: 300px;
+    width: 190px;
     height: 200px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
+    margin-right:5px;
+    margin-left: 5px;
 }
 .dst_carousel_item *{
   position: relative;
@@ -67,8 +69,9 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
+    outline: none;
 }
 .dst_carousel_nav {
     position:absolute;
@@ -84,22 +87,24 @@
 .dst_carousel_nav a i{
     color: #fff;
 }
+
 @media screen and (min-width:469px){
     .dst_carousel_nav_prev {
         position: relative;
         top: -135px;
-        left: -80px;
+        left: -65px;
         z-index: 2;
     }
     .dst_carousel_nav_next {
         position: relative;
         top: -135px;
-        left: 540px;
+        left: 525px;
         z-index: 2;
     }
 }
+
 @media screen and (max-width:468px){
-    .dst_carousel{max-width:300px;}
+    .dst_carousel{max-width:200px;}
     .dst_carousel_nav{
         background-color: #dedede;
         height: 50px;
@@ -107,7 +112,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        max-width: 280px;
+        max-width: 170px;
         margin: 0 auto;
     }
 }
