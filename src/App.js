@@ -96,7 +96,7 @@ function App() {
             <Page data={data}/>
           </Route>
           <Route path="/post/:slug">
-            <Post data={data}/>
+            <Post data={data} posts={posts}/>
           </Route>
           <Route path='/search'>
             <Search statusSearchBar={statusSearchBar} data={data}/>

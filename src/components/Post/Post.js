@@ -4,13 +4,17 @@ import UtilityObj from '../../utils/UtilityObj';
 import Parser from 'html-react-parser';
 import './Post.css';
 import Spinner from '../Spinner/Spinner';
+import Carousel from '../Carousel/Carousel';
+import carousel_json from '../../data_mocks/carousel_mock/it-mock.json'
 
-export default function Post({data}) {
+
+export default function Post({data,posts}) {
+    console.log(posts);
     let { slug } = useParams();
     const [post, setPost] = useState([]);
     const [isFetching, setIsFetching] = useState(true);
     const utilObj = new UtilityObj();
-
+    
     const get_single_post = async() => {
      
         const res = await fetch(process.env.REACT_APP_API_URL+`posts?_embed&slug=${slug}`);
@@ -62,6 +66,7 @@ export default function Post({data}) {
                                         <div className="dst_blog_post" id="dst_blog_post">
                                             { Parser(post[0].content.rendered) }
                                         </div>
+                                        <Carousel data={data} posts={carousel_json} autoplay={true} showNav={false}/>
                                     </div>
                                 </div>
                             )

@@ -1,0 +1,113 @@
+.dst_carousel{
+    height: 300px;
+    max-width: 600px;
+    overflow-x: hidden;
+    margin: 0 auto;
+    width: 100%;
+}
+.dst_carousel ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    transition: 0.6s ease-in-out;
+    overflow-x: none;
+}
+.dst_carousel ul li{
+    list-style-type: none;
+}
+.dst_carousel ul li a{
+    text-decoration: none;
+}
+.dst_carousel_item h3{
+    font-weight: 400;
+    font-size: 20px;
+    line-height:120%;
+    padding-top: 30px;
+}
+.dst_carousel_item{
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+}
+.dst_carousel_item *{
+  position: relative;
+  z-index: 3;
+  padding: 15px;
+}
+.dst_carousel_item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    height: inherit;
+    width: inherit;
+}
+.dst_carousel_item h3{
+    color: #fff;
+}
+.dst_carousel_item button{
+    border: 0;
+    border-bottom: 3px solid #030314;
+    color: #fff;
+    background: #02002f;
+    padding-top: 0;
+    border-radius: 4px;
+    padding: 6px 12px;
+    bottom: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    cursor: pointer;
+}
+.dst_carousel_nav {
+    position:absolute;
+}
+.dst_carousel_nav a {
+    background: #02002f;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 30px;
+    border-radius: 4px;
+    border-bottom: 3px solid #030514;
+}
+.dst_carousel_nav a i{
+    color: #fff;
+}
+@media screen and (min-width:469px){
+    .dst_carousel_nav_prev {
+        position: relative;
+        top: -135px;
+        left: -80px;
+        z-index: 2;
+    }
+    .dst_carousel_nav_next {
+        position: relative;
+        top: -135px;
+        left: 540px;
+        z-index: 2;
+    }
+}
+@media screen and (max-width:468px){
+    .dst_carousel{max-width:300px;}
+    .dst_carousel_nav{
+        background-color: #dedede;
+        height: 50px;
+        padding: 10px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
