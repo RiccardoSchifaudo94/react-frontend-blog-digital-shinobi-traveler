@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import {Pagination,PostGallery,Spinner} from './../../components'
 
 import './Search.css';
@@ -13,6 +14,8 @@ export default function Search({statusSearchBar, data}) {
     const [currentPage,setCurrentPage] = useState(1);
     const [totalPosts,setTotalPosts] = useState(100);
 
+    const history = useHistory();
+
    
 
     const searchPaginate = (pageNumber) => {
@@ -22,12 +25,33 @@ export default function Search({statusSearchBar, data}) {
     }
 
     useEffect(()=>{
-        setSearchQuery('');
-        setEnabledSearch(false);
-        setSearchedPosts([]);
+
+            var url = window.location.search;
+            var searchParamUrl = new URLSearchParams(url);
+
+            if(searchParamUrl.has("s")){
+                
+                if(searchParamUrl.get("s").length>0){
+                    let keyword = searchParamUrl.get("s");
+                    setSearchSpinner(true);
+                    setSearchQuery(keyword);
+                    searchByKeyword(keyword,1);
+                }
+                else{
+                    setSearchQuery('');
+                }
+            }
+            else{
+                setSearchQuery('');
+                setEnabledSearch(false);
+                setSearchedPosts([]);
+            }
     },[statusSearchBar]);
     
     const search_posts = async(id) => {
+
+        history.push("/search");
+
         let lang;
         
         (data.lang==='it') ? lang = 'it' : lang = 'en';
@@ -36,6 +60,7 @@ export default function Search({statusSearchBar, data}) {
        
         const result = await fetch(url_localized);
         let totals = Number(result.headers.get('X-WP-Total'));
+        
         setTotalPosts(totals);
 
         await result.json().then((data)=>{
@@ -57,6 +82,25 @@ export default function Search({statusSearchBar, data}) {
     }
     
     const disableSearch = () => setEnabledSearch(false);
+
+    const searchByKeyword = async (keyword,id) =>{
+        let lang;
+        
+        (data.lang==='it') ? lang = 'it' : lang = 'en';
+
+        const url_localized = process.env.REACT_APP_API_URL+`posts?search=${keyword}&_embed&lang=${lang}&per_page=${postsPerPage}&page=${id}`;
+       
+        const result = await fetch(url_localized);
+        let totals = Number(result.headers.get('X-WP-Total'));
+        
+        setTotalPosts(totals);
+
+        await result.json().then((data)=>{
+            setSearchedPosts(data);
+            setEnabledSearch(true);
+            setSearchSpinner(false);
+        }).catch((err)=>console.error(err));
+    }
 
     return (
         (statusSearchBar)&&(

@@ -78,3 +78,33 @@
     font-size: 18px;
     padding: 3px 4px 0;
 }
+
+.dst_sidebar .dst_sidebar_block input{ 
+    font-family: "Montserrat", sans-serif;
+    text-transform: capitalize;
+    width: 200px;
+    background: #f2f2f2;
+    border: 1px solid #bbb;
+    height: 55px!important;
+    border-radius: 4px;
+    color: #151515;
+    font-size: 16px!important;
+    position: relative;
+    padding-left: 15px;
+}
+.dst_sidebar .dst_sidebar_block button {
+    position: absolute;
+    right: 45px;
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
+    border: 0;
+    background-color: #02002f;
+    
+    margin-right: 3px;
+    border-radius: 4px;
+    border-bottom: 5px solid #030314;
+}
+.dst_sidebar .dst_sidebar_block button i{
+    color: #fff;
+}

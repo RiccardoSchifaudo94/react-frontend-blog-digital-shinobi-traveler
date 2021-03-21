@@ -26,9 +26,6 @@ export default function Header({data, selectLang, isMobile}) {
         }       
     },[location]);
 
-    useEffect(()=>{
-        console.log("status sidebar dentro header = "+isMobile);
-    },[]);
 
 
     return (
@@ -54,7 +51,7 @@ export default function Header({data, selectLang, isMobile}) {
                         <li onClick={()=>{setShowSearchBar(!showSearchBar);}}>
                             {
                                 showSearchBar 
-                                ?(<a onClick={()=>{history.goBack();}}><i className="fa fa-times"></i></a>)
+                                ?(<Link to="/"><i className="fa fa-times"></i></Link>)
                                 :(<Link to="/search"><i className="fa fa-search"></i></Link>)
                             }
                         </li>
