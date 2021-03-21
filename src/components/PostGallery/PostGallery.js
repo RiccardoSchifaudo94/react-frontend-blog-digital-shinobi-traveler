@@ -17,7 +17,7 @@ export default function PostGallery({data,posts,spinner}) {
                                         <Link to={`/post/${post.slug}`}>
                                             <h1>{utilObj.stripHtml(post.title.rendered)}</h1>
                                             <img src={post._embedded['wp:featuredmedia']['0'].source_url} alt="shinobi-post"/>
-                                            <div>{utilObj.stripHtml(post.excerpt.rendered)}</div>
+                                            <div>{utilObj.trimString(utilObj.stripHtml(post.excerpt.rendered),250)}{"..."}</div>
                                             <button>{data.postgallery[0].label_btn_read}</button>
                                         </Link>
                                     </article>

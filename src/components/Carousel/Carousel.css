@@ -119,15 +119,15 @@
 }
 
 @media screen and (max-width:468px){
-    .dst_carousel{max-width:200px;padding-bottom:100px;}
+    .dst_carousel{max-width:300px;padding-bottom:100px;}
     .dst_carousel_nav{
         background-color: #dedede;
         height: 50px;
-        padding: 10px;
+        padding: 10px 0;
         position: absolute;
         left: 0;
         right: 0;
-        max-width: 170px;
+        max-width: 300px;
         margin: 0 auto;
     }
 }

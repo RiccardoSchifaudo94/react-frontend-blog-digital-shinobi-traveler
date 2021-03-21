@@ -2,38 +2,38 @@ import React,{useEffect,useState} from 'react';
 import './Carousel.css';
 import UtilityObj from './../../utils/UtilityObj';
 
-export default function Carousel({data,posts, autoplay = false}) {
-    console.log(data);
-
-    var shift = 0;
-    const items = posts.length;
-    let num_slides;
-
+export default function Carousel({data,posts, autoplay = false, width=200, gutter=10}) {
+   
     const isMobile = () =>{
         if(window.screen.width<468)
             return true;
         return false;
     }
 
-    let totalLength = (isMobile()) ? (items-1)*200 : (items-3)*200;
+    var shift = 0;
+    const items = posts.length;
+    let totalLength = (isMobile()) ? (items -1)*300 : (items-3)*width;
+    let length_shift = (isMobile()) ? 300 : width;
+    let width_item = (isMobile()) ? 300 : width;
+    let num_slides;
+        num_slides = (isMobile()) ? num_slides = items - 1 : num_slides = items - 3;
+    
+    gutter = (isMobile()) ? gutter = 0 : gutter;
+    
     let i = 0;
 
     const utilObj = new UtilityObj();
-    
-   
-
+  
     const shiftLeftCarousel = () =>{
         
         if(i>0){
         
-            shift += 200;
+            shift += length_shift;
             i--;
         
         }else{ 
             
-            (isMobile()) ? num_slides = items - 1 : num_slides = items - 4;
-            
-            shift = -totalLength;
+            shift = -(totalLength);
             i = (num_slides);
         }
         
@@ -41,11 +41,10 @@ export default function Carousel({data,posts, autoplay = false}) {
     }
     
     const shiftRightCarousel = () =>{
-        
-        (isMobile()) ? num_slides = items - 2 : num_slides = items - 4;
-        
-        if(i<=(num_slides)){
-            shift -= 200; 
+      
+    
+        if(i<(num_slides)){
+            shift -= length_shift; 
             i++;
         }
         else{
@@ -56,48 +55,29 @@ export default function Carousel({data,posts, autoplay = false}) {
         document.querySelector(".dst_carousel ul").style.left = shift+"px";
     }
     
-    const autoplayCarousel = () =>{
-        
-        (isMobile()) ? num_slides = items - 2 : num_slides = items - 4;        
-        
-        if(i<=(num_slides)){
-            shift -= 200; 
-            i++
-        }
-        else{
-            i=0; 
-            shift=0;
-        }
 
-        document.querySelector(".dst_carousel ul").style.left = shift+"px";
-    }
-    useEffect(()=>{
-       
-     if(autoplay)
-        setInterval(autoplayCarousel,3000);
-       
-    },[shift]);
-
-    return (
-        <div className="dst_carousel">
-            <h2>{data.carousel[0].title}</h2>
-            <ul>
-                {posts.map((post)=>(
-                    <li key={post.id}>
-                        <a href={post.slug}>
-                            <div className="dst_carousel_item" style={{backgroundImage:`url(${post.images.medium})`}}>
-                                <h3>{utilObj.trimString(utilObj.stripHtml(post.title.rendered),70)}</h3>
-                                <button>{data.carousel[0].label_btn_read}</button>
-                            </div>
-                        </a>
-                    </li>
-                ))}
-            </ul>
-            {(!autoplay)&&(
-            <div className="dst_carousel_nav">
-                <a className="dst_carousel_nav_prev" onClick={shiftLeftCarousel}><i className="fa fa-angle-left"></i></a>
-                <a className="dst_carousel_nav_next" onClick={shiftRightCarousel}><i className="fa fa-angle-right"></i></a>
-            </div>)}
+    return (<div>
+            {  (posts.length!==0)&&(
+                <div className="dst_carousel">
+                    <h2>{data.carousel[0].title}</h2>
+                    <ul>
+                        {posts.map((post)=>(
+                            <li key={post.id}>
+                                <a href={post.slug}>
+                                    <div className="dst_carousel_item" style={{backgroundImage:`url(${post.images.medium})`,width:`${(width_item - gutter) }px`,marginLeft:`${(gutter/2)}px`,marginRight:`${(gutter/2)}`}}>
+                                        <h3>{utilObj.trimString(utilObj.stripHtml(post.title.rendered),70)}</h3>
+                                        <button>{data.carousel[0].label_btn_read}</button>
+                                    </div>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="dst_carousel_nav">
+                        <a className="dst_carousel_nav_prev" onClick={shiftLeftCarousel}><i className="fa fa-angle-left"></i></a>
+                        <a className="dst_carousel_nav_next" onClick={shiftRightCarousel}><i className="fa fa-angle-right"></i></a>
+                    </div>
+                </div>)
+            }
         </div>
     )
 }
