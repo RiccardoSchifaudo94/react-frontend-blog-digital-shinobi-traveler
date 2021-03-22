@@ -54,7 +54,7 @@ body{
     background-size: cover;
     display: flex;
     align-items: center;
-    z-index: 2;
+    z-index: 4;
 }
 .dst_img_section_article:after {
     content: "";
@@ -86,6 +86,7 @@ body{
 .dst_info_section_article{
     text-align: center;
     margin: 0 auto;
+    padding: 20px 30px 0;
 }
 .dst_info_section_article *{
     display: block;
@@ -232,7 +233,7 @@ body{
     padding-top: 56.25%;
     margin-bottom: 30px;
 }
-.dst_blog_post figure .wp-block-embed__wrapper iframe {
+.dst_blog_post figure .wp-block-embed__wrapper iframe{
     position: absolute;
     top: 0;
     left: 0;
@@ -299,4 +300,9 @@ body{
 	100% {
 		transform: scale(0.75);
 	}
+}
+@media screen and (max-width:468px){
+    iframe{
+        max-width:300px;
+    }
 }

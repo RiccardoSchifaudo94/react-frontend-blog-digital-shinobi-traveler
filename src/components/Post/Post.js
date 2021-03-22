@@ -5,6 +5,7 @@ import Parser from 'html-react-parser';
 import './Post.css';
 import Spinner from '../Spinner/Spinner';
 import Carousel from '../Carousel/Carousel';
+import LightBox from '../LightBox/LightBox';
 import carousel_json from '../../data_mocks/carousel_mock/it-mock.json'
 
 
@@ -14,6 +15,9 @@ export default function Post({data,posts}) {
     const [post, setPost] = useState([]);
     const [postsCarousel,setPostsCarousel] = useState([]);
     const [isFetching, setIsFetching] = useState(true);
+    const [showLightBox,setShowLightBox] = useState(false);
+    const [urlLightBox,setUrlLightBox] = useState('');
+    const [slideGallery,setSlideGallery] = useState([]);
     const utilObj = new UtilityObj();
     
     const get_single_post = async() => {
@@ -50,8 +54,29 @@ export default function Post({data,posts}) {
     useEffect(()=>{    
         utilObj.scrollToTop();
         get_single_post();
+        
     },[]);
    
+    const openLightBox = (url) =>{
+        setUrlLightBox(url);
+        setShowLightBox(true);
+        document.body.style.overflow = 'hidden';
+    }
+    const prepareLightBoxesImages = () =>{
+        var items_img = document.querySelectorAll(".dst_blog_post img");
+        var src_slides = [];
+        for(let i=0;i<items_img.length;i++){
+            src_slides.push(items_img[i].src);
+            items_img[i].addEventListener("click",function(){
+                openLightBox(this.src);
+                document.querySelector(".dst_lightbox i").addEventListener("click",function(){
+                    setShowLightBox(false);
+                    document.body.style.overflow = 'scroll';
+                })
+            })
+        }
+        setSlideGallery(src_slides);
+    }
     return (
             (!isFetching) 
                         ? 
@@ -99,11 +124,12 @@ export default function Post({data,posts}) {
                                         )
                                     }
                                     <div className="container">
-                                        <div className="dst_blog_post" id="dst_blog_post">
+                                        <div className="dst_blog_post" id="dst_blog_post" onLoad={prepareLightBoxesImages}>
                                             { Parser(post[0].content.rendered) }
                                         </div>
                                         <Carousel data={data} posts={postsCarousel}/>
                                     </div>
+                                    {(showLightBox)&&(<LightBox url={urlLightBox} slideGallery={slideGallery}/>)}
                                 </div>
                             )
                             :(<Redirect to="/"/>)

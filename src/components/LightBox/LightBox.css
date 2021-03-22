@@ -1,0 +1,67 @@
+.dst_lightbox{
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dst_lightbox a i{
+    position: absolute;
+    z-index: 4;
+    color: #fff;
+    top:30px;
+    right: 30px;
+}
+.dst_lightbox img{
+   padding: 30px;
+   background-color: #fff;
+   transition: 0.4s ease-in-out;
+}
+.dst_lightbox_nav {
+    position: absolute;
+    width: 100%;
+}
+.dst_lightbox_nav  .dst_lightbox_nav_prev{
+    float: left;
+}
+.dst_lightbox_nav  .dst_lightbox_nav_next{
+    float: right;
+}
+.dst_lightbox_nav button {
+    background-color: #02002f;
+    color: #fff;
+    border: none;
+    border-bottom: 3px solid #030314;
+    padding:10px 20px;
+    border-radius: 4px;
+    outline: none;
+}
+.dst_lightbox_nav button i{
+    color:#fff;
+}
+@media screen and (max-width:1200px){
+    .dst_lightbox img{
+        max-width: 800px;
+        max-height: 600px;
+        object-fit: contain;
+    }
+}
+@media screen and (max-width:768px){
+    .dst_lightbox img{
+        max-width: 500px;
+    }
+}
+@media screen and (max-width:468px){
+    .dst_lightbox img{
+        max-width: 320px;
+        max-height: 400px;
+        object-fit: contain;
+    }
+}
