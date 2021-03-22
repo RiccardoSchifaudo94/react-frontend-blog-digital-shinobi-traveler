@@ -21,6 +21,26 @@ body{
     top: -12px;
     margin-right: 10px;
 }
+.dst_socials_section {
+    display: flex!important;
+    justify-content: center;
+    padding-top: 10px;
+}
+.dst_socials_section div{
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dst_socials_section a{
+    text-decoration: none;
+}
+.dst_socials_section div i {
+    animation: none;
+    font-size: 24px;
+}
 .dst_img_section_article{
     position: relative;
     background-repeat: no-repeat;
@@ -42,12 +62,12 @@ body{
     right: 0;
     left: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0.6) 50%, black 90%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.5) 26%, rgba(0, 0, 0, 0.6) 50%, black 90%);
 }
 .dst_img_section_article h1 {
     font-size: 30px;
     padding-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: #fff;
     text-align: center;
     padding: 0 0 20px;

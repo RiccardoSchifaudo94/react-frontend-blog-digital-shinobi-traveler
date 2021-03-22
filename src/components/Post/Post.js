@@ -65,6 +65,33 @@ export default function Post({data,posts}) {
                                                 <div className="dst_info_section_article">    
                                                     <h1>{utilObj.stripHtml(post[0].title.rendered)}</h1> 
                                                     <span>{utilObj.formatDate(post[0].date, data.lang)}</span>
+                                                    <div className="dst_socials_section">
+                                                        <a href={`https://www.facebook.com/sharer.php?u=${post[0].link}`} target="_blank">
+                                                            <div style={{backgroundColor:"#3b5998"}}>
+                                                                <i className="fa fa-facebook-f"></i>
+                                                            </div>
+                                                        </a>
+                                                        <a href={`http://www.linkedin.com/shareArticle?mini=true&url=${post[0].link}`} target="_blank">
+                                                            <div style={{backgroundColor:"#0e76a8"}}>
+                                                                <i className="fab fa-linkedin-in"></i>
+                                                            </div>
+                                                        </a>
+                                                        <a href={`https://twitter.com/intent/tweet?text=${post[0].link}`} target="_blank">
+                                                            <div style={{backgroundColor:"#1da1f2"}}>
+                                                                <i class="fab fa-twitter"></i>
+                                                            </div>
+                                                        </a>
+                                                        <a href={`https://wa.me/?text=${post[0].link}`} target="_blank">
+                                                            <div style={{backgroundColor:"#26be0a"}}>
+                                                                <i className="fab fa-whatsapp"></i>
+                                                            </div>	
+                                                        </a>
+                                                        <a href={`mailto:?subject=${post[0].title.rendered}&body=Digital Shinobi Traveler - Riccardo Schifaudo Blog : ${post[0].link}`} title={`${post[0].title.rendered}`}>
+                                                                <div style={{backgroundColor:"#999"}}>
+                                                                    <i className="far fa-envelope"></i>
+                                                                </div>
+                                                        </a>
+                                                    </div>
                                                     <p>Scroll</p>
                                                     <i className="fa fa-3x fa-angle-double-down" onClick={scrollDown}></i>
                                                 </div>
