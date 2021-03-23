@@ -225,7 +225,7 @@ body{
     text-align: center;
     padding: 20px;
     max-width: 600px;
-    margin: 40px auto;
+    margin:0px auto;
 }
 .dst_blog_post figure .wp-block-embed__wrapper{
     position: relative;
