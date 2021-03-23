@@ -196,6 +196,9 @@ export default function Intro({data}) {
                     <h2>Ecco i 5 articoli più letti del Blog</h2>
                     <Carousel data={data} posts={posts} autoplay={false}/>
 				</div>
+                <div className="dst_intro_row">
+                    <h2>Dai su, cosa aspetti? </h2>
+                </div>
             </div>
             <div className="shinobi_img_box" style={{backgroundImage:"url('images/ricky-amsterdam.jpg')",backgroundPosition:"center"}}>
                 <a href="https://www.the-shinobi-arts-of-eccentricity.com/blog/"><button>Entra nel Blog</button></a>
