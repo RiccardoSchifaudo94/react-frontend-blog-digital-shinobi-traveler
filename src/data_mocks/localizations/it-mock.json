@@ -49,7 +49,38 @@
                 "linkedin":"https://it.linkedin.com/in/riccardo-schifaudo-20345993",
                 "instagram":"https://www.instagram.com/digitalshinobidiabolist/",
                 "twitter":"https://www.twitter.com/ActivistShinobi/"
-            }]
+            }],
+            "items":[   {   
+                            "text":"Home", 
+                            "url":"/",
+                            "css":null
+                        },
+                        {   
+                            "text":"Su di me",
+                            "url":"/page/su-di-me/",
+                            "css":"about"
+                        },
+                        {   
+                            "text":"Missione",
+                            "url":"/page/filosofia-del-dojo/",
+                            "css":"mission"
+                        },
+                        {   
+                            "text":"Contattami",
+                            "url":"/page/contattami/",
+                            "css":"contacts"
+                        },
+                        {
+                            "text":"FAQ",
+                            "url":"/page/faq-domande-frequenti",
+                            "css":null
+                        },
+                        {
+                            "text":"Dona",
+                            "url":"/page/dona",
+                            "css":null
+                        }
+                ]
         }
     ],
     "not_found":[

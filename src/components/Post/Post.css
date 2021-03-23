@@ -141,10 +141,11 @@ body{
     font-size:30px;
 }
 .dst_blog_post img{
-    max-width: 600px;
+    max-width: 400px;
     width: 100%;
     height: auto;
     margin: 30px auto;
+    cursor: pointer;
 }
 .dst_blog_post h2, 
 .dst_blog_post h3, 

@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.4s ease-in-out;
 }
 .dst_lightbox a i{
     position: absolute;
@@ -22,7 +23,6 @@
 .dst_lightbox img{
    padding: 30px;
    background-color: #fff;
-   transition: 0.4s ease-in-out;
 }
 .dst_lightbox_nav {
     position: absolute;
@@ -56,6 +56,8 @@
 @media screen and (max-width:768px){
     .dst_lightbox img{
         max-width: 500px;
+        max-height: 300px;
+        object-fit: contain;
     }
 }
 @media screen and (max-width:468px){

@@ -4,6 +4,7 @@ import './Footer.css';
 
 
 export default function Footer({data}) {
+    console.log(data);
     return (
         <footer>
             <div className="container">
@@ -15,6 +16,12 @@ export default function Footer({data}) {
                         <a href={data.footer[0].social_urls.facebook} target="_blank" rel="noreferrer"><i className="fa fa-facebook-f"></i></a>
                         <a href={data.footer[0].social_urls.instagram} target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
                         <a href={data.footer[0].social_urls.twitter} target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
+                </div>
+                <div className="dst_footer_nav_menu">
+                    <h2>Vuoi conoscere di più sullo Shinobi</h2>
+                    <ul>
+                    { data.footer[0].items.map((item,key)=>(<li key={key} className="ds_footer_desktop_item"><a rel="noreferrer" href={item.url}>{item.text}</a></li>)) }
+                    </ul>
                 </div>
                 <span className="dst_footer_copyright">{data.footer[0].copyright}</span>
                 <Privacy/>
