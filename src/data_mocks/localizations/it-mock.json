@@ -11,6 +11,11 @@
                     "css":null
                 },
                 {   
+                    "text":"Blog", 
+                    "url":"/blog/",
+                    "css":null
+                },
+                {   
                     "text":"Su di me",
                     "url":"/page/su-di-me/",
                     "css":"about"

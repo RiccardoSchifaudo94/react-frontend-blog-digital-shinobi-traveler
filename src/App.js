@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search, Sidebar } from "./components";
+import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search, Sidebar, Intro } from "./components";
 import {
   BrowserRouter as Router,
   Switch,
@@ -89,6 +89,9 @@ function App() {
       <Header data={data} selectLang={selectLang} isMobile={statusSidebar}/>
         <Switch>
           <Route exact path="/">
+            <Intro data={data}/>
+          </Route>
+          <Route path="/blog">
             <PostGallery data={data} posts={posts} spinner={spinner}/>
             <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
           </Route>

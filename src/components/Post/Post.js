@@ -127,7 +127,7 @@ export default function Post({data,posts}) {
                                         <div className="dst_blog_post" id="dst_blog_post" onLoad={prepareLightBoxesImages}>
                                             { Parser(post[0].content.rendered) }
                                         </div>
-                                        <Carousel data={data} posts={postsCarousel}/>
+                                        <Carousel data={data} posts={postsCarousel} setTitle={true}/>
                                     </div>
                                     {(showLightBox)&&(<LightBox url={urlLightBox} slideGallery={slideGallery}/>)}
                                 </div>

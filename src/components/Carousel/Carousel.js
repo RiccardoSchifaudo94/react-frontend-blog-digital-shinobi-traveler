@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import './Carousel.css';
 import UtilityObj from './../../utils/UtilityObj';
 
-export default function Carousel({data,posts, autoplay = false, width=200, gutter=10}) {
+export default function Carousel({data,posts, autoplay = false, width=200, gutter=10, setTitle=false}) {
    
     const isMobile = () =>{
         if(window.screen.width<468)
@@ -59,11 +59,11 @@ export default function Carousel({data,posts, autoplay = false, width=200, gutte
     return (<div>
             {  (posts.length!==0)&&(
                 <div className="dst_carousel">
-                    <h2>{data.carousel[0].title}</h2>
+                    {(setTitle) && (<h2>{data.carousel[0].title}</h2>)}
                     <ul>
                         {posts.map((post)=>(
                             <li key={post.id}>
-                                <a href={post.slug}>
+                                <a href={`/post/${post.slug}`}>
                                     <div className="dst_carousel_item" style={{backgroundImage:`url(${post.images.medium})`,width:`${(width_item - gutter) }px`,marginLeft:`${(gutter/2)}px`,marginRight:`${(gutter/2)}`}}>
                                         <h3>{utilObj.trimString(utilObj.stripHtml(post.title.rendered),70)}</h3>
                                         <button>{data.carousel[0].label_btn_read}</button>
