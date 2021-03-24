@@ -1,17 +1,12 @@
 import React,{useEffect, useState} from 'react';
 import {Carousel} from '../../components';
-import posts_it from '../../data_mocks/carousel_mock/it-mock.json';
-import posts_en from '../../data_mocks/carousel_mock/en-mock.json';
+
 import './Intro.css';
 import { Link } from 'react-router-dom';
 
-export default function Intro({data}) {
-    let [posts,setPosts] = useState([]);
+export default function Intro({data,postsCarousel}) {
+    console.log(postsCarousel);
     console.log(data);
-    useEffect(()=>{
-        console.log(data);
-       (data.lang==='it') ? setPosts(posts_it) : setPosts(posts_en);
-    },[posts]);
     return (
         <div className="dst_intro">
             <div className="shinobi_img_box" style={{backgroundImage:"url('/images/digital-shinobi-traveler-cinque-terre-riomaggiare.jpg')"}}></div>
@@ -115,10 +110,11 @@ export default function Intro({data}) {
             </div>
             <div className="container">
 				<div className="dst_intro_row">
-						<h2>Quali sono le arti dell'Eccentrico Ninja Digitale?</h2>
+						<h2>{data.intro[0].shinobi_title_section_2}</h2>
 						<p>
-							Come uno Shinobi, ovvero un maestro Ninja, le arti del travestimento sono molteplici,<br/>
-							la sua identità e il suo scopo può cambiare nel corso della missione.
+                            {data.intro[0].shinobi_section_2_text_1}
+							<br/>
+                            {data.intro[0].shinobi_section_2_text_2}
 						</p>
 				</div>
             </div>
@@ -138,74 +134,47 @@ export default function Intro({data}) {
             </div>
             <div className="container">
 				<div className="dst_intro_row">
-					<h2 style={{border:0}}>Sei curioso di sapere cosa troverai nel Blog? :)</h2>
+					<h2 style={{border:0}}>{data.intro[0].shinobi_title_section_3}</h2>
 				</div>
                 <div className="dst_intro_row">
                     <div className="shinobi_general_description">
 						<div className="dst_intro_col_6">
-							<h3>The Shinobi Arts of Eccentricity</h3>
+							<h3>{data.intro[0].shinobi_section_3_label_1}</h3>
 							<p id="p_correct">
-								Il progetto nasce come blog personale dove racconto le mie esperienze di viaggio alternativi,
-								 metodi educativi e i miei particolari interessi in stile dojo Ninja.
+                                {data.intro[0].shinobi_section_3_text_1}
 							</p>
 						</div>
 						<div className="dst_intro_col_6">
 							<ul>
-								<li>
-									<label>
-                                        <i className="fa fa-map-signs fa-2x"></i>
-                                        <strong>Travel Blogging</strong>
-                                    </label>
-									<p>Esperienze di viaggio personale, in Interrail, Viaggi in Solitaria, Viaggi "Fuori Porta";</p>
-								</li>
-								<li>
-									<label>
-                                        <i className="fa fa-subway fa-2x"></i>
-                                        <strong>Travel Planning</strong>
-                                    </label>
-									<p>Organizzazione logistica dei viaggi, dove mangiare, pendolarismo, mobilità sostenibile e alternativa, tecniche di viaggio scout;</p>
-								</li>
-								<li>
-									<label>
-                                        <i className="fa fa-plane fa-2x"></i>
-                                        <strong>Edu-Travelling</strong>
-                                    </label>
-									<p>Curiosità culturali, metodi di educazione non-formale dei progetti di mobilità Erasmus Plus e di apprendimento altenativo e a distanza;</p>
-								</li>
-								<li>
-									<label>
-                                        <i className="fa fa-gamepad fa-2x"></i>
-                                        <strong>Digital Youth Work</strong>
-                                    </label>
-									<p>Strumenti di gioco, guide interattive e schede per attività educative e animazione giovanile per bambini e ragazzi basate sul metodo scout e all'educazione non-formale apprese durante i progetti europei in formato digitale;</p>
-								</li>
-								<li>
-									<label>
-                                        <i className="fa fa-user-secret fa-2x"></i>
-                                        <strong>Digital Ninjutsu</strong>
-                                    </label>
-									<p>Come in Ninja erano esperti nell'arte dello spiongaggio e nel furto dei dati, puoi trovare consigli su applicazioni web e mobile per trovare informazioni, risorse per scopi personali, scolastici e lavorativi grazie a Internet.</p>
-								</li>
+                                {data.intro[0].shinobi_info_graphics.map((item)=>(
+                                    <li>
+                                        <label>
+                                            <i className={item.icon}></i>
+                                            <strong>{item.title}</strong>
+                                        </label>
+                                        <p>{item.text}</p>
+                                    </li>   
+                                ))}
 							</ul>
 						</div>
 					</div>
                 </div>
 				<div className="dst_intro_row">
                     <form className="shinobi_search_article" action="/search" method="GET">
-                        <label>Vuoi rileggere un articolo?</label>
-                        <input type="text" name="s" placeholder="Inserisci il titolo"/>
-                        <button>Cerca <i className="fa fa-search"></i></button>
+                        <label>{data.intro[0].shinobi_searchbar_title}</label>
+                        <input type="text" name="s" placeholder={data.intro[0].shinobi_searchbar_placeholder}/>
+                        <button>{data.intro[0].shinobi_searchbar_label_btn} <i className="fa fa-search"></i></button>
                     </form>
-                    <p>Oppure</p>
-                    <h2>Ecco i 5 articoli più letti del Blog</h2>
-                    <Carousel data={data} posts={posts} autoplay={false}/>
+                    <p>{data.intro[0].shinobi_searchbar_or}</p>
+                    <h2>{data.intro[0].shinobi_searchbar_more_read}</h2>
+                    <Carousel data={data} posts={postsCarousel} autoplay={false}/>
 				</div>
                 <div className="dst_intro_row">
-                    <h2>Dai su, cosa aspetti? </h2>
+                    <h2>{data.intro[0].shinobi_title_section_4}</h2>
                 </div>
             </div>
             <div className="shinobi_img_box" style={{backgroundImage:"url('images/ricky-amsterdam.jpg')",backgroundPosition:"center"}}>
-            <Link to={data.header[0].items[1].url}><button>Entra nel Blog</button></Link>
+            <Link to={data.header[0].items[1].url}><button>{data.intro[0].shinobi_section_4_label_btn}</button></Link>
             </div>
             <div className="shinobi_divider_splash"></div>
         </div>

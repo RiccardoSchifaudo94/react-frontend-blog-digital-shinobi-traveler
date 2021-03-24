@@ -131,7 +131,47 @@
             "shinobi_start_splash_not_done_text_1":"Ti chiedo solo di essere pagato in visibilità",
             "shinobi_start_splash_done":"FATTO?",
             "shinobi_start_splash_done_label_1":"Grazie! Ti ripago con invisibilità... Nel mondo digitale!",
-            "shinobi_start_splash_done_text_1":"Bene, procediamo... ;)"
+            "shinobi_start_splash_done_text_1":"Bene, procediamo... ;)",
+            "shinobi_title_section_2":"Quali sono le arti dell'Eccentrico Ninja Digitale?",
+            "shinobi_section_2_text_1":"Come uno Shinobi, ovvero un maestro Ninja, le arti del travestimento sono molteplici,",
+            "shinobi_section_2_text_2":"la sua identità e il suo scopo può cambiare nel corso della missione.",
+            "shinobi_title_section_3":"Sei curioso di sapere cosa troverai nel Blog? :)",
+            "shinobi_section_3_label_1":"The Shinobi Arts of Eccentricity",
+            "shinobi_section_3_text_1":"Il progetto nasce come blog personale dove racconto le mie esperienze di viaggio alternativi, metodi educativi e i miei particolari interessi in stile dojo Ninja.",
+            "shinobi_info_graphics":[
+                {
+                    "icon":"fa fa-map-signs fa-2x",
+                    "title":"Travel Blogging",
+                    "text":"Esperienze di viaggio personale, in Interrail, Viaggi in Solitaria, Viaggi 'Fuori Porta';"
+                },
+                {
+                    "icon":"fa fa-subway fa-2x",
+                    "title":"Travel Planning",
+                    "text":"Organizzazione logistica dei viaggi, dove mangiare, pendolarismo, mobilità sostenibile e alternativa, tecniche di viaggio scout;"
+                },
+                {
+                    "icon":"fa fa-plane fa-2x",
+                    "title":"Edu-Travelling",
+                    "text":"Curiosità culturali, metodi di educazione non-formale dei progetti di mobilità Erasmus Plus e di apprendimento altenativo e a distanza;"
+                },
+                {
+                    "icon":"fa fa-gamepad fa-2x",
+                    "title":"Digital Youth Work",
+                    "text":"Strumenti di gioco, guide interattive e schede per attività educative e animazione giovanile per bambini e ragazzi basate sul metodo scout e all'educazione non-formale apprese durante i progetti europei in formato digitale;"
+                },
+                {
+                    "icon":"fa fa-user-secret fa-2x",
+                    "title":"Digital Ninjutsu",
+                    "text":"Come in Ninja erano esperti nell'arte dello spiongaggio e nel furto dei dati, puoi trovare consigli su applicazioni web e mobile per trovare informazioni, risorse per scopi personali, scolastici e lavorativi grazie a Internet."
+                }
+            ],
+            "shinobi_searchbar_title":"Vuoi rileggere un articolo?",
+            "shinobi_searchbar_placeholder":"Inserisci il titolo",
+            "shinobi_searchbar_or":"Oppure",
+            "shinobi_searchbar_more_read":"Ecco i 5 articoli più letti del Blog",
+            "shinobi_searchbar_label_btn":"Cerca",
+            "shinobi_title_section_4":"Dai su, cosa aspetti?",
+            "shinobi_section_4_label_btn":"Entra nel Blog!"
         }
     ]
 }

@@ -124,8 +124,47 @@
             "shinobi_start_splash_not_done_text_1":"I ask you to be paid only in visibility :)",
             "shinobi_start_splash_done":"ARE YOU READY?",
             "shinobi_start_splash_done_label_1":"Thank you! I will pay you back with invisibility... Into the digital world!",
-            "shinobi_start_splash_done_text_1":"Well, let's proceed... ;)"
-
+            "shinobi_start_splash_done_text_1":"Well, let's proceed... ;)",
+            "shinobi_title_section_2":"Which are the Eccentric Digital Ninja Arts?",
+            "shinobi_section_2_text_1":"As a Shinobi, a Ninja Master, disguise's arts are severals",
+            "shinobi_section_2_text_2":"your identity and purpose can change continuosly during your mission",
+            "shinobi_title_section_3":"Do you want to kwow what you can find inside the Blog?",
+            "shinobi_section_3_label_1":"The Shinobi Arts of Eccentricity",
+            "shinobi_section_3_text_1":"The project was born as personal blog where I disclouse my personal experiences, my alternative trips and non-formal education courses in ninja style.",
+            "shinobi_info_graphics":[
+                {
+                    "icon":"fa fa-map-signs fa-2x",
+                    "title":"Travel Blogging",
+                    "text":"Personal travel experiences, in Interrail, Solo-travel, 'Out the door' trips;"
+                },
+                {
+                    "icon":"fa fa-subway fa-2x",
+                    "title":"Travel Planning",
+                    "text":"Logistic organization of travel, where to eat, commuting, sustainable and alternative mobility, scout travel techniques;"
+                },
+                {
+                    "icon":"fa fa-plane fa-2x",
+                    "title":"Edu-Travelling",
+                    "text":"Cultural curiosities, non-formal education methods of Erasmus Plus mobility projects and alternative and distance learning;"
+                },
+                {
+                    "icon":"fa fa-gamepad fa-2x",
+                    "title":"Digital Youth Work",
+                    "text":"Game tools, interactive guides and cards for educational activities and youth animation for children and young people based on the scout method and non-formal education learned during European projects in digital format;"
+                },
+                {
+                    "icon":"fa fa-user-secret fa-2x",
+                    "title":"Digital Ninjutsu",
+                    "text":"As in Ninja they were experts in the art of espionage and data theft, you can find advice on web and mobile applications to find information, resources for personal, school and work purposes thanks to the Internet."
+                }
+            ],
+            "shinobi_searchbar_title":"Do you want to read again an article?",
+            "shinobi_searchbar_placeholder":"Insert title post to search ...",
+            "shinobi_searchbar_or":"Or",
+            "shinobi_searchbar_more_read":"Here the 5 most read posts of the Blog",
+            "shinobi_searchbar_label_btn":"Search",
+            "shinobi_title_section_4":"Hey, What are you waiting for?",
+            "shinobi_section_4_label_btn":"Go to Blog!"
         }
     ]
 }

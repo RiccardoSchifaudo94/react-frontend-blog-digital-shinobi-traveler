@@ -13,6 +13,9 @@ import UtilityObj from './utils/UtilityObj';
 import data_it from './data_mocks/localizations/it-mock.json';
 import data_en from './data_mocks/localizations/en-mock.json';
 
+import posts_carousel_it from './data_mocks/carousel_mock/it-mock.json';
+import posts_carousel_en from './data_mocks/carousel_mock/en-mock.json';
+
 function App() {
   
   const [posts, setPosts] = useState([]);
@@ -23,8 +26,7 @@ function App() {
   const [statusSearchBar] = useState(true);
   const [statusSidebar] = useState(false);
   
- 
-  
+
   const utilityOBJ = new UtilityObj();
 
   const localize_site = () =>{
@@ -39,10 +41,24 @@ function App() {
       return data_temp;
   }
 
-  let [data,setData] = useState(localize_site()); 
+  const localize_carousel_intro = () =>{
+    
+    let carousel_temp;
+    
+    if(localStorage.getItem('lang')===null){
+      (utilityOBJ.detectLang()==='it-IT') ? carousel_temp = posts_carousel_it : carousel_temp = posts_carousel_en;
+    }else{
+      (localStorage.getItem('lang')==='it') ? carousel_temp = posts_carousel_it : carousel_temp = posts_carousel_en;
+    }
+      return carousel_temp;
+  }
 
+  let [data,setData] = useState(localize_site()); 
+  let [postsCarousel, setPostsCarousel] = useState(localize_carousel_intro());
+  
   const selectLang = (selected_lang = 'it') =>{
     (selected_lang === 'it') ? data = data_it : data = data_en;
+    (selected_lang === 'it') ? setPostsCarousel(posts_carousel_it) : setPostsCarousel(posts_carousel_en);
     setData(data);
     setSpinner(true);
     get_posts(1);
@@ -89,7 +105,7 @@ function App() {
       <Header data={data} selectLang={selectLang} isMobile={statusSidebar}/>
         <Switch>
           <Route exact path="/">
-            <Intro data={data}/>
+            <Intro data={data} postsCarousel={postsCarousel}/>
           </Route>
           <Route path="/blog">
             <PostGallery data={data} posts={posts} spinner={spinner}/>
