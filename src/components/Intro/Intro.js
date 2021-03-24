@@ -191,7 +191,7 @@ export default function Intro({data}) {
 					</div>
                 </div>
 				<div className="dst_intro_row">
-                    <form className="shinobi_search_article" action="https://www.the-shinobi-arts-of-eccentricity.com/blog/" method="GET">
+                    <form className="shinobi_search_article" action="/search" method="GET">
                         <label>Vuoi rileggere un articolo?</label>
                         <input type="text" name="s" placeholder="Inserisci il titolo"/>
                         <button>Cerca <i className="fa fa-search"></i></button>
@@ -205,7 +205,7 @@ export default function Intro({data}) {
                 </div>
             </div>
             <div className="shinobi_img_box" style={{backgroundImage:"url('images/ricky-amsterdam.jpg')",backgroundPosition:"center"}}>
-                <a href="https://www.the-shinobi-arts-of-eccentricity.com/blog/"><button>Entra nel Blog</button></a>
+            <Link to={data.header[0].items[1].url}><button>Entra nel Blog</button></Link>
             </div>
             <div className="shinobi_divider_splash"></div>
         </div>

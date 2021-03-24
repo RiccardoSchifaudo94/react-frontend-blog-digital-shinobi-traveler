@@ -11,6 +11,11 @@
                     "css":null
                 },
                 {   
+                    "text":"Blog", 
+                    "url":"/blog",
+                    "css":null
+                },
+                {   
                     "text":"About me",
                     "url":"/page/about-me",
                     "css":"about"
