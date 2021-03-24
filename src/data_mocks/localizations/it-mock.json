@@ -102,5 +102,36 @@
     "carousel":[{
         "title":"Potrebbe piacerti, vuoi darci un'occhiata? ;)",
         "label_btn_read":"Leggi"
-    }]
+    }],
+    "intro":[
+        {
+            "shinobi_bio_text_1":"Ciao, sono Riccardo Schifaudo, e sono il “Digital Shinobi Traveler” di questo blog “Dojo”.",
+            "shinobi_bio_text_2":"Amo viaggiare, sono curioso e mi dedico a diversi hobbies come la giocoleria con il Diabolo, ai Prototipi Elettronici e l’Attivismo Politico.",
+            "shinobi_bio_text_3":"Ho studiato Elettronica, mi sono specializzato in UX Design e sono Web Developer.",
+            "shinobi_bio_text_4":"Cerco sempre nuovi stimoli e ispirazioni per apprendere e fare nuove esperienze di viaggio.",
+            "shinobi_bio_label_btn":"Scopri di più",
+            "shinobi_introduction_heading_1":"Grazie per essere entrato nel mio Blog di Dojo Virtuale!",
+            "shinobi_introduction_heading_2":"Se già conosci le arti del ninja digitale saprai come muoverti,\n ma se è la prima volta che mi incontri ti dò il mio benvenuto.",
+            "shinobi_title_section_1":"Vogliamo cominciare? ;)",
+            "shinobi_section_1_text_1":"All'interno del Dojo dello Shinobi Digitale, potrai trovare consigli ed esperienze personali di viaggio, \n metodi educativi alternativi e riflessioni personali e sull'evoluzione digitale",
+            "shinobi_section_1_text_2":"La comunità è aperta a tutte le persone mentalmente aperte,",
+            "shinobi_section_1_text_3":"desiderose di migliorare la propria formazione personale grazie a internet",
+            "shinobi_section_1_text_4":"e ai viaggi formativi ed educativi non convenzionali.",
+            "shinobi_start_splash_heading_1":"Prima di entrare nel Blog di Dojo Virtuale",
+            "shinobi_start_splash_follow_label_btn":"Seguimi",
+            "shinobi_start_splash_follow_facebook":"Seguimi su Facebook",
+            "shinobi_start_splash_follow_facebook_label_1":"Digital Shinobi Traveler",
+            "shinobi_start_splash_follow_facebook_text_1":"Racconti dei miei viaggi in giro per l'Europa in solitaria e grazie a progetti europei da come sono stati pianificati agli spostamenti e curiosità culturali del posto",
+            "shinobi_start_splash_follow_facebook_label_2":"Digital Shinobi Maker",
+            "shinobi_start_splash_follow_facebook_text_2":"Portofolio progetti di Internet delle Cose e progetti di prototipazione digitale e web.",
+            "shinobi_start_splash_follow_instagram_label_1":"Digital Shinobi Diabolist",
+            "shinobi_start_splash_follow_instagram_text_1":"Esibizioni con Diabolo, grande yo-yo di origine cinese, e tutorial di giocoleria di questa disciplina.",
+            "shinobi_start_splash_not_done":"NON HAI FATTO?",
+            "shinobi_start_splash_not_done_label_1":"Ripeti i passaggi :D",
+            "shinobi_start_splash_not_done_text_1":"Ti chiedo solo di essere pagato in visibilità",
+            "shinobi_start_splash_done":"FATTO?",
+            "shinobi_start_splash_done_label_1":"Grazie! Ti ripago con invisibilità... Nel mondo digitale!",
+            "shinobi_start_splash_done_text_1":"Bene, procediamo... ;)"
+        }
+    ]
 }

@@ -1,64 +1,63 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import {Carousel} from '../../components';
-import posts from '../../data_mocks/carousel_mock/it-mock.json';
+import posts_it from '../../data_mocks/carousel_mock/it-mock.json';
+import posts_en from '../../data_mocks/carousel_mock/en-mock.json';
 import './Intro.css';
+import { Link } from 'react-router-dom';
 
 export default function Intro({data}) {
+    let [posts,setPosts] = useState([]);
+    console.log(data);
     useEffect(()=>{
-       
-    },[]);
+        console.log(data);
+       (data.lang==='it') ? setPosts(posts_it) : setPosts(posts_en);
+    },[posts]);
     return (
         <div className="dst_intro">
             <div className="shinobi_img_box" style={{backgroundImage:"url('/images/digital-shinobi-traveler-cinque-terre-riomaggiare.jpg')"}}></div>
             <div className="shinobi_bio">
-                
-                    <p>Ciao, sono Riccardo Schifaudo, e sono il “Digital Shinobi Traveler” di questo blog “Dojo”.</p>
-                    <p>Amo viaggiare, sono curioso e mi dedico a diversi hobbies come la giocoleria con il Diabolo,
-                        ai Prototipi Elettronici e l’Attivismo Politico.</p>
-                    <p>Ho studiato Elettronica, mi sono specializzato in UX Design e sono Web Developer.</p>
-                    <p>Cerco sempre nuovi stimoli e ispirazioni per apprendere e fare nuove esperienze di viaggio.
-                    </p>
-                    <a href="https://www.the-shinobi-arts-of-eccentricity.com/blog/su-di-me/"><button>Scopri di più <i class="fa fa-address-card-o"></i></button></a>
+                    <p>{data.intro[0].shinobi_bio_text_1}</p>
+                    <p>{data.intro[0].shinobi_bio_text_2}</p>
+                    <p>{data.intro[0].shinobi_bio_text_3}</p>
+                    <p>{data.intro[0].shinobi_bio_text_4}</p>
+                    <Link to={data.header[0].items[2].url}><button>{data.intro[0].shinobi_bio_label_btn}<i class="fa fa-address-card-o"></i></button></Link>
             </div>
             <div className="shinobi_divider_splash"></div>
             <div className="shinobi_introduction">
                     <div className="container">
-                        <h3>Grazie per essere entrato nel mio Blog di Dojo Virtuale! </h3>
+                        <h3>{data.intro[0].shinobi_introduction_heading_1} </h3>
                         <h3>
-                            Se già conosci le arti del ninja digitale saprai come muoverti,<br/>
-                            ma se è la prima volta che mi incontri ti dò il mio benvenuto.
+                        {data.intro[0].shinobi_introduction_heading_2}
                         </h3>
-                        <h2>Vogliamo cominciare? ;)</h2>
+                        <h2>{data.intro[0].shinobi_title_section_1}</h2>
+                        <p>{data.intro[0].shinobi_section_1_text_1}</p>
                         <p>
-                            All'interno del Dojo dello Shinobi Digitale, potrai trovare consigli ed esperienze personali di viaggio,<br/>
-                            metodi educativi alternativi e riflessioni personali e sull'evoluzione digitale</p>
-                        <p>
-                            La comunità è aperta a tutte le persone mentalmente aperte,<br/>
-                            desiderose di migliorare la propria formazione personale grazie a internet<br/>
-                            e ai viaggi formativi ed educativi non convenzionali.
+                            {data.intro[0].shinobi_section_1_text_2}<br/>
+                            {data.intro[0].shinobi_section_1_text_3}<br/>
+                            {data.intro[0].shinobi_section_1_text_4}
                         </p>	
                     </div>
             </div>	
             <br/>
             <div class="shinobi_start_splash">
                 <div className="container">
-                    <h2>Prima di entrare nel Blog di Dojo Virtuale</h2>
+                    <h2>{data.intro[0].shinobi_start_splash_heading_1}</h2>
                             <div className="dst_intro_row">
                                 <div className="shinobi_social_divider">
                                     <div className="dst_intro_col_3" align="center">
                                         <i className="fa fa-facebook fa-2x"></i>
-                                        <h4>Seguimi su Facebook</h4>
+                                        <h4>{data.intro[0].shinobi_start_splash_follow_facebook}</h4>
                                     </div>
                                     <div className="dst_intro_col_9">
-                                        <h5>Digital Shinobi Traveler</h5>
-                                        <p>Racconti dei miei viaggi in giro per l'Europa in solitaria e grazie a progetti europei da come sono stati pianificati agli spostamenti e curiosità culturali del posto
-                                        </p>
+                                        <h5>{data.intro[0].shinobi_start_splash_follow_facebook_label_1}</h5>
+                                        <p>{data.intro[0].shinobi_start_splash_follow_facebook_text_1}</p>
                                         <br/>
-                                        <h5>Digital Shinobi Maker</h5>
-                                        <p>Portofolio progetti di Internet delle Cose e progetti di prototipazione digitale e web.</p>
+                                        <h5>{data.intro[0].shinobi_start_splash_follow_facebook_label_2}</h5>
+                                        <p>{data.intro[0].shinobi_start_splash_follow_facebook_text_2}</p>
                                         <br/>
                                         <a href="https://www.facebook.com/DigitalShinobiTraveler/">
-                                            <button>Segui 
+                                            <button>
+                                                {data.intro[0].shinobi_start_splash_follow_label_btn} 
                                                 <i class="fa fa-thumbs-up"></i>
                                             </button>
                                         </a>
@@ -70,15 +69,20 @@ export default function Intro({data}) {
                                 <div className="shinobi_social_divider">
                                     <div className="dst_intro_col_3" align="center">
                                         <i className="fa fa-instagram fa-2x"></i>
-                                        <h4>Seguimi su Instragram</h4>
+                                        <h4>{data.intro[0].shinobi_start_splash_follow_linkedin}</h4>
                                     </div>
                                     <div className="dst_intro_col_9">
-                                        <h5>Digital Shinobi Diabolist</h5>
+                                        <h5>{data.intro[0].shinobi_start_splash_follow_instagram_label_1}</h5>
                                         <p>
-                                            Esibizioni con Diabolo, grande yo-yo di origine cinese, e tutorial di giocoleria di questa disciplina.
+                                            {data.intro[0].shinobi_start_splash_follow_instagram_text_1}
                                         </p>
                                         <br/>
-                                        <a href="https://www.instagram.com/digitalshinobidiabolist/" target="_blank"><button>Seguimi <i className="fa fa-arrow-right"></i></button></a>
+                                        <a href="https://www.instagram.com/digitalshinobidiabolist/" target="_blank">
+                                            <button>
+                                                {data.intro[0].shinobi_start_splash_follow_label_btn}
+                                                <i className="fa fa-arrow-right"></i>
+                                            </button>
+                                        </a>
                                         <hr/>
                                     </div>
                                 </div>
@@ -87,11 +91,11 @@ export default function Intro({data}) {
                                 <div className="shinobi_social_divider">
                                     <div class="dst_intro_col_3" align="center">
                                         <i className="fa fa-times fa-2x"></i>
-                                        <h4>Non hai Fatto?</h4>
+                                        <h4>{data.intro[0].shinobi_start_splash_not_done}</h4>
                                     </div>
                                     <div className="dst_intro_col_9">
-                                        <h5>Ripeti i passaggi :D</h5>
-                                        <p>Ti chiedo solo di essere pagato in visibilità</p>
+                                        <h5>{data.intro[0].shinobi_start_splash_not_done_label_1}</h5>
+                                        <p>{data.intro[0].shinobi_start_splash_not_done_text_1}</p>
                                     </div>
                                 </div>
                             </div>
@@ -99,11 +103,11 @@ export default function Intro({data}) {
 								<div className="shinobi_social_divider">
 										<div className="dst_intro_col_3" align="center">
 											<i className="fa fa-check fa-2x"></i>
-											<h4>Fatto?</h4>
+											<h4>{data.intro[0].shinobi_start_splash_done}</h4>
 										</div>
 										<div className="dst_intro_col_9">
-											<h5>Grazie! Ti ripago con invisibilità... Nel mondo digitale!</h5>
-											<p>Bene, procediamo... ;)</p>
+											<h5>{data.intro[0].shinobi_start_splash_done_label_1}</h5>
+											<p>{data.intro[0].shinobi_start_splash_done_text_1}</p>
 										</div>
 								</div>
 							</div>

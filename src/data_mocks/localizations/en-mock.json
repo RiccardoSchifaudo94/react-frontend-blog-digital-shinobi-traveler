@@ -88,5 +88,39 @@
     "carousel":[{
         "title":"Would you like to give a glance here ;)",
         "label_btn_read":"Read"
-    }]
+    }],
+    "intro":[
+        {
+            "shinobi_bio_text_1":"Hi,I am Riccardo Schifaudo, and I am the “Digital Shinobi Traveler” of this blog “Dojo”.",
+            "shinobi_bio_text_2":"I love traveling, I am curious and I like involving myself on severals hobbies such as juggling with Diabolo, with electronics' prototypes and digital political activism.",
+            "shinobi_bio_text_3":"I studied Electronic,and afterwards on UX Design and I am a Web Developer.",
+            "shinobi_bio_text_4":"I am always looking for new motivations and inspirations in order to learn and challenge a new experience of travelling",
+            "shinobi_bio_link":"/page/about-me",
+            "shinobi_bio_label_btn":"More about me",
+            "shinobi_introduction_heading_1":"Thank you to be entered in my Virtual Dojo Blog!",
+            "shinobi_introduction_heading_2":"If you have already known digital ninja arts, you can already aware how to move, \n but if it is your first time you are welcome",
+            "shinobi_title_section_1":"Shall we begin? ;)",
+            "shinobi_section_1_text_1":"Inside to Digital Shinobi Dojo,you can find tips and personal experiences of my trips, \n alternative studies' methodologies and personal reflections about digital evolutions",
+            "shinobi_section_1_text_2":"My community is available for open-minded people,",
+            "shinobi_section_1_text_3":"who are willing to improve own personal tuition thank to internet resources,",
+            "shinobi_section_1_text_4":"and non-conventional trips of non-formal education.",
+            "shinobi_start_splash_heading_1":"Before to step into my Digital Virtual Dojo",
+            "shinobi_start_splash_follow_label_btn":"Follow me",
+            "shinobi_start_splash_follow_facebook":"Follow me on Facebook",
+            "shinobi_start_splash_follow_facebook_label_1":"Digital Shinobi Traveler",
+            "shinobi_start_splash_follow_facebook_text_1":"Stories about my trips when I was wandering alone across Europe using Erasmus plus projects, how to organize journeys' plans and discover tradinions of coutries where I was.",
+            "shinobi_start_splash_follow_facebook_label_2":"Digital Shinobi Maker",
+            "shinobi_start_splash_follow_facebook_text_2":"My personal portfolio with my digital prototypes and web projects.",
+            "shinobi_start_splash_follow_linkedin":"Follow me on Instragram",
+            "shinobi_start_splash_follow_instagram_label_1":"Digital Shinobi Diabolist",
+            "shinobi_start_splash_follow_instagram_text_1":"Diabolo performances and juggling's lessons",
+            "shinobi_start_splash_not_done":"ARE YOU NOT READY ?",
+            "shinobi_start_splash_not_done_label_1":"Repeat the steps :D",
+            "shinobi_start_splash_not_done_text_1":"I ask you to be paid only in visibility :)",
+            "shinobi_start_splash_done":"ARE YOU READY?",
+            "shinobi_start_splash_done_label_1":"Thank you! I will pay you back with invisibility... Into the digital world!",
+            "shinobi_start_splash_done_text_1":"Well, let's proceed... ;)"
+
+        }
+    ]
 }
