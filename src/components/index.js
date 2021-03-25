@@ -11,3 +11,4 @@ export  { default as Page} from './Page/Page';
 export  { default as PostGallery} from './PostGallery/PostGallery';
 export  { default as Pagination} from './Pagination/Pagination';
 export  { default as Privacy} from './Privacy/Privacy';
+export  { default as Widget} from './Widget/Widget';
