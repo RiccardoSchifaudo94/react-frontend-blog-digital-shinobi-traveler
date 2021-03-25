@@ -1,10 +1,9 @@
 import React from 'react';
-import { Privacy } from '..';
+import { Privacy } from '../../components';
 import './Footer.css';
 
 
 export default function Footer({data}) {
-    console.log(data);
     return (
         <footer>
             <div className="container">

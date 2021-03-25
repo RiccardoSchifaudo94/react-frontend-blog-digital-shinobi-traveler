@@ -1,16 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import {useParams, Link, Redirect} from 'react-router-dom';
-import UtilityObj from '../../utils/UtilityObj';
+import { useParams, Link, Redirect, useHistory } from 'react-router-dom';
 import Parser from 'html-react-parser';
+
+import UtilityObj from '../../utils/UtilityObj';
+import { Carousel, LightBox, Spinner } from '../../components';
 import './Post.css';
-import Spinner from '../Spinner/Spinner';
-import Carousel from '../Carousel/Carousel';
-import LightBox from '../LightBox/LightBox';
-import carousel_json from '../../data_mocks/carousel_mock/it-mock.json'
 
 
-export default function Post({data,posts}) {
-
+export default function Post({data,totalPosts}) {
+    
     let { slug } = useParams();
     const [post, setPost] = useState([]);
     const [postsCarousel,setPostsCarousel] = useState([]);
@@ -18,10 +16,15 @@ export default function Post({data,posts}) {
     const [showLightBox,setShowLightBox] = useState(false);
     const [urlLightBox,setUrlLightBox] = useState('');
     const [slideGallery,setSlideGallery] = useState([]);
+    const [counterNavPosts,setCounterNavPosts] = useState(0);
+    const [showPrevNavPost,setShowPrevNavPost] = useState(false);
+    const [showNextNavPost,setShowNextNavPost] = useState(true);
+    const history = useHistory();
+
     const utilObj = new UtilityObj();
-    
+
     const get_single_post = async() => {
-     
+
         const res = await fetch(process.env.REACT_APP_API_URL+`posts?_embed&slug=${slug}`);
         
         await res.json().then((data)=>{
@@ -44,6 +47,36 @@ export default function Post({data,posts}) {
             setPostsCarousel(data);
         }).catch((err)=>console.log(err));
     }
+
+    
+    const get_nav_post = async() => {
+        
+        if(counterNavPosts!==0&&counterNavPosts<=totalPosts){
+
+            if(counterNavPosts>1)
+                setShowPrevNavPost(true);
+            else
+                setShowPrevNavPost(false);
+
+            if(counterNavPosts===totalPosts)
+                setShowNextNavPost(false);
+            
+            setIsFetching(true);
+            let url_next_post = process.env.REACT_APP_API_URL+`posts?_embed&lang=${data.lang}&per_page=1&page=${counterNavPosts}`;
+            console.log(url_next_post);
+            const res_next_post = await fetch(url_next_post);  
+            await res_next_post.json().then((data)=>{
+                history.push(data[0].slug);
+                utilObj.scrollToTop();
+                setPost(data);
+                get_posts_carousel(data);
+                setIsFetching(false);
+            }).catch((err)=>console.log(err));  
+
+        }
+       
+       
+    }
     
     const scrollDown = () =>{
         document.getElementById('dst_blog_post').scrollIntoView({
@@ -56,6 +89,10 @@ export default function Post({data,posts}) {
         get_single_post();
         
     },[]);
+
+    useEffect(()=>{
+        get_nav_post();
+    },[counterNavPosts]);
    
     const openLightBox = (url) =>{
         setUrlLightBox(url);
@@ -128,6 +165,10 @@ export default function Post({data,posts}) {
                                             { Parser(post[0].content.rendered) }
                                         </div>
                                         <Carousel data={data} posts={postsCarousel} setTitle={true}/>
+                                        <div className="dst_nav_post_gallery">
+                                            {(showPrevNavPost)&&(<button className="dst_nav_post_prev" onClick={()=>{setCounterNavPosts(counterNavPosts - 1)}}><i className="fa fa-arrow-left"></i>{" "}Prev Post</button>)}
+                                            {(showNextNavPost)&&(<button className="dst_nav_post_next" onClick={()=>{setCounterNavPosts(counterNavPosts + 1)}}>Next Post{" "}<i className="fa fa-arrow-right"></i></button>)}
+                                        </div>
                                     </div>
                                     {(showLightBox)&&(<LightBox url={urlLightBox} slideGallery={slideGallery}/>)}
                                 </div>

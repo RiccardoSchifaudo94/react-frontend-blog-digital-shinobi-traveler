@@ -1,8 +1,9 @@
 import React,{useEffect,useState} from 'react';
-import Parser from 'html-react-parser';
 import {useParams, Redirect, Link, useLocation} from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
+import Parser from 'html-react-parser';
+
 import UtilityObj from '../../utils/UtilityObj';
+import { Spinner } from '../../components';
 import './Page.css';
 
 export default function Page({data}) {

@@ -1,8 +1,10 @@
 import React from 'react';
-import './PostGallery.css';
-import UtilityObj from '../../utils/UtilityObj';
-import {Spinner} from '../../components';
 import { Link } from "react-router-dom";
+
+
+import UtilityObj from '../../utils/UtilityObj';
+import { Spinner } from '../../components';
+import './PostGallery.css';
 
 export default function PostGallery({data,posts,spinner}) {
     const utilObj = new UtilityObj();

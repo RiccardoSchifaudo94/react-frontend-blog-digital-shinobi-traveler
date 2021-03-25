@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './LightBox.css';
 
 export default function LightBox({url, slideGallery }) {
+    
     const [urlSlide,setUrlSlide] = useState(url);
     const findInitialIndex = slideGallery.findIndex((x)=>x===url);
 

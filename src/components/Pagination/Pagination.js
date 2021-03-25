@@ -1,6 +1,8 @@
 import React from 'react';
-import './Pagination.css';
+
 import UtilityObj from './../../utils/UtilityObj';
+import './Pagination.css';
+
 
 export default function Pagination({postsPerPage,totalPosts, paginate, currentPage, spinner}) {
     

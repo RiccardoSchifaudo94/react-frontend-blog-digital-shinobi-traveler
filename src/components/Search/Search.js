@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from 'react';
-import {useHistory} from 'react-router-dom';
-import {Pagination,PostGallery,Spinner} from './../../components'
+import React,{ useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
+import { Pagination,PostGallery,Spinner } from './../../components'
 import './Search.css';
 
 export default function Search({statusSearchBar, data}) {
@@ -84,6 +84,7 @@ export default function Search({statusSearchBar, data}) {
     const disableSearch = () => setEnabledSearch(false);
 
     const searchByKeyword = async (keyword,id) =>{
+        
         let lang;
         
         (data.lang==='it') ? lang = 'it' : lang = 'en';

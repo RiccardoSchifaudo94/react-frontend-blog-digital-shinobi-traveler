@@ -1,12 +1,11 @@
-import React,{useEffect, useState} from 'react';
-import {Carousel} from '../../components';
+import React from 'react';
+import { Carousel } from '../../components';
 
 import './Intro.css';
 import { Link } from 'react-router-dom';
 
 export default function Intro({data,postsCarousel}) {
-    console.log(postsCarousel);
-    console.log(data);
+
     return (
         <div className="dst_intro">
             <div className="shinobi_img_box" style={{backgroundImage:"url('/images/digital-shinobi-traveler-cinque-terre-riomaggiare.jpg')"}}></div>
