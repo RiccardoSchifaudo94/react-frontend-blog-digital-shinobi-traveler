@@ -87,6 +87,10 @@
             "not_found":"Not results found!"
         }
     ],
+    "post":[{
+        "nav_btn_prev":"Prev Post",
+        "nav_btn_next":"Next Post"
+    }],
     "postgallery":[{
         "label_btn_read":"Read More"
     }],

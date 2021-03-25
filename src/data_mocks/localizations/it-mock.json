@@ -96,6 +96,10 @@
             "not_found":"Nessun risultato trovato!"
         }
     ],
+    "post":[{
+        "nav_btn_prev":"Precedente articolo",
+        "nav_btn_next":"Prossimo articolo"
+    }],
     "postgallery":[{
         "label_btn_read":"Leggi qui"
     }],

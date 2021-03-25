@@ -296,13 +296,14 @@ body{
 }
 .dst_nav_post_gallery button{
     background: #02002f;
-    padding: 5px 10px;
-    font-size: 18px;
+    padding: 7px 12px;
+    font-size: 16px;
     border-radius: 4px;
     border: 0;
     border-bottom: 3px solid #030514;
     color: #ffffff;
     outline: none;
+    font-weight: 500;
 }
 .dst_nav_post_gallery button i{
     color: #fff;

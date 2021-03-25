@@ -166,8 +166,8 @@ export default function Post({data,totalPosts}) {
                                         </div>
                                         <Carousel data={data} posts={postsCarousel} setTitle={true}/>
                                         <div className="dst_nav_post_gallery">
-                                            {(showPrevNavPost)&&(<button className="dst_nav_post_prev" onClick={()=>{setCounterNavPosts(counterNavPosts - 1)}}><i className="fa fa-arrow-left"></i>{" "}Prev Post</button>)}
-                                            {(showNextNavPost)&&(<button className="dst_nav_post_next" onClick={()=>{setCounterNavPosts(counterNavPosts + 1)}}>Next Post{" "}<i className="fa fa-arrow-right"></i></button>)}
+                                            {(showPrevNavPost)&&(<button className="dst_nav_post_prev" onClick={()=>{setCounterNavPosts(counterNavPosts - 1)}}><i className="fa fa-arrow-left"></i>{" "}{data.post[0].nav_btn_prev}</button>)}
+                                            {(showNextNavPost)&&(<button className="dst_nav_post_next" onClick={()=>{setCounterNavPosts(counterNavPosts + 1)}}>{data.post[0].nav_btn_next}{" "}<i className="fa fa-arrow-right"></i></button>)}
                                         </div>
                                     </div>
                                     {(showLightBox)&&(<LightBox url={urlLightBox} slideGallery={slideGallery}/>)}
