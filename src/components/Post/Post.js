@@ -71,7 +71,7 @@ export default function Post({data,posts}) {
                 openLightBox(this.src);
                 document.querySelector(".dst_lightbox i").addEventListener("click",function(){
                     setShowLightBox(false);
-                    document.body.style.overflow = 'scroll';
+                    document.body.style.overflow = 'unset';
                 })
             })
         }

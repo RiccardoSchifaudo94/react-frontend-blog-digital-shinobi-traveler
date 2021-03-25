@@ -17,8 +17,8 @@ export default function PostGallery({data,posts,spinner}) {
                                         <article key={post.id}>
                                             <Link to={`/post/${post.slug}`}>
                                                 <h1>{utilObj.stripHtml(post.title.rendered)}</h1>
-                                                <img src={post._embedded['wp:featuredmedia']['0'].source_url} alt="shinobi-post"/>
-                                                <div>{utilObj.trimString(utilObj.stripHtml(post.excerpt.rendered),250)}{"..."}</div>
+                                                <div className="dst_post_image_box" style={{backgroundImage:`url(${post._embedded['wp:featuredmedia']['0'].source_url})`}}></div>
+                                                <div className="dst_post_text">{utilObj.trimString(utilObj.stripHtml(post.excerpt.rendered),250)}{"..."}</div>
                                                 <button>{data.postgallery[0].label_btn_read}</button>
                                             </Link>
                                         </article>

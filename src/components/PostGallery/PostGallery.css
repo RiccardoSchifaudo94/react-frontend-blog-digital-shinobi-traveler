@@ -61,3 +61,29 @@ height: auto;
 width: 100%;
 margin: 20px auto;
 }
+.dst_post_image_box {
+    min-height: 300px;
+    max-width: 500px;
+    width:100%;
+    height: auto;
+    margin: 30px auto;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.dst_post_image_box:after {
+    position: absolute;
+    z-index: 2;
+    width: inherit;
+    content: "";
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1%, rgba(0, 0, 0, 0.2) 26%, rgba(0, 0, 0, 0.5) 50%, black 90%);
+    height: inherit;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.dst_post_text{
+    max-width:500px;
+    margin:0 auto;
+}
