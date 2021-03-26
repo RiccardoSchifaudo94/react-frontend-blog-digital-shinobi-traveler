@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useParams, Link, Redirect, useHistory } from 'react-router-dom';
+import { useParams , Redirect, useHistory } from 'react-router-dom';
 import Parser from 'html-react-parser';
 
 import UtilityObj from '../../utils/UtilityObj';
@@ -44,7 +44,8 @@ export default function Post({data,totalPosts}) {
     const get_posts_carousel = async(single_post) => {
         const res_carousel = await fetch(process.env.REACT_APP_API_URL+`posts?_embed&lang=${data.lang}&categories=${single_post[0].categories[0]}`);
         await res_carousel.json().then((data)=>{
-            setPostsCarousel(data);
+            let carousel_data_without_current_post = data.filter((x)=>x.slug!==slug)
+            setPostsCarousel(carousel_data_without_current_post);
         }).catch((err)=>console.log(err));
     }
 

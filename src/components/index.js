@@ -6,6 +6,7 @@ export  { default as Footer } from './Footer/Footer';
 export  { default as NotFound } from './NotFound/NotFound';
 export  { default as Search } from './Search/Search';
 export  { default as Sidebar } from './Sidebar/Sidebar';
+export  { default as SocialShare } from './SocialShare/SocialShare';
 export  { default as Spinner } from './Spinner/Spinner';
 export  { default as Post } from './Post/Post';
 export  { default as Page } from './Page/Page';
