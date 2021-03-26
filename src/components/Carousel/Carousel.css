@@ -123,11 +123,11 @@
     .dst_carousel_nav{
         background-color: #dedede;
         height: 50px;
-        padding: 10px 0;
+        padding: 10px 0!important;
         position: absolute;
         left: 0;
         right: 0;
         max-width: 300px;
-        margin: 0 auto;
+        margin: 0 auto!important;
     }
 }

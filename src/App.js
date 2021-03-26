@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search, Sidebar, Intro } from "./components";
+import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search, Intro } from "./components";
 import {
   BrowserRouter as Router,
   Switch,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from '../../components';
+import { Carousel, ProgressBar } from '../../components';
 
 import './Intro.css';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ export default function Intro({data,postsCarousel}) {
 
     return (
         <div className="dst_intro">
+            <ProgressBar/>
             <div className="shinobi_img_box" style={{backgroundImage:"url('/images/digital-shinobi-traveler-cinque-terre-riomaggiare.jpg')"}}></div>
             <div className="shinobi_bio">
                     <p>{data.intro[0].shinobi_bio_text_1}</p>

@@ -1,0 +1,23 @@
+
+.dst_progress_bar_container {
+    position: fixed;
+    z-index: 10;
+    background: rgba(255,255,255,0.05);
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+  
+  
+.dst_progress_bar {
+    background: linear-gradient(to left,#0f7ca6,#02002f);
+    transform-origin: top left;
+    transform: scale(0,0);
+    opacity: 0;
+}
+
+.dst_progress_bar_container,
+.dst_progress_bar {
+    height: 10px;
+}

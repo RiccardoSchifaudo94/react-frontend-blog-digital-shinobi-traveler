@@ -3,7 +3,7 @@ import { useParams, Link, Redirect, useHistory } from 'react-router-dom';
 import Parser from 'html-react-parser';
 
 import UtilityObj from '../../utils/UtilityObj';
-import { Carousel, LightBox, Spinner } from '../../components';
+import { Carousel, LightBox, Spinner, ProgressBar } from '../../components';
 import './Post.css';
 
 
@@ -161,6 +161,7 @@ export default function Post({data,totalPosts}) {
                                         )
                                     }
                                     <div className="container">
+                                        <ProgressBar/>
                                         <div className="dst_blog_post" id="dst_blog_post" onLoad={prepareLightBoxesImages}>
                                             { Parser(post[0].content.rendered) }
                                         </div>
