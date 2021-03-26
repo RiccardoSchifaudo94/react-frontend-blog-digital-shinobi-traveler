@@ -2,12 +2,12 @@
     height: auto;
     max-width: 600px;
     overflow-x: hidden;
-    margin: 30px auto 100px;
+    margin: 30px auto 100px!important;
     width: 100%;
     border-top: 1px solid #c1c1c1;
     border-bottom: 1px solid #c1c1c1;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding-top: 20px!important;
+    padding-bottom: 40px!important;
 }
 .dst_carousel h2{
     font-family: "Raleway",sans-serif;
@@ -34,7 +34,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height:120%;
-    padding-top: 30px;
+    padding: 30px 20px 0;
 }
 .dst_carousel_item{
     width: 190px;

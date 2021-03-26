@@ -64,7 +64,7 @@ export default function Carousel({data,posts, autoplay = false, width=200, gutte
                         {posts.map((post)=>(
                             <li key={post.id}>
                                 <a href={`/post/${post.slug}`}>
-                                    <div className="dst_carousel_item" style={{backgroundImage:`url(${post.images.medium})`,width:`${(width_item - gutter) }px`,marginLeft:`${(gutter/2)}px`,marginRight:`${(gutter/2)}`}}>
+                                    <div className="dst_carousel_item" style={{backgroundImage:`url(${post.images.medium})`,width:`${(width_item - gutter) }px`,marginLeft:`${(gutter/2)}px`,marginRight:`${(gutter/2)}px`}}>
                                         <h3>{utilObj.trimString(utilObj.stripHtml(post.title.rendered),70)}</h3>
                                         <button>{data.carousel[0].label_btn_read}</button>
                                     </div>

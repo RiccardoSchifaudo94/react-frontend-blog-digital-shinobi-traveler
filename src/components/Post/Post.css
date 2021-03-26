@@ -284,6 +284,32 @@ body{
 .shinobi_sub_section i{
     color: #ffffff;
 }
+.shinobi_banner_sponsor {
+    background-color: #dedede;
+    padding: 30px;
+    text-align: center;
+    margin: 30px auto;
+    border-radius: 4px;
+}
+.shinobi_banner_sponsor i {
+    display: block;
+    font-size: 40px;
+    color: #02002f;
+    margin-bottom: 20px;
+}
+.shinobi_banner_sponsor strong {
+    font-size: 18px;
+    color: #444;
+    font-weight: 600;
+}
+.shinobi_banner_sponsor h4{
+    font-size: 24px;
+    line-height:120%;
+}
+.shinobi_banner_sponsor p{
+    line-height: 100%;
+    font-size:18px;
+}
 .dst_blog_post pre.wp-block-code {
     overflow: scroll;
     text-align: left;
