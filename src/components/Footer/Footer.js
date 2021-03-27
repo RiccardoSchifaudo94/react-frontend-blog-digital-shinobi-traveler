@@ -17,7 +17,7 @@ export default function Footer({data}) {
                         <a href={data.footer[0].social_urls.twitter} target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
                 </div>
                 {
-                    (data.footer[0].items.lenght!=0)
+                    (data.footer[0].items.lenght!==0)
                     &&(
                         <div className="dst_footer_nav_menu">
                         

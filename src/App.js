@@ -98,7 +98,7 @@ function App() {
 
   useEffect(() => {
     get_posts(1);
-  }, []);
+  });
   
   return (
     <Router>

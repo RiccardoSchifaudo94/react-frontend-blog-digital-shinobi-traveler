@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Link, useLocation, useHistory} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import UtilityObj from './../../utils/UtilityObj';
 import {Sidebar} from '../../components';
 import "./Header.css";
@@ -17,8 +17,6 @@ export default function Header({data, selectLang, isMobile}) {
     const scrollToTop = () => utilObj.scrollToTop();
 
     const location = useLocation();
-    const history = useHistory();
-
 
     useEffect(()=>{
         if(location.pathname!=='/search'){

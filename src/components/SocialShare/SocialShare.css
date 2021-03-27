@@ -1,0 +1,21 @@
+.dst_socials_section {
+    display: flex!important;
+    justify-content: center;
+    padding-top: 10px;
+}
+.dst_socials_section div{
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+.dst_socials_section a{
+    text-decoration: none;
+}
+.dst_socials_section div i {
+    animation: none;
+    font-size: 24px;
+}

@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import {useParams, Redirect, Link, useLocation} from 'react-router-dom';
+import {useParams, Redirect, useLocation} from 'react-router-dom';
 import Parser from 'html-react-parser';
 
 import UtilityObj from '../../utils/UtilityObj';
