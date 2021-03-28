@@ -107,7 +107,9 @@
     float: left;
     display: none;
 }
-
+.dst_img_section_article{
+    background-position: center bottom;
+}
 @media screen and (max-width:768px){
     .shinobi_about_me{
         padding-bottom:100px;
