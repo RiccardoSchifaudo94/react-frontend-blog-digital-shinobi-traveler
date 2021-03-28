@@ -62,6 +62,7 @@ function App() {
     setData(data);
     setSpinner(true);
     get_posts(1);
+    setCurrentPage(1);
     localStorage.setItem('lang',selected_lang);
   }
 
@@ -98,7 +99,7 @@ function App() {
 
   useEffect(() => {
     get_posts(1);
-  });
+  }, []);
   
   return (
     <Router>

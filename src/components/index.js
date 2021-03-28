@@ -5,6 +5,7 @@ export  { default as LightBox } from './LightBox/LightBox';
 export  { default as Footer } from './Footer/Footer';
 export  { default as NotFound } from './NotFound/NotFound';
 export  { default as Search } from './Search/Search';
+export  { default as Slider } from './Slider/Slider';
 export  { default as Sidebar } from './Sidebar/Sidebar';
 export  { default as SocialShare } from './SocialShare/SocialShare';
 export  { default as Spinner } from './Spinner/Spinner';

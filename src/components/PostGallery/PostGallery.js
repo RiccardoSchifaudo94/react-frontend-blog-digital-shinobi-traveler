@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-
+import data_carousel_ita from '../../data_mocks/carousel_mock/it-mock.json'
 import UtilityObj from '../../utils/UtilityObj';
-import { Spinner } from '../../components';
+import { Spinner, Slider } from '../../components';
 import './PostGallery.css';
 
 export default function PostGallery({data,posts,spinner}) {
     const utilObj = new UtilityObj();
     return (
         <div className="dst_post">
+            <Slider slides={data_carousel_ita} data={data}></Slider>
             <div className="container">
                 { (spinner) 
                     ? (<Spinner/>)

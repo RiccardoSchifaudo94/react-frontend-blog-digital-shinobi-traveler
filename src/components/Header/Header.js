@@ -40,18 +40,18 @@ export default function Header({data, selectLang, isMobile}) {
                     <li className="ds_header_mobile_item"><Link to="/"><i className="fa fa-angle-left" style={{fontWeight:"900",fontSize:"20px"}}></i></Link></li>
                         <li className="ds_header_mobile_item" onClick={()=>{setShowSidebar(!showSidebar);}}><a><i className="fa fa-reorder"></i></a></li>
                         { data.header[0].items.map((item,key)=>(<li key={key} className="ds_header_desktop_item"><a rel="noreferrer" href={item.url}>{item.text}</a></li>)) }
-                        <li>
-                            <select className="dst_select_lang" value={data.lang} onChange={(e)=>selectLang(e.target.value)}>
-                                <option value="it">Ita</option>
-                                <option value="en">Eng</option>
-                            </select>
-                        </li>
                         <li onClick={()=>{setShowSearchBar(!showSearchBar);}}>
                             {
                                 showSearchBar 
                                 ?(<Link to="/"><i className="fa fa-times"></i></Link>)
                                 :(<Link to="/search"><i className="fa fa-search"></i></Link>)
                             }
+                        </li>
+                        <li>
+                            <select className="dst_select_lang" value={data.lang} onChange={(e)=>selectLang(e.target.value)}>
+                                <option value="it">Ita</option>
+                                <option value="en">Eng</option>
+                            </select>
                         </li>
                     </ul>
                 </div>

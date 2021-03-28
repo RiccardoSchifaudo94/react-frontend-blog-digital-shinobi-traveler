@@ -214,7 +214,8 @@ body{
     padding-top: 56.25%;
     margin-bottom: 30px;
 }
-.dst_blog_post figure .wp-block-embed__wrapper iframe{
+.dst_blog_post figure .wp-block-embed__wrapper iframe,
+{
     position: absolute;
     top: 0;
     left: 0;
@@ -334,7 +335,7 @@ body{
 	}
 }
 @media screen and (max-width:468px){
-    iframe{
+    iframe, video{
         max-width:300px;
     }
 }
