@@ -32,7 +32,6 @@ export default function Slider({slides,data}) {
     }
    
     function initSlider(shift){
-        console.log(items);
         let slider = document.querySelector(".dst_slider_container");
         let i = 0;
         setInterval(function(){
@@ -58,13 +57,15 @@ export default function Slider({slides,data}) {
                 <ul className="dst_slider_container" style={{width:`${detectWidth()}px`}}>
                     {
                         slides.map((slide,key)=>(
-                                        <li key={key} className="dst_slider_item" style={{width:`${detectWidth()}px`,backgroundImage:`url(${slide.images.large})`}}>
+                                   
+                                        <li className="dst_slider_item" key={key} style={{width:`${detectWidth()}px`,backgroundImage:`url(${slide.images.large})`}}>
                                             <div className="dst_slider_item_info_box">
                                                 <h1>{utilObj.stripHtml(slide.title.rendered)}</h1>
                                                 <span>{utilObj.formatDate(slide.date, data.lang)}</span>
-                                                <button>Read More</button>
+                                                <a href={`/post/${slide.slug}`}><button>Read More</button></a>
                                             </div>
                                         </li>
+                                    
                                     )
                         )
                     }

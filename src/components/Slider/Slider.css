@@ -5,6 +5,7 @@
     box-shadow: 4px 4px 4px #acacac;
     overflow-x: hidden;
 }
+
 .dst_slider_container{
     list-style-type: none;
     display: -webkit-inline-box;
@@ -45,6 +46,25 @@
     text-align:center;
     color: #fff;
 }
+.dst_slider_item_info_box h1{
+    line-height: 100%;
+    font-size: 32px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.dst_slider_item_info_box h1:after{
+    content: " ";
+    display: block;
+    height: 3px;
+    width: 90px;
+    background: linear-gradient( -45deg, #02002f ,#0f97cb );
+    margin-top: 15px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
 .dst_slider_item_info_box button{
     padding: 10px 20px;
     background: #02002f;
@@ -52,7 +72,7 @@
     font-size: 16px;
     font-family: "Raleway",sans-serif;
     font-weight: 400;
-    border-bottom: 3px solid #030314;
+    border-bottom: 3px solid #030314!important;
     outline: none;
     border-radius: 4px;
     margin: 30px auto;

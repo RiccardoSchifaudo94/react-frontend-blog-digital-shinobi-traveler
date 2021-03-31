@@ -43,8 +43,8 @@ export default function Post({data,totalPosts}) {
    
     const get_posts_carousel = async(single_post) => {
         const res_carousel = await fetch(process.env.REACT_APP_API_URL+`posts?_embed&lang=${data.lang}&categories=${single_post[0].categories[0]}`);
-        await res_carousel.json().then((data)=>{
-            let carousel_data_without_current_post = data.filter((x)=>x.slug!==slug)
+        await res_carousel.json().then((response)=>{
+            let carousel_data_without_current_post = response.filter((x)=>x.slug!==slug);
             setPostsCarousel(carousel_data_without_current_post);
         }).catch((err)=>console.log(err));
     }
@@ -69,7 +69,7 @@ export default function Post({data,totalPosts}) {
             await res_next_post.json().then((data)=>{
                 history.push(data[0].slug);
                 utilObj.scrollToTop();
-                setPost(data);
+                setPost(data);   
                 get_posts_carousel(data);
                 setIsFetching(false);
             }).catch((err)=>console.log(err));  
@@ -95,6 +95,11 @@ export default function Post({data,totalPosts}) {
         get_nav_post();
     },[counterNavPosts]);
    
+    useEffect(()=>{
+       console.log("new post");
+       console.log(post[0]);
+    },[post]);
+
     const openLightBox = (url) =>{
         setUrlLightBox(url);
         setShowLightBox(true);

@@ -3,7 +3,7 @@ import './Carousel.css';
 import UtilityObj from './../../utils/UtilityObj';
 
 export default function Carousel({data,posts, autoplay = false, width=200, gutter=10, setTitle=false}) {
-   
+
     const isMobile = () =>{
         if(window.screen.width<468)
             return true;
