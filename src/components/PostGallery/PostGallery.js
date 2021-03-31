@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 import UtilityObj from '../../utils/UtilityObj';
@@ -8,6 +8,10 @@ import './PostGallery.css';
 export default function PostGallery({data,posts,spinner}) {
 
     const utilObj = new UtilityObj();
+
+    useState(()=>{
+        utilObj.scrollToTop();
+    },[]);
     
     return (
         <div className="dst_post">

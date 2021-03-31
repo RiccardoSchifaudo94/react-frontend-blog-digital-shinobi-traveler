@@ -113,11 +113,11 @@ function App() {
           <Route path="/blog">
             <Slider data={data} slides={postSlider}/>
             <div style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
-            <div style={{width:"65%"}}>
+            <div style={{width:"70%"}}>
               <PostGallery data={data} posts={posts} spinner={spinner}/>
               <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
             </div>
-            <div  style={{width:"35%"}}>
+            <div  style={{width:"30%"}}>
               <Widget data={data} lastPosts={postSlider}/>
             </div>
             </div>

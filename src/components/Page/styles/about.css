@@ -60,6 +60,11 @@
     text-align:center;
     position:relative;
 }
+.shinobi_about_me.wp-block-column,
+.shinobi_diabolist.wp-block-column,
+.shinobi_traveler.wp-block-column{
+    max-width: 600px!important;
+}
 .shinobi_about_me h2 strong,
 .shinobi_diabolist h2 strong,
 .shinobi_traveler h2 strong,

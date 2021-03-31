@@ -118,7 +118,7 @@ body{
 .dst_blog_post h4 strong
 .dst_blog_post h5 strong,
 .dst_blog_post h6 strong{
-    font-size:30px;
+    font-size:30px!important;
 }
 .dst_blog_post img{
     max-width: 400px;
