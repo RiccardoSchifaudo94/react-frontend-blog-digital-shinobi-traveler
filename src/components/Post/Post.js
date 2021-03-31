@@ -63,8 +63,9 @@ export default function Post({data,totalPosts}) {
                 setShowNextNavPost(false);
             
             setIsFetching(true);
+            
             let url_next_post = process.env.REACT_APP_API_URL+`posts?_embed&lang=${data.lang}&per_page=1&page=${counterNavPosts}`;
-            console.log(url_next_post);
+    
             const res_next_post = await fetch(url_next_post);  
             await res_next_post.json().then((data)=>{
                 history.push(data[0].slug);
@@ -95,11 +96,6 @@ export default function Post({data,totalPosts}) {
         get_nav_post();
     },[counterNavPosts]);
    
-    useEffect(()=>{
-       console.log("new post");
-       console.log(post[0]);
-    },[post]);
-
     const openLightBox = (url) =>{
         setUrlLightBox(url);
         setShowLightBox(true);

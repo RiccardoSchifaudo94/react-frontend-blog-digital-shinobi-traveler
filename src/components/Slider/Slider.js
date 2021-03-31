@@ -6,7 +6,7 @@ export default function Slider({slides,data}) {
 
     const utilObj = new UtilityObj();
 
-    const [items,setItems] = useState(slides.length);
+    const [items] = useState(slides.length);
 
     const detectWidth = () =>{
         let get_width = window.innerWidth 
@@ -15,7 +15,7 @@ export default function Slider({slides,data}) {
         return get_width;
     }
 
-    const [shift,setShift] = useState(detectWidth());
+    const [shift] = useState(detectWidth());
     
     function resizeSlider(){
         //future implementation

@@ -15,7 +15,7 @@ export default function Intro({data,postsCarousel}) {
                     <p>{data.intro[0].shinobi_bio_text_2}</p>
                     <p>{data.intro[0].shinobi_bio_text_3}</p>
                     <p>{data.intro[0].shinobi_bio_text_4}</p>
-                    <Link to={data.header[0].items[2].url}><button>{data.intro[0].shinobi_bio_label_btn}<i class="fa fa-address-card-o"></i></button></Link>
+                    <Link to={data.header[0].items[2].url}><button>{data.intro[0].shinobi_bio_label_btn}<i className="fa fa-address-card-o"></i></button></Link>
             </div>
             <div className="shinobi_divider_splash"></div>
             <div className="shinobi_introduction">
@@ -34,7 +34,7 @@ export default function Intro({data,postsCarousel}) {
                     </div>
             </div>	
             <br/>
-            <div class="shinobi_start_splash">
+            <div className="shinobi_start_splash">
                 <div className="container">
                     <h2>{data.intro[0].shinobi_start_splash_heading_1}</h2>
                             <div className="dst_intro_row">
@@ -53,7 +53,7 @@ export default function Intro({data,postsCarousel}) {
                                         <a href="https://www.facebook.com/DigitalShinobiTraveler/">
                                             <button>
                                                 {data.intro[0].shinobi_start_splash_follow_label_btn} 
-                                                <i class="fa fa-thumbs-up"></i>
+                                                <i className="fa fa-thumbs-up"></i>
                                             </button>
                                         </a>
                                         <hr/>
@@ -146,8 +146,8 @@ export default function Intro({data,postsCarousel}) {
 						</div>
 						<div className="dst_intro_col_6">
 							<ul>
-                                {data.intro[0].shinobi_info_graphics.map((item)=>(
-                                    <li>
+                                {data.intro[0].shinobi_info_graphics.map((item, key)=>(
+                                    <li key={key}>
                                         <label>
                                             <i className={item.icon}></i>
                                             <strong>{item.title}</strong>
