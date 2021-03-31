@@ -9,6 +9,7 @@
   color: #444;
   font-size: 18px;
   line-height: 1.65;
+  user-select: none;
 }
 
 ::-webkit-scrollbar-thumb {

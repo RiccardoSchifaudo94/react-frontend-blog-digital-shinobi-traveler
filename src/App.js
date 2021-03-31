@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search, Intro } from "./components";
+import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search, Intro, Slider, Widget } from "./components";
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,6 +19,7 @@ import posts_carousel_en from './data_mocks/carousel_mock/en-mock.json';
 function App() {
   
   const [posts, setPosts] = useState([]);
+  const [postSlider, setPostSlider] = useState([]);
   const [spinner,setSpinner] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage]  = useState(10);
@@ -80,6 +81,7 @@ function App() {
 
     await res.json().then((data)=>{
       setPosts(data);
+      if(id===1) setPostSlider(data.slice(0,5));
     });
     
     setSpinner(false); 
@@ -109,8 +111,16 @@ function App() {
             <Intro data={data} postsCarousel={postsCarousel}/>
           </Route>
           <Route path="/blog">
-            <PostGallery data={data} posts={posts} spinner={spinner}/>
-            <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
+            <Slider data={data} slides={postSlider}/>
+            <div style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
+            <div style={{width:"65%"}}>
+              <PostGallery data={data} posts={posts} spinner={spinner}/>
+              <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
+            </div>
+            <div  style={{width:"35%"}}>
+              <Widget data={data} lastPosts={postSlider}/>
+            </div>
+            </div>
           </Route>
           <Route path="/page/:slug">
             <Page data={data}/>

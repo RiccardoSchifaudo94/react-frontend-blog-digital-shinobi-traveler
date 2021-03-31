@@ -79,3 +79,6 @@
     border: none;
     cursor: pointer;
 }
+.dst_slider_item_info_box a{
+    text-decoration: none;
+}

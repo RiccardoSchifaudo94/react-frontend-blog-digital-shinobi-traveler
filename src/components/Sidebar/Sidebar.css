@@ -12,6 +12,7 @@
     border-right:3px solid #dedede;
     box-shadow: 3px 4px 3px #c1c1c1;
     transition:0.4s ease-in-out;
+    overflow-y: scroll;
 }
 .dst_sidebar_open{
     left: 0px !important;

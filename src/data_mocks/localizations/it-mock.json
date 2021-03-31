@@ -8,26 +8,31 @@
                 {   
                     "text":"Home", 
                     "url":"/",
+                    "type":"url",
                     "css":null
                 },
                 {   
                     "text":"Blog", 
                     "url":"/blog/",
+                    "type":"link",
                     "css":null
                 },
                 {   
                     "text":"Su di me",
                     "url":"/page/su-di-me/",
+                    "type":"url",
                     "css":"about"
                 },
                 {   
                     "text":"Missione",
                     "url":"/page/filosofia-del-dojo/",
+                    "type":"url",
                     "css":"mission"
                 },
                 {   
                     "text":"Contattami",
                     "url":"/page/contattami/",
+                    "type":"url",
                     "css":"contacts"
                 }
             ]

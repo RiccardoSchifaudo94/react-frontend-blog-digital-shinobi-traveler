@@ -55,6 +55,10 @@
     border-bottom-right-radius: 4px;
     margin-top: 20px;
 }
+.shinobi_bio button i{
+    color:#fff;
+    margin-left:10px;
+} 
 .shinobi_bio p {
     color: #fff;
     font-weight: 400;
@@ -362,6 +366,10 @@ form.shinobi_search_article label {
 .shinobi_img_box button:hover,
 .shinobi_top_menu:hover {
     box-shadow: inset 0 0 0 50px #0f97cb!important;
+}
+.shinobi_img_box button i{
+    color: #fff;
+    margin-left:10px;
 }
 .shinobi_biography_block {
     border-bottom:1px solid #151515;

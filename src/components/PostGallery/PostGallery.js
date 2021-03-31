@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import UtilityObj from '../../utils/UtilityObj';
-import { Spinner, Slider } from '../../components';
+import { Spinner } from '../../components';
 import './PostGallery.css';
 
 export default function PostGallery({data,posts,spinner}) {
@@ -14,7 +14,6 @@ export default function PostGallery({data,posts,spinner}) {
                 { (spinner) 
                     ?(<Spinner/>)
                     :( <div>
-                        <Slider data={data} slides={posts.slice(0,5)}/>
                         <div className="container">
                         {
                             posts.map(

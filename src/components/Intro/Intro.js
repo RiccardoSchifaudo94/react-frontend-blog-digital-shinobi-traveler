@@ -15,7 +15,7 @@ export default function Intro({data,postsCarousel}) {
                     <p>{data.intro[0].shinobi_bio_text_2}</p>
                     <p>{data.intro[0].shinobi_bio_text_3}</p>
                     <p>{data.intro[0].shinobi_bio_text_4}</p>
-                    <Link to={data.header[0].items[2].url}><button>{data.intro[0].shinobi_bio_label_btn}<i className="fa fa-address-card-o"></i></button></Link>
+                    <Link to={data.header[0].items[2].url}><button>{data.intro[0].shinobi_bio_label_btn}<i class="fas fa-address-card"></i></button></Link>
             </div>
             <div className="shinobi_divider_splash"></div>
             <div className="shinobi_introduction">
@@ -174,7 +174,7 @@ export default function Intro({data,postsCarousel}) {
                 </div>
             </div>
             <div className="shinobi_img_box" style={{backgroundImage:"url('images/ricky-amsterdam.jpg')",backgroundPosition:"center"}}>
-            <Link to={data.header[0].items[1].url}><button>{data.intro[0].shinobi_section_4_label_btn}</button></Link>
+            <Link to={data.header[0].items[1].url}><button>{data.intro[0].shinobi_section_4_label_btn} <i class="fas fa-door-open"></i></button></Link>
             </div>
             <div className="shinobi_divider_splash"></div>
         </div>

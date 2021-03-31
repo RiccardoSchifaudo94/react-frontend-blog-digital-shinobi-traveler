@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 export default function Sidebar({data, showSidebar}) {
@@ -22,7 +23,7 @@ export default function Sidebar({data, showSidebar}) {
             </div>
             <hr/>
             <ul>
-                { data.header[0].items.map((item,key)=>(<li key={key}><a rel="noreferrer" href={item.url}>{item.text}</a></li>)) }
+                { data.header[0].items.map((item,key)=>(<li key={key} onClick={()=>{document.querySelector(".dst_sidebar").classList.remove("dst_sidebar_open");}}>{(item.type==='link')?(<Link to={`${item.url}`}>{item.text}</Link>):(<a rel="noreferrer" href={item.url}>{item.text}</a>)}</li>)) }
             </ul>
             <hr/>
             <div className="dst_sidebar_icon_socials">

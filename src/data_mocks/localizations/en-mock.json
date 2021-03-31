@@ -8,26 +8,31 @@
                 {   
                     "text":"Home", 
                     "url":"/",
+                    "type":"url",
                     "css":null
                 },
                 {   
                     "text":"Blog", 
                     "url":"/blog",
+                    "type":"link",
                     "css":null
                 },
                 {   
                     "text":"About me",
                     "url":"/page/about-me",
+                    "type":"url",
                     "css":"about"
                 },
                 {   
                     "text":"Mission",
                     "url":"/page/dojo-philosophy",
+                    "type":"url",
                     "css":"mission"
                 },
                 {   
                     "text":"Contacts",
                     "url":"/page/contacts/",
+                    "type":"url",
                     "css":"contacts"
                 }
             ]
