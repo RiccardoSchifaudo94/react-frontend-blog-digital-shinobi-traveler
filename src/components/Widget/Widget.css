@@ -72,8 +72,3 @@
     color: #fff;
     font-size: 20px;
 }
-@media screen and (max-width:468px){
-    .dst_widget{
-        display: none;
-    }
-}

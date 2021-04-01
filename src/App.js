@@ -131,7 +131,7 @@ function App() {
             <Page data={data}/>
           </Route>
           <Route path="/post/:slug">
-            <Post data={data} totalPosts={totalPosts}/>
+            <Post data={data} totalPosts={totalPosts} lastPosts={postSlider}/>
           </Route>
           <Route path='/search'>
             <Search statusSearchBar={statusSearchBar} data={data}/>

@@ -3,13 +3,13 @@ import { useParams, Redirect, useHistory } from 'react-router-dom';
 import Parser from 'html-react-parser';
 
 import UtilityObj from '../../utils/UtilityObj';
-import { Carousel, LightBox, Spinner, ProgressBar, SocialShare } from '../../components';
+import { Carousel, LightBox, Spinner, ProgressBar, SocialShare, Widget } from '../../components';
 import { GridContainer } from '../../containers';
 
 import './Post.css';
 
 
-export default function Post({data,totalPosts}) {
+export default function Post({data,totalPosts, lastPosts = []}) {
     
     let { slug } = useParams();
     const [post, setPost] = useState([]);
@@ -140,14 +140,21 @@ export default function Post({data,totalPosts}) {
                                     }
                                     <GridContainer.Container>
                                         <ProgressBar/>
-                                        <div className="dst_blog_post" id="dst_blog_post" onLoad={prepareLightBoxesImages}>
-                                            { Parser(post[0].content.rendered) }
-                                        </div>
-                                        <Carousel data={data} posts={postsCarousel} setTitle={true}/>
-                                        <div className="dst_nav_post_gallery">
-                                            {(showPrevNavPost)&&(<button className="dst_nav_post_prev" onClick={()=>{setCounterNavPosts(counterNavPosts - 1)}}><i className="fa fa-arrow-left"></i>{" "}{data.post[0].nav_btn_prev}</button>)}
-                                            {(showNextNavPost)&&(<button className="dst_nav_post_next" onClick={()=>{setCounterNavPosts(counterNavPosts + 1)}}>{data.post[0].nav_btn_next}{" "}<i className="fa fa-arrow-right"></i></button>)}
-                                        </div>
+                                        <GridContainer.Row>
+                                            <GridContainer.Col size={8}>
+                                                <div className="dst_blog_post" id="dst_blog_post" onLoad={prepareLightBoxesImages}>
+                                                    { Parser(post[0].content.rendered) }
+                                                </div>
+                                                <Carousel data={data} posts={postsCarousel} setTitle={true}/>
+                                                <div className="dst_nav_post_gallery">
+                                                    {(showPrevNavPost)&&(<button className="dst_nav_post_prev" onClick={()=>{setCounterNavPosts(counterNavPosts - 1)}}><i className="fa fa-arrow-left"></i>{" "}{data.post[0].nav_btn_prev}</button>)}
+                                                    {(showNextNavPost)&&(<button className="dst_nav_post_next" onClick={()=>{setCounterNavPosts(counterNavPosts + 1)}}>{data.post[0].nav_btn_next}{" "}<i className="fa fa-arrow-right"></i></button>)}
+                                                </div>
+                                            </GridContainer.Col>
+                                            <GridContainer.Col size={4}>
+                                                <Widget data={data} lastPosts={lastPosts} />
+                                            </GridContainer.Col>
+                                        </GridContainer.Row>
                                     </GridContainer.Container>
                                     {(showLightBox)&&(<LightBox url={urlLightBox} slideGallery={slideGallery}/>)}
                                 </GridContainer.Row>

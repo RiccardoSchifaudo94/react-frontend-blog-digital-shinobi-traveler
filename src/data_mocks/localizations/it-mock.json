@@ -182,5 +182,14 @@
             "shinobi_title_section_4":"Dai su, cosa aspetti?",
             "shinobi_section_4_label_btn":"Entra nel Blog!"
         }
-    ]
+    ],
+    "widget":[{
+        "shinobi_widget_label_1_title":"Digital Shinobi",
+        "shinobi_widget_label_2_title":"Chi Sono",
+        "shinobi_widget_label_2_text_1":"Ciao, sono Riccardo Schifaudo, creatore del blog di “The Shinobi Arts of Eccentricity”.",
+        "shinobi_widget_label_2_text_2":"Ho fondato questo blog per divulgare le mie tecniche personali di filosofia ninja applicata alla tecnologia per diventare smart nei viaggi, nella vita quotidiana tramite le forme di apprendimento alternativo.",
+        "shinobi_widget_label_2_text_3":"Leggendo le mie esperienze personali potrete diventare esperti nell’arte marziale del ninja digitale.",
+        "shinobi_widget_label_3_title":"Seguimi su Facebook",
+        "shinobi_widget_label_4_title":"Le ultime dal Dojo"
+    }]
 }
