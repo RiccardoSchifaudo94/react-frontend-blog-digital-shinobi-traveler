@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Carousel, ProgressBar } from '../../components';
-import {GridContainer} from '../../containers';
+import { GridContainer } from '../../containers';
 
 import './Intro.css';
 

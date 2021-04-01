@@ -27,10 +27,10 @@ export default function Sidebar({data, showSidebar}) {
             </ul>
             <hr/>
             <div className="dst_sidebar_icon_socials">
-                        <a href={data.footer[0].social_urls.linkedin} target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
-                        <a href={data.footer[0].social_urls.facebook} target="_blank" rel="noreferrer"><i className="fa fa-facebook-f"></i></a>
-                        <a href={data.footer[0].social_urls.instagram} target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
-                        <a href={data.footer[0].social_urls.twitter} target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
+                        <a href={data.footer[0].social_urls[0].linkedin} target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
+                        <a href={data.footer[0].social_urls[0].facebook} target="_blank" rel="noreferrer"><i className="fa fa-facebook-f"></i></a>
+                        <a href={data.footer[0].social_urls[0].instagram} target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+                        <a href={data.footer[0].social_urls[0].twitter} target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
             </div>
         </div>
     )

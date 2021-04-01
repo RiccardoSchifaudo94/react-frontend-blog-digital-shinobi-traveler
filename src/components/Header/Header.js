@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import UtilityObj from './../../utils/UtilityObj';
 import {Sidebar} from '../../components';
-import {GridContainer} from '../../containers';
+import { GridContainer } from '../../containers';
 import "./Header.css";
 
 

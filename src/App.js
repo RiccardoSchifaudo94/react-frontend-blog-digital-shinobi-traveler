@@ -117,11 +117,11 @@ function App() {
             <Slider data={data} slides={postSlider}/>
             <GridContainer.Row>
                 <GridContainer.Container>
-                  <GridContainer.Col size={7}>
+                  <GridContainer.Col size={7} align="center">
                     <PostGallery data={data} posts={posts} spinner={spinner}/>
                     <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
                   </GridContainer.Col>
-                  <GridContainer.Col size={5}>
+                  <GridContainer.Col size={5} align="center">
                     <Widget data={data} lastPosts={postSlider}/>
                   </GridContainer.Col>
                 </GridContainer.Container>

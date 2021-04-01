@@ -1,7 +1,9 @@
 import React,{ useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Pagination,PostGallery,Spinner } from './../../components'
+import { Pagination,PostGallery,Spinner } from './../../components';
+import { GridContainer } from '../../containers';
+
 import './Search.css';
 
 export default function Search({statusSearchBar, data}) {
@@ -105,54 +107,57 @@ export default function Search({statusSearchBar, data}) {
 
     return (
         (statusSearchBar)&&(
-        <div className="dst_search_bar">
-            <div className="container">
-                <h1>{data.searchbar[0].title}</h1>
-                <input type="text" 
-                       value={searchQuery} 
-                       onChange={
-                                    (e) =>  
-                                            {
-                                                setSearchQuery(e.target.value); 
-                                                disableSearch(); 
-                                            }
-                                } 
-                        onKeyPress={
-                                    
-                                    (e) =>  { 
-                                                if(e.key==='Enter') 
-                                                    search(); 
-                                            }
-                                    } 
-                        placeholder={
-                                        data.searchbar[0].placeholder
-                                    }
-                />
-                <button style={{width:'90px'}} 
-                        onClick={search}>
-                    {data.searchbar[0].label_btn}
-                </button>
-            </div>
-            <div className="container">
-            {
-               (searchSpinner) 
-               ? (<Spinner/>)
-               :( 
-                    (searchedPosts.length===0) 
-                    ?((enableSearch)&&(<div className="dst_strip_results"><h1 className="dst_strip_result_header"><strong>{data.searchbar[0].not_found}</strong></h1></div>))
-                    :(
-                        <div className="dst_strip_results">
-                            { 
-                                (enableSearch)&& 
-                                (<h1 className="dst_strip_result_header"><strong>{totalPosts} {data.searchbar[0].alert_results} :</strong>{" "}{searchQuery}</h1>)
-                            }
-                            <PostGallery posts={searchedPosts} data={data}/>
-                            <Pagination postsPerPage={10} totalPosts={totalPosts} paginate={searchPaginate} currentPage={currentPage}/>
-                        </div>
-                    )
-                )
-            }
-            </div>
-        </div>)      
+            <GridContainer.Row>  
+                <div className="dst_search_bar">
+                        <GridContainer.Container>
+                            <h1>{data.searchbar[0].title}</h1>
+                            <input type="text" 
+                                value={searchQuery} 
+                                onChange={
+                                                (e) =>  
+                                                        {
+                                                            setSearchQuery(e.target.value); 
+                                                            disableSearch(); 
+                                                        }
+                                            } 
+                                    onKeyPress={
+                                                
+                                                (e) =>  { 
+                                                            if(e.key==='Enter') 
+                                                                search(); 
+                                                        }
+                                                } 
+                                    placeholder={
+                                                    data.searchbar[0].placeholder
+                                                }
+                            />
+                            <button style={{width:'90px'}} 
+                                    onClick={search}>
+                                {data.searchbar[0].label_btn}
+                            </button>
+                        </GridContainer.Container>
+                        <GridContainer.Container>
+                        {
+                        (searchSpinner) 
+                        ? (<Spinner/>)
+                        :( 
+                                (searchedPosts.length===0) 
+                                ?((enableSearch)&&(<div className="dst_strip_results"><h1 className="dst_strip_result_header"><strong>{data.searchbar[0].not_found}</strong></h1></div>))
+                                :(
+                                    <div className="dst_strip_results">
+                                        { 
+                                            (enableSearch)&& 
+                                            (<h1 className="dst_strip_result_header"><strong>{totalPosts} {data.searchbar[0].alert_results} :</strong>{" "}{searchQuery}</h1>)
+                                        }
+                                        <PostGallery posts={searchedPosts} data={data}/>
+                                        <Pagination postsPerPage={10} totalPosts={totalPosts} paginate={searchPaginate} currentPage={currentPage}/>
+                                    </div>
+                                )
+                            )
+                        }
+                        </GridContainer.Container>
+                </div>
+            </GridContainer.Row>  
+        )      
     )
 }

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import UtilityObj from '../../utils/UtilityObj';
 import { Spinner } from '../../components';
+import { GridContainer } from '../../containers';
+
 import './PostGallery.css';
 
 export default function PostGallery({data,posts,spinner}) {
@@ -17,8 +19,8 @@ export default function PostGallery({data,posts,spinner}) {
         <div className="dst_post">
                 { (spinner) 
                     ?(<Spinner/>)
-                    :( <div>
-                        <div className="container">
+                    :( <GridContainer.Row>
+                        <GridContainer.Container type="fullwidth">
                         {
                             posts.map(
                                 (post)=>(
@@ -33,8 +35,8 @@ export default function PostGallery({data,posts,spinner}) {
                                         )
                             )
                         }
-                        </div>   
-                        </div>
+                        </GridContainer.Container>
+                        </GridContainer.Row>
                     )
                 }
             </div>

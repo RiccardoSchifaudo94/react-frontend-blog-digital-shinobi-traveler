@@ -3,7 +3,10 @@ import {useParams, Redirect, useLocation} from 'react-router-dom';
 import Parser from 'html-react-parser';
 
 import UtilityObj from '../../utils/UtilityObj';
+
 import { Spinner } from '../../components';
+import { GridContainer } from '../../containers';
+
 import './Page.css';
 
 export default function Page({data}) {
@@ -54,12 +57,12 @@ export default function Page({data}) {
         });
     }
     return (
-        <div>
+        <GridContainer.Row>
             {
              (!isFetching)
                 ?((page.length!==0)
                     ?
-                    (  <div>
+                    (  <GridContainer.Container type="fullwidth">
                            
                             {
                                 (page[0].featured_media!==0)
@@ -75,19 +78,21 @@ export default function Page({data}) {
                                 )
                             }
                             <div className="dst_blog_page" id="dst_blog_page">
-                                <div className="container">
-                                    { (page[0].featured_media===0)
-                                        &&
-                                        (<h1>{utilObj.stripHtml(page[0].title.rendered)}</h1>)
-                                    }
-                                    {Parser(page[0].content.rendered)}
-                                </div>
+                                <GridContainer.Row>
+                                    <GridContainer.Container>
+                                        { (page[0].featured_media===0)
+                                            &&
+                                            (<h1>{utilObj.stripHtml(page[0].title.rendered)}</h1>)
+                                        }
+                                        {Parser(page[0].content.rendered)}
+                                    </GridContainer.Container>
+                                </GridContainer.Row>
                             </div>
-                        </div>
+                        </GridContainer.Container>
                     )
                     :(<Redirect to="/*"/>))
                 :(<Spinner/>)
             }
-        </div>
+        </GridContainer.Row>
     )
 }

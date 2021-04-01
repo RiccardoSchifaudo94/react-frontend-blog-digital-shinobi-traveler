@@ -4,6 +4,8 @@ import Parser from 'html-react-parser';
 
 import UtilityObj from '../../utils/UtilityObj';
 import { Carousel, LightBox, Spinner, ProgressBar, SocialShare } from '../../components';
+import { GridContainer } from '../../containers';
+
 import './Post.css';
 
 
@@ -121,7 +123,7 @@ export default function Post({data,totalPosts}) {
                         ? 
                         ((post.length!==0) 
                             ?(  
-                                <div>
+                                <GridContainer.Row>
                                     {
                                     (post[0].featured_media!==0)&&
                                         (
@@ -136,7 +138,7 @@ export default function Post({data,totalPosts}) {
                                             </div>
                                         )
                                     }
-                                    <div className="container">
+                                    <GridContainer.Container>
                                         <ProgressBar/>
                                         <div className="dst_blog_post" id="dst_blog_post" onLoad={prepareLightBoxesImages}>
                                             { Parser(post[0].content.rendered) }
@@ -146,9 +148,9 @@ export default function Post({data,totalPosts}) {
                                             {(showPrevNavPost)&&(<button className="dst_nav_post_prev" onClick={()=>{setCounterNavPosts(counterNavPosts - 1)}}><i className="fa fa-arrow-left"></i>{" "}{data.post[0].nav_btn_prev}</button>)}
                                             {(showNextNavPost)&&(<button className="dst_nav_post_next" onClick={()=>{setCounterNavPosts(counterNavPosts + 1)}}>{data.post[0].nav_btn_next}{" "}<i className="fa fa-arrow-right"></i></button>)}
                                         </div>
-                                    </div>
+                                    </GridContainer.Container>
                                     {(showLightBox)&&(<LightBox url={urlLightBox} slideGallery={slideGallery}/>)}
-                                </div>
+                                </GridContainer.Row>
                             )
                             :(<Redirect to="/"/>)
             ):(<Spinner/>)
