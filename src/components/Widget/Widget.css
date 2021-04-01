@@ -6,6 +6,7 @@
     display: block;
     margin: 40px auto;
     max-width:300px;
+    text-align: left;
 }
 .dst_widget h2{
     margin: 20px 0 40px;

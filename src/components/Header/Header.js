@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import UtilityObj from './../../utils/UtilityObj';
 import {Sidebar} from '../../components';
+import {GridContainer} from '../../containers';
 import "./Header.css";
 
 
@@ -27,15 +28,15 @@ export default function Header({data, selectLang, isMobile}) {
 
 
     return (
-        <>
+        <GridContainer.Row>
         <nav className="dst_header" id="top">
-            <div className="container">
-                <img src={data.header[0].image} width="50" height="50" alt="digital-shinobi-traveler"/>
-                <h1>{data.header[0].title}</h1>
-                <span>{data.header[0].description}</span>
-            </div>
+            <GridContainer.Container>
+                    <img src={data.header[0].image} width="50" height="50" alt="digital-shinobi-traveler"/>
+                    <h1>{data.header[0].title}</h1>
+                    <span>{data.header[0].description}</span>
+            </GridContainer.Container>
             <div className="dst_sub_header">
-                <div className="container">
+                <GridContainer.Container>
                     <ul>
                        <li className="ds_header_mobile_item"><Link to="/"><i className="fa fa-angle-left" style={{fontWeight:"900",fontSize:"20px"}}></i></Link></li>
                         <li className="ds_header_mobile_item" onClick={()=>{setShowSidebar(!showSidebar);}}><a><i className="fa fa-reorder"></i></a></li>
@@ -54,11 +55,12 @@ export default function Header({data, selectLang, isMobile}) {
                             </select>
                         </li>
                     </ul>
-                </div>
+                </GridContainer.Container>
             </div>
             <i className="fa fa-2x fa-angle-double-up dst_top_menu" onClick={()=>{scrollToTop()}}></i>
         </nav>
+        
         <Sidebar data={data} showSidebar={showSidebar}/>
-        </>
+        </GridContainer.Row>
     )
 }

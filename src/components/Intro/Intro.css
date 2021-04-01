@@ -1,6 +1,4 @@
 .dst_intro *{
-    padding:0;
-    margin:0;
     text-align:center;
 }
 .dst_intro h2{
@@ -410,28 +408,7 @@ form.shinobi_search_article label {
     background: rgba(15, 151, 203, .8);
     margin-top: 10px;
 }
-.dst_intro_row{
-    display: inline-block;
-    width:100%;
-}
-.dst_intro_col_3,
-.dst_intro_col_4,
-.dst_intro_col_6,
-.dst_intro_col_9{
-    float: left;
-}
-.dst_intro_col_3{
-    width: 25%;
-}
-.dst_intro_col_4{
-    width: 33.33333333%;
-}
-.dst_intro_col_6{
-    width: 50%;
-}
-.dst_intro_col_9{
-    width: 75%;
-}
+
 @media screen and (max-width:768px){
     .shinobi_general_description h3:after{
         height:0;
@@ -456,13 +433,5 @@ form.shinobi_search_article label {
         margin-bottom: 20px;
         max-width: 300px;
         margin: 0 auto 30px;
-    }
-}
-@media screen and (max-width:468px){
-    .dst_intro_col_3,
-    .dst_intro_col_4,
-    .dst_intro_col_6,
-    .dst_intro_col_9{
-        width:100%;
     }
 }

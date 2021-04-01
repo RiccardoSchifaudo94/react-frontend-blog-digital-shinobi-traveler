@@ -1,5 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import { Header,NotFound, Footer, Page, Post , PostGallery, Pagination, Search, Intro, Slider, Widget } from "./components";
+
+import { GridContainer } from './containers';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -112,15 +115,17 @@ function App() {
           </Route>
           <Route path="/blog">
             <Slider data={data} slides={postSlider}/>
-            <div style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
-            <div style={{width:"70%"}}>
-              <PostGallery data={data} posts={posts} spinner={spinner}/>
-              <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
-            </div>
-            <div  style={{width:"30%"}}>
-              <Widget data={data} lastPosts={postSlider}/>
-            </div>
-            </div>
+            <GridContainer.Row>
+                <GridContainer.Container>
+                  <GridContainer.Col size={7}>
+                    <PostGallery data={data} posts={posts} spinner={spinner}/>
+                    <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} spinner={spinner}/>
+                  </GridContainer.Col>
+                  <GridContainer.Col size={5}>
+                    <Widget data={data} lastPosts={postSlider}/>
+                  </GridContainer.Col>
+                </GridContainer.Container>
+            </GridContainer.Row>
           </Route>
           <Route path="/page/:slug">
             <Page data={data}/>

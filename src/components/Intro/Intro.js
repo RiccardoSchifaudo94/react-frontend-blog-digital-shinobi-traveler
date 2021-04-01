@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { Carousel, ProgressBar } from '../../components';
+import {GridContainer} from '../../containers';
 
 import './Intro.css';
-import { Link } from 'react-router-dom';
 
 export default function Intro({data,postsCarousel}) {
 
@@ -19,7 +21,7 @@ export default function Intro({data,postsCarousel}) {
             </div>
             <div className="shinobi_divider_splash"></div>
             <div className="shinobi_introduction">
-                    <div className="container">
+                    <GridContainer.Container>
                         <h3>{data.intro[0].shinobi_introduction_heading_1} </h3>
                         <h3>
                         {data.intro[0].shinobi_introduction_heading_2}
@@ -31,19 +33,19 @@ export default function Intro({data,postsCarousel}) {
                             {data.intro[0].shinobi_section_1_text_3}<br/>
                             {data.intro[0].shinobi_section_1_text_4}
                         </p>	
-                    </div>
+                    </GridContainer.Container>
             </div>	
             <br/>
             <div className="shinobi_start_splash">
-                <div className="container">
+                <GridContainer.Container>
                     <h2>{data.intro[0].shinobi_start_splash_heading_1}</h2>
-                            <div className="dst_intro_row">
+                            <GridContainer.Row>
                                 <div className="shinobi_social_divider">
-                                    <div className="dst_intro_col_3" align="center">
+                                    <GridContainer.Col size={3} align="center">
                                         <i className="fa fa-facebook fa-2x"></i>
                                         <h4>{data.intro[0].shinobi_start_splash_follow_facebook}</h4>
-                                    </div>
-                                    <div className="dst_intro_col_9">
+                                    </GridContainer.Col>
+                                    <GridContainer.Col size={9}>
                                         <h5>{data.intro[0].shinobi_start_splash_follow_facebook_label_1}</h5>
                                         <p>{data.intro[0].shinobi_start_splash_follow_facebook_text_1}</p>
                                         <br/>
@@ -57,16 +59,16 @@ export default function Intro({data,postsCarousel}) {
                                             </button>
                                         </a>
                                         <hr/>
-                                    </div>
+                                    </GridContainer.Col>
                                 </div>
-							</div>	
-                            <div className="dst_intro_row">
+                            </GridContainer.Row>	
+                            <GridContainer.Row>
                                 <div className="shinobi_social_divider">
-                                    <div className="dst_intro_col_3" align="center">
+                                    <GridContainer.Col size={3} align="center">
                                         <i className="fa fa-instagram fa-2x"></i>
                                         <h4>{data.intro[0].shinobi_start_splash_follow_linkedin}</h4>
-                                    </div>
-                                    <div className="dst_intro_col_9">
+                                    </GridContainer.Col>
+                                    <GridContainer.Col size={9}>
                                         <h5>{data.intro[0].shinobi_start_splash_follow_instagram_label_1}</h5>
                                         <p>
                                             {data.intro[0].shinobi_start_splash_follow_instagram_text_1}
@@ -79,72 +81,77 @@ export default function Intro({data,postsCarousel}) {
                                             </button>
                                         </a>
                                         <hr/>
-                                    </div>
+                                    </GridContainer.Col>
                                 </div>
-                            </div>
-                            <div className="dst_intro_row">
+                            </GridContainer.Row>
+                            <GridContainer.Row>
                                 <div className="shinobi_social_divider">
-                                    <div class="dst_intro_col_3" align="center">
+                                    <GridContainer.Col size={3} align="center">
                                         <i className="fa fa-times fa-2x"></i>
                                         <h4>{data.intro[0].shinobi_start_splash_not_done}</h4>
-                                    </div>
-                                    <div className="dst_intro_col_9">
+                                    </GridContainer.Col>
+                                    <GridContainer.Col size={9}>
                                         <h5>{data.intro[0].shinobi_start_splash_not_done_label_1}</h5>
                                         <p>{data.intro[0].shinobi_start_splash_not_done_text_1}</p>
-                                    </div>
+                                    </GridContainer.Col>
                                 </div>
-                            </div>
-                            <div className="dst_intro_row">
+                            </GridContainer.Row>
+                            <GridContainer.Row>
 								<div className="shinobi_social_divider">
-										<div className="dst_intro_col_3" align="center">
+                                        <GridContainer.Col size={3} align="center">
 											<i className="fa fa-check fa-2x"></i>
 											<h4>{data.intro[0].shinobi_start_splash_done}</h4>
-										</div>
-										<div className="dst_intro_col_9">
+										</GridContainer.Col>
+                                        <GridContainer.Col size={9}>
 											<h5>{data.intro[0].shinobi_start_splash_done_label_1}</h5>
 											<p>{data.intro[0].shinobi_start_splash_done_text_1}</p>
-										</div>
+                                        </GridContainer.Col>
 								</div>
-							</div>
-                </div>
+                            </GridContainer.Row>
+                </GridContainer.Container>
             </div>
-            <div className="container">
-				<div className="dst_intro_row">
+            <GridContainer.Container>
+                <GridContainer.Row>
 						<h2>{data.intro[0].shinobi_title_section_2}</h2>
 						<p>
                             {data.intro[0].shinobi_section_2_text_1}
 							<br/>
                             {data.intro[0].shinobi_section_2_text_2}
 						</p>
-				</div>
-            </div>
+                </GridContainer.Row>
+            </GridContainer.Container>
             <br/>
-            <div className="dst_intro_row" style={{position:"relative"}}>
-                
-                <div className="dst_intro_col_4 shinobi_block_topic" style={{backgroundImage:"url('images/digital-shinobi-traveler-cinque-terre-riomaggiare.jpg')"}}>
-                    <h6>Digital Shinobi <strong>Traveler</strong></h6>
-                </div>
-                <div className="dst_intro_col_4 shinobi_block_topic" style={{backgroundImage:"url('images/ricky-arduino-maker.jpg')"}}>
-                    <h6>Digital Shinobi <strong>Maker</strong></h6>
-                </div>
-                <div className="dst_intro_col_4 shinobi_block_topic" style={{backgroundImage:"url('images/ricky-diabolo.jpg')"}}>
-                    <h6>Digital Shinobi <strong>Diabolist</strong></h6>
-                </div>
+            <GridContainer.Row style={{position:"relative"}}>
+                <GridContainer.Col size={4}>
+                    <div className="shinobi_block_topic" style={{backgroundImage:"url('images/digital-shinobi-traveler-cinque-terre-riomaggiare.jpg')"}}>
+                        <h6>Digital Shinobi <strong>Traveler</strong></h6>
+                    </div>
+                </GridContainer.Col>
+                <GridContainer.Col size={4}>
+                    <div className="shinobi_block_topic" style={{backgroundImage:"url('images/ricky-arduino-maker.jpg')"}}>
+                        <h6>Digital Shinobi <strong>Maker</strong></h6>
+                    </div>
+                </GridContainer.Col>
+                <GridContainer.Col size={4}>
+                    <div className="shinobi_block_topic" style={{backgroundImage:"url('images/ricky-diabolo.jpg')"}}>
+                        <h6>Digital Shinobi <strong>Diabolist</strong></h6>
+                    </div>
+                </GridContainer.Col>
                 <div class="shinobi_divider_splash" style={{position:"absolute"}}></div>
-            </div>
-            <div className="container">
-				<div className="dst_intro_row">
+            </GridContainer.Row>
+            <GridContainer.Container>
+                <GridContainer.Row>
 					<h2 style={{border:0}}>{data.intro[0].shinobi_title_section_3}</h2>
-				</div>
-                <div className="dst_intro_row">
+                </GridContainer.Row>
+                <GridContainer.Row>
                     <div className="shinobi_general_description">
-						<div className="dst_intro_col_6">
+                        <GridContainer.Col size={6}>
 							<h3>{data.intro[0].shinobi_section_3_label_1}</h3>
 							<p id="p_correct">
                                 {data.intro[0].shinobi_section_3_text_1}
 							</p>
-						</div>
-						<div className="dst_intro_col_6">
+						</GridContainer.Col>
+						<GridContainer.Col size={6}>
 							<ul>
                                 {data.intro[0].shinobi_info_graphics.map((item, key)=>(
                                     <li key={key}>
@@ -156,10 +163,10 @@ export default function Intro({data,postsCarousel}) {
                                     </li>   
                                 ))}
 							</ul>
-						</div>
+                        </GridContainer.Col>
 					</div>
-                </div>
-				<div className="dst_intro_row">
+                </GridContainer.Row>
+                <GridContainer.Row>
                     <form className="shinobi_search_article" action="/search" method="GET">
                         <label>{data.intro[0].shinobi_searchbar_title}</label>
                         <input type="text" name="s" placeholder={data.intro[0].shinobi_searchbar_placeholder}/>
@@ -168,11 +175,11 @@ export default function Intro({data,postsCarousel}) {
                     <p>{data.intro[0].shinobi_searchbar_or}</p>
                     <h2>{data.intro[0].shinobi_searchbar_more_read}</h2>
                     <Carousel data={data} posts={postsCarousel} autoplay={false}/>
-				</div>
-                <div className="dst_intro_row">
+                </GridContainer.Row>
+                <GridContainer.Row>
                     <h2>{data.intro[0].shinobi_title_section_4}</h2>
-                </div>
-            </div>
+                </GridContainer.Row>
+            </GridContainer.Container>
             <div className="shinobi_img_box" style={{backgroundImage:"url('images/ricky-amsterdam.jpg')",backgroundPosition:"center"}}>
             <Link to={data.header[0].items[1].url}><button>{data.intro[0].shinobi_section_4_label_btn} <i class="fas fa-door-open"></i></button></Link>
             </div>

@@ -26,7 +26,7 @@ export default function Widget({data,lastPosts = []}) {
                             {
                                 lastPosts.map((post)=>(
                                                         <li>
-                                                            <a href={`${post.slug}`}>{post.title.rendered}</a>
+                                                            <a href={`/post/${post.slug}`}>{post.title.rendered}</a>
                                                         </li>
                                                     )
                             )}
