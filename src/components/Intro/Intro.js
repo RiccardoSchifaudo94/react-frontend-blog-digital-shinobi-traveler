@@ -183,7 +183,6 @@ export default function Intro({data,postsCarousel}) {
             <div className="shinobi_img_box" style={{backgroundImage:"url('images/ricky-amsterdam.jpg')",backgroundPosition:"center"}}>
             <Link to={data.header[0].items[1].url}><button>{data.intro[0].shinobi_section_4_label_btn} <i class="fas fa-door-open"></i></button></Link>
             </div>
-            <div className="shinobi_divider_splash"></div>
         </div>
     )
 }

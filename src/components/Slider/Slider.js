@@ -48,6 +48,12 @@ export default function Slider({slides,data}) {
         window.addEventListener("resize",detectWidth);
         window.addEventListener("load",initSlider(detectWidth()));
         window.addEventListener("resize",resizeSlider);
+
+        return () => {
+            window.removeEventListener("resize",detectWidth);
+            window.removeEventListener("load",initSlider(detectWidth()));
+            window.removeEventListener("resize",resizeSlider);
+        }
     },[]);
     
     return (
