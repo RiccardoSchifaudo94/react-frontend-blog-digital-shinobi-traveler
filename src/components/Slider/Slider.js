@@ -1,8 +1,9 @@
 import React,{useEffect, useState} from 'react';
+import { Spinner } from '..';
 import UtilityObj from '../../utils/UtilityObj'
 import './Slider.css';
 
-export default function Slider({slides,data}) {
+export default function Slider({slides,data, spinner}) {
 
     const utilObj = new UtilityObj();
 
@@ -16,7 +17,6 @@ export default function Slider({slides,data}) {
     }
 
     const [shift] = useState(detectWidth());
-    const slider = document.querySelector(".dst_slider");
     
     function resizeSlider(){
         /*future implementation
@@ -25,8 +25,11 @@ export default function Slider({slides,data}) {
             setShift(new_width);
             initSlider(new_width);
         */    
-            
-       (shift===detectWidth()) 
+        let slider = document.querySelector(".dst_slider_container");     
+        console.log("you are in resize slider = ");
+        console.log(slider);
+
+        (shift===detectWidth()) 
         ? slider.style.display = 'block' 
         : slider.style.display = 'none';
         
@@ -49,35 +52,33 @@ export default function Slider({slides,data}) {
         window.addEventListener("resize",detectWidth);
         window.addEventListener("load",initSlider(detectWidth()));
         window.addEventListener("resize",resizeSlider);
-
-        return () => {
-            window.removeEventListener("resize",detectWidth);
-            window.removeEventListener("load",initSlider(detectWidth()));
-            window.removeEventListener("resize",resizeSlider);
-        }
     },[]);
     
     return (
-        (slides.length>0)
-        &&(
-            <div className="dst_slider" style={{maxWidth:`${detectWidth()}px`}}>
-                <ul className="dst_slider_container" style={{width:`${detectWidth()}px`}}>
-                    {
-                        slides.map((slide,key)=>(
-                                   
-                                        <li className="dst_slider_item" key={key} style={{width:`${detectWidth()}px`,backgroundImage:`url(${slide.images.large})`}}>
-                                            <div className="dst_slider_item_info_box">
-                                                <h1>{utilObj.stripHtml(slide.title.rendered)}</h1>
-                                                <span>{utilObj.formatDate(slide.date, data.lang)}</span>
-                                                <a href={`/post/${slide.slug}`}><button>Read More</button></a>
-                                            </div>
-                                        </li>
-                                    
-                                    )
-                        )
-                    }
-                </ul>
-            </div>
+        (spinner)
+        ?(<Spinner/>)
+        :(
+            (slides.length>0)
+                &&(
+                    <div className="dst_slider" style={{maxWidth:`${detectWidth()}px`}}>
+                        <ul className="dst_slider_container" style={{width:`${detectWidth()}px`}}>
+                            {
+                                slides.map((slide,key)=>(
+                                        
+                                                <li className="dst_slider_item" key={key} style={{width:`${detectWidth()}px`,backgroundImage:`url(${slide.images.large})`}}>
+                                                    <div className="dst_slider_item_info_box">
+                                                        <h1>{utilObj.stripHtml(slide.title.rendered)}</h1>
+                                                        <span>{utilObj.formatDate(slide.date, data.lang)}</span>
+                                                        <a href={`/post/${slide.slug}`}><button>Read More</button></a>
+                                                    </div>
+                                                </li>
+                                            
+                                            )
+                                )
+                            }
+                        </ul>
+                    </div>
+                )
         )
     )
 }

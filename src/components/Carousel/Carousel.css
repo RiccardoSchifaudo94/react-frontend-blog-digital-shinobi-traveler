@@ -119,9 +119,8 @@
 }
 
 @media screen and (max-width:468px){
-    .dst_carousel{max-width:300px;padding-bottom:100px;}
+    .dst_carousel{max-width:300px;padding-bottom:100px!important;}
     .dst_carousel_nav{
-        background-color: #dedede;
         height: 50px;
         padding: 10px 0!important;
         position: absolute;

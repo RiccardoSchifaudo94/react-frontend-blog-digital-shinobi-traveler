@@ -49,6 +49,7 @@ export default function Page({data}) {
 
     useEffect(()=>{
         get_page();
+        utilObj.scrollToTop();
     },[]);
     
     const scrollDown = () =>{

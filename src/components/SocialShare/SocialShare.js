@@ -28,7 +28,7 @@ export default function SocialShare({title='',link='',facebook=true,whatsapp=tru
                 (twitter)&&(
                     <a href={`https://twitter.com/intent/tweet?text=${link}`} target="_blank" rel="noreferrer">
                         <div style={{backgroundColor:"#1da1f2",borderBottom:"3px solid #136ba0"}}>
-                            <i class="fab fa-twitter"></i>
+                            <i className="fab fa-twitter"></i>
                         </div>
                     </a>   
                 )

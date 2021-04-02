@@ -155,7 +155,7 @@ export default function Post({data,totalPosts, lastPosts = []}) {
                                                 </div>
                                             </GridContainer.Col>
                                             <GridContainer.Col size={4}>
-                                                <Widget data={data} lastPosts={lastPosts} />
+                                                <Widget data={data} lastPosts={lastPosts}/>
                                             </GridContainer.Col>
                                         </GridContainer.Row>
                                     </GridContainer.Container>

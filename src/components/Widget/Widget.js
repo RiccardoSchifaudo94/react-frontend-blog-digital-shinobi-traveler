@@ -34,7 +34,7 @@ export default function Widget({data,lastPosts = []}) {
     useEffect(()=>{
         initFbSDK(data.lang)
     },[]);
-
+  
     return (
         <div className="dst_widget">
           <h2>{data.widget[0].shinobi_widget_label_1_title}</h2>
