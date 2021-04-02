@@ -67,14 +67,18 @@ export default function Page({data}) {
                             {
                                 (page[0].featured_media!==0)
                                 &&
-                                (<div className="dst_img_section_article" style={{backgroundImage: `url(${page[0]["_embedded"]["wp:featuredmedia"][0]["source_url"]})`}}>
-                                    <div className="dst_info_section_article">    
-                                        <h1>{utilObj.stripHtml(page[0].title.rendered)}</h1> 
-                                        <span>{utilObj.formatDate(page[0].date, data.lang)}</span>
-                                        <p>Scroll</p>
-                                        <i className="fa fa-3x fa-angle-double-down" onClick={scrollDown}></i>
-                                    </div>
-                                 </div> 
+                                (
+                                    <GridContainer.Col size={12}> 
+                                        <div className="dst_img_section_article" style={{backgroundImage: `url(${page[0]["_embedded"]["wp:featuredmedia"][0]["source_url"]})`}}>
+                                            <div className="dst_info_section_article">    
+                                                <h1>{utilObj.stripHtml(page[0].title.rendered)}</h1> 
+                                                <span>{utilObj.formatDate(page[0].date, data.lang)}</span>
+                                                <p>Scroll</p>
+                                                <i className="fa fa-3x fa-angle-double-down" onClick={scrollDown}></i>
+                                            </div>
+                                        </div> 
+                                        <div className="shinobi_divider_splash"></div> 
+                                    </GridContainer.Col> 
                                 )
                             }
                             <div className="dst_blog_page" id="dst_blog_page">

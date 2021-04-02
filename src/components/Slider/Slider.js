@@ -16,18 +16,19 @@ export default function Slider({slides,data}) {
     }
 
     const [shift] = useState(detectWidth());
+    const slider = document.querySelector(".dst_slider");
     
     function resizeSlider(){
-        //future implementation
-        /*
+        /*future implementation
+        
             let new_width = detectWidth();
             setShift(new_width);
             initSlider(new_width);
         */    
             
        (shift===detectWidth()) 
-        ? document.querySelector(".dst_slider").style.display = 'block' 
-        : document.querySelector(".dst_slider").style.display = 'none';
+        ? slider.style.display = 'block' 
+        : slider.style.display = 'none';
         
     }
    
