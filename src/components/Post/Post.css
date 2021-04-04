@@ -82,7 +82,7 @@
     position: relative;
 }
 .dst_blog_post{
-    margin:20px auto;
+    margin:20px;
     padding:20px;
     color: #02002f;
     text-align: center;
@@ -172,6 +172,7 @@
     list-style-type: none;
     text-align: left;
     position: relative;
+    padding-bottom:20px;
 }
 .dst_blog_post li:before{
     content: "+";
