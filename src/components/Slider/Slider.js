@@ -30,7 +30,7 @@ export default function Slider({slides,data, spinner}) {
         console.log(slider);
 
         (shift===detectWidth()) 
-        ? slider.style.display = 'block' 
+        ? slider.style.display = '-webkit-inline-box'
         : slider.style.display = 'none';
         
     }
