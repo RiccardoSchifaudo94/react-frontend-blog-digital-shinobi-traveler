@@ -1,15 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Carousel, ProgressBar } from '../../components';
+import { Carousel, ProgressBar, SEO } from '../../components';
 import { GridContainer } from '../../containers';
+
+import utilityOBJ from '../../utils/UtilityObj';
 
 import './Intro.css';
 
 export default function Intro({data,postsCarousel}) {
 
+    const utilObj = new utilityOBJ();
+
     return (
         <div className="dst_intro">
+            <SEO title={utilObj.stripHtml(data.meta[0].title)} description={utilObj.stripHtml(data.meta[0].description)} siteTitle={"Digital Shinobi Traveler"} image={''} slug={''} type=''/>
             <ProgressBar/>
             <div className="shinobi_img_box" style={{backgroundImage:"url('/images/digital-shinobi-traveler-cinque-terre-riomaggiare.jpg')"}}></div>
             <div className="shinobi_bio">

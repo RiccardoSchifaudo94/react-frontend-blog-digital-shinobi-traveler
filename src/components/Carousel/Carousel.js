@@ -72,10 +72,17 @@ export default function Carousel({data,posts, autoplay = false, width=200, gutte
                             </li>
                         ))}
                     </ul>
-                    <div className="dst_carousel_nav">
-                        <a className="dst_carousel_nav_prev" onClick={shiftLeftCarousel}><i className="fa fa-angle-left"></i></a>
-                        <a className="dst_carousel_nav_next" onClick={shiftRightCarousel}><i className="fa fa-angle-right"></i></a>
-                    </div>
+                    {
+                        (isMobile()===false && posts.length<3)
+                            ?(<div></div>)
+                            :
+                            (
+                                <div className="dst_carousel_nav">
+                                    <a className="dst_carousel_nav_prev" onClick={shiftLeftCarousel}><i className="fa fa-angle-left"></i></a>
+                                    <a className="dst_carousel_nav_next" onClick={shiftRightCarousel}><i className="fa fa-angle-right"></i></a>
+                                </div>
+                            )
+                    }
                 </div>)
             }
         </div>

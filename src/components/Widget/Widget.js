@@ -1,6 +1,8 @@
 import React,{useEffect} from 'react';
 import Parser from 'html-react-parser';
 
+import UtilityObj from '../../utils/UtilityObj';
+
 import { GridContainer } from '../../containers';
 
 import './Widget.css';
@@ -8,6 +10,7 @@ import './Widget.css';
 export default function Widget({data,lastPosts = []}) {
     
     let html = ``;
+    const utilObj = new UtilityObj();
 
     const initFbSDK = (lang) =>{
         
@@ -76,7 +79,7 @@ export default function Widget({data,lastPosts = []}) {
                             {
                                 lastPosts.map((post,key)=>(
                                                         <li key={key}>
-                                                            <a href={`/post/${post.slug}`}>{post.title.rendered}</a>
+                                                            <a href={`/post/${post.slug}`}>{utilObj.stripHtml(post.title.rendered)}</a>
                                                         </li>
                                                     )
                             )}

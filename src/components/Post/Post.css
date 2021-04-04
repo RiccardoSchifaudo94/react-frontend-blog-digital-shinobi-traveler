@@ -301,6 +301,7 @@
     color: #ffffff;
     outline: none;
     font-weight: 500;
+    margin-bottom:10px;
 }
 .dst_nav_post_gallery button i{
     color: #fff;
@@ -310,6 +311,7 @@
 }
 .dst_nav_post_gallery button.dst_nav_post_next{
     float: right;
+    margin-right:10px;
 }
 @keyframes pulse {
 	0% {

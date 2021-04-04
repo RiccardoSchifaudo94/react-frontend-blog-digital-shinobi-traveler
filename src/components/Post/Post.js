@@ -3,7 +3,7 @@ import { useParams, Redirect, useHistory } from 'react-router-dom';
 import Parser from 'html-react-parser';
 
 import UtilityObj from '../../utils/UtilityObj';
-import { Carousel, LightBox, Spinner, ProgressBar, SocialShare, Widget } from '../../components';
+import { Carousel, LightBox, Spinner, ProgressBar, SEO, SocialShare, Widget } from '../../components';
 import { GridContainer } from '../../containers';
 
 import './Post.css';
@@ -124,6 +124,7 @@ export default function Post({data,totalPosts, lastPosts = []}) {
                         ((post.length!==0) 
                             ?(  
                                 <GridContainer.Row>
+                                    <SEO title={utilObj.stripHtml(post[0].title.rendered)} description={utilObj.stripHtml(post[0].excerpt.rendered)} siteTitle={"Digital Shinobi Traveler"} image={post[0].images.large} slug={slug} type='post'/>
                                     {
                                     (post[0].featured_media!==0)&&
                                         (

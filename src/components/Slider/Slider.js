@@ -26,9 +26,7 @@ export default function Slider({slides,data, spinner}) {
             initSlider(new_width);
         */    
         let slider = document.querySelector(".dst_slider_container");     
-        console.log("you are in resize slider = ");
-        console.log(slider);
-
+       
         (shift===detectWidth()) 
         ? slider.style.display = '-webkit-inline-box'
         : slider.style.display = 'none';

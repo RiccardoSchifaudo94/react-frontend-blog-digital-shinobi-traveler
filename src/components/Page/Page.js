@@ -4,7 +4,7 @@ import Parser from 'html-react-parser';
 
 import UtilityObj from '../../utils/UtilityObj';
 
-import { Spinner } from '../../components';
+import { Spinner , SEO } from '../../components';
 import { GridContainer } from '../../containers';
 
 import './Page.css';
@@ -35,6 +35,7 @@ export default function Page({data}) {
     const [page,setPage] = useState([]);
     const [isFetching,setIsFetching] = useState(true);
     const utilObj = new UtilityObj();
+    let image_meta = ``;
 
     const get_page = async() =>{
      
@@ -49,6 +50,11 @@ export default function Page({data}) {
 
     useEffect(()=>{
         get_page();
+        if(page.length>1){
+            (page[0].featured_media!==0) 
+            ? image_meta = page[0]["_embedded"]["wp:featuredmedia"][0]["source_url"] 
+            : image_meta = '';
+        }
         utilObj.scrollToTop();
     },[]);
     
@@ -64,7 +70,7 @@ export default function Page({data}) {
                 ?((page.length!==0)
                     ?
                     (  <GridContainer.Container type="fullwidth">
-                           
+                            <SEO title={utilObj.stripHtml(page[0].title.rendered)} description={utilObj.stripHtml(page[0].excerpt.rendered)} siteTitle={"Digital Shinobi Traveler"} image={image_meta} slug={slug} type='page'/>
                             {
                                 (page[0].featured_media!==0)
                                 &&

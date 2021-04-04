@@ -1,4 +1,9 @@
 {   "lang":"it",
+    "meta":[{
+        "title":"Digital Shinobi Traveler - Blog di Riccardo Schifaudo",
+        "description":"Digital Shinobi Traveler è il blog di Riccardo Schifaudo. Cosa trovi ? - Digital: Consigli app mobile e web, trend digitali, i miei progetti di siti web, UX/IoT. - Shinobi: Come trovare info e imparare in digitale, ispirandomi alla cultura ninja. - Traveler: Diario di viaggi in solitaria e con progetti europei di educazione non formale.",
+        "sitename":"Digital Shinobi Traveler"
+    }],
     "header":[
         {
             "title":"Digital Shinobi Traveler",
